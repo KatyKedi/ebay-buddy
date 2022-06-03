@@ -11,10 +11,14 @@ function ItemDisplay() {
   const [state, dispatch] = useItemContext();
   const { keyword } = state;
   const { loading, data } = useQuery(QUERY_ITEMS);
-  
+  console.log(state)
+  let filteredItems;
+
   useEffect(() => {
     if (data) {
-      const filteredItems = data.items.filter(item => item.name.includes(keyword));
+      console.log(keyword)
+      filteredItems = data.items.filter(item => item.name.includes(keyword));
+      console.log(filteredItems)
       dispatch({
         type: UPDATE_ITEMS,
         items: filteredItems,
@@ -22,7 +26,6 @@ function ItemDisplay() {
       filteredItems.forEach((item) => {
         idbPromise('items', 'put', item);
       });
-      return filteredItems;
     } else if (!loading) {
       idbPromise('items', 'get').then((items) => {
         dispatch({
@@ -31,14 +34,14 @@ function ItemDisplay() {
         });
       });
     }
-  })
+  }, [keyword, data, loading, dispatch]);
   
   return (
   <>
     <div className="container display-container">
         <div className="text-center border">
             <ul className="display-box">
-            {filteredItems.forEach(item => (<li>{item.name}</li>))}
+            {/* {filteredItems.forEach(item => (<li>{item.name}</li>))} */}
             </ul>
             
     </div>

@@ -5,6 +5,7 @@ import {
 } from "./actions";
 
 export const reducer = (state, action) => {
+    console.log(action)
   switch (action.type) {
     case UPDATE_ITEMS:
       return {
@@ -58,7 +59,7 @@ export const reducer = (state, action) => {
     case UPDATE_CURRENT_KEYWORD:
        return {
          ...state,
-         currentKeyword: action.currentKeyword
+         keyword: action.keyword
     }
 
     default:

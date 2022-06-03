@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import TextField from "@mui/material/TextField";
+import { useNavigate } from 'react-router-dom'
 
 import { useItemContext } from '../../utils/GlobalState';
 import { UPDATE_ITEMS } from '../../utils/actions';
@@ -10,34 +11,40 @@ import { idbPromise } from '../../utils/helpers';
 function Search() {
     const [state, dispatch] = useItemContext();
     const { keyword } = state;
+    const navigate = useNavigate();
 
-  const enterKeyword = (newKeyword) => {
-    if (!keyword) {
-        dispatch({
-            type: UPDATE_CURRENT_KEYWORD,
-            keyword: newKeyword
-        });
-        idbPromise('keyword', 'put', newKeyword)
-        } else {
-          idbPromise('keyword', 'get').then((keyword) => {
+    const [itemName, setItemName] = useState('');
+
+    useEffect(() => {
+        console.log(itemName)
+        if (itemName) {
             dispatch({
-              type: UPDATE_CURRENT_KEYWORD,
-              keyword: keyword,
+                type: UPDATE_CURRENT_KEYWORD,
+                keyword: itemName
             });
-      });
-    }
-  }
+            idbPromise('keyword', 'put', itemName)
+        } else {
+            idbPromise('keyword', 'get').then((keyword) => {
+                dispatch({
+                type: UPDATE_CURRENT_KEYWORD,
+                keyword: itemName,
+                });
+        });
+        }
+    }, [itemName]);
 
 
   const handleItemSearch = (event) => {
     event.preventDefault();
-
-    const itemName = document.getElementById("itemName").value;
-    enterKeyword(itemName)
-    // state.items.map((item) => {item.name.includes(itemName)})
-    window.location.replace('/item-display');
+    navigate('/item-display', { replace: true })
+    // history.push("/item-display");
   }
 
+  const handleTextChange = (event) => {
+    setItemName(event.target.value);
+  }
+
+  console.log(itemName)
   return (
     <main className="background">
       <form onSubmit={(event) => {handleItemSearch(event)}}>
@@ -47,6 +54,8 @@ function Search() {
             id="itemName"
             label="Item Name?"
             variant="outlined"
+            value={itemName}
+            onChange={(event) => handleTextChange(event)}
           />
         </div>
 
