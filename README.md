@@ -13,7 +13,7 @@ ebayBuddy aims to make the lives of ebay sellers easier by giving them a tool to
 
 ## DEPLOYED APPLICATION
 
-https://floating-stream-47756.herokuapp.com/
+
 
 ## PRESENTATION
 
