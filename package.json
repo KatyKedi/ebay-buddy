@@ -4,7 +4,11 @@
   "description": "",
   "main": "Develop/server/server.js",
   "scripts": {
-    "start": "node Develop/server/server.js"
+    "start": "node Develop/server/server.js",
+    "develop": "concurrently \"cd Develop/server && npm run watch\" \"cd Develop/client && npm start\"",
+    "install": "cd Develop/server && npm i && cd ../client && npm i",
+    "seed": "cd Develop/server && npm run seed",
+    "build": "cd Develop/client && npm run build"
   },
   "repository": {
     "type": "git",
