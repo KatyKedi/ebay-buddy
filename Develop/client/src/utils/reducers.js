@@ -1,11 +1,12 @@
 import { useReducer } from "react";
 import {
   UPDATE_ITEMS,
-  UPDATE_CURRENT_KEYWORD
+  UPDATE_CURRENT_KEYWORD,
+  UPDATE_CURRENT_ITEM
 } from "./actions";
 
 export const reducer = (state, action) => {
-    console.log(action)
+  console.log(action)
   switch (action.type) {
     case UPDATE_ITEMS:
       return {
@@ -60,7 +61,13 @@ export const reducer = (state, action) => {
        return {
          ...state,
          keyword: action.keyword
-    }
+      }
+
+    case UPDATE_CURRENT_ITEM:
+      return {
+        ...state,
+        singleItem: action.singleItem
+      }
 
     default:
       return state;

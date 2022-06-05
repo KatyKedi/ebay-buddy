@@ -8,3 +8,17 @@ export const QUERY_ITEMS = gql`
         }
     }
 `
+
+export const QUERY_ITEM = gql`
+    query getItem($id: ID!) {
+        item(_id: $id) {
+            _id  
+            name
+            description
+            weight
+            size
+            createdAt
+            section      
+        }
+    }
+`

@@ -50,7 +50,8 @@ const resolvers = {
     },
     item: async (parent, { _id }, context) => {
       if (context.user) {
-        return Item.findById(_id);
+        return Item
+          .findById(_id);
       }
       throw new AuthenticationError('Not logged in');
     },

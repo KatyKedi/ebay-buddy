@@ -11,7 +11,7 @@ import { CatalogProvider } from './utils/GlobalState';
 
 import Login from "./components/Login/index.js"
 import Search from "./components/Search/Search.js";
-import Appbar from "./components/Appbar/index.js";
+import Header from "./components/Header/index.js";
 import Donation from './components/Donation/index';
 import ItemDisplay from "./components/ItemDisplay/index.js";
 import ItemDetails from "./components/ItemDetails/index.js";
@@ -44,7 +44,7 @@ function App() {
       <BrowserRouter>
       <div className="background">
         <CatalogProvider>
-          <Appbar />
+          <Header />
           <main>
             <Routes>
               <Route

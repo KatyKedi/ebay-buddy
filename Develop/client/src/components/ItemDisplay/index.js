@@ -2,19 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { useItemContext } from '../../utils/GlobalState';
 import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../utils/queries';
-import { UPDATE_ITEMS } from '../../utils/actions';
+import { UPDATE_CURRENT_ITEM, UPDATE_ITEMS } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./style.css"
+import { useNavigate } from 'react-router-dom';
 
 function ItemDisplay() {
   const [state, dispatch] = useItemContext();
   const { keyword } = state;
   const { loading, data } = useQuery(QUERY_ITEMS);
+  const navigate = useNavigate();
 
   const [filteredItems, setFilteredItems] = useState([]);
-
-  
+  const [selectedItem, setSelectedItem] = useState('');
 
   useEffect(() => {
     if (data) {
@@ -34,19 +35,42 @@ function ItemDisplay() {
         });
       });
     }
-  }, [data, loading, dispatch]);
+    dispatch({
+      type: UPDATE_CURRENT_ITEM,
+      singleItem: selectedItem
+    })
+  }, [data, loading, selectedItem, keyword, dispatch]);
+
+  const handleItemClick = (event) => {
+    setSelectedItem(event.target.getAttribute('id'))
+  }
+
+  const handleViewClick = (event) => {
+    if (selectedItem) {
+      navigate('/item-details', { replace: true })
+    }
+  }
   
   return (
   <>
     <div className="container display-container">
         <div className="text-center border">
             <ul className="display-box">
-              {filteredItems.map(item => (<li>{item.name}</li>))}
+              {filteredItems.map(item => (
+              <li 
+                onClick={(event) => handleItemClick(event)}
+                id={item._id}>
+              {item.name}
+              </li>))}
             </ul>     
         </div>
     </div>
     <div className="row button-container">       
-      <button className="col btn1 btn btn-primary">View | Edit</button>
+      <button 
+        className="col btn1 btn btn-primary"
+        onClick={(event) => handleViewClick(event)}
+      >View | Edit</button>
+      
       <button className="col btn1 btn btn-danger ">Delete</button>
       <button className="col btn1 btn btn-success">Add</button>
     </div>

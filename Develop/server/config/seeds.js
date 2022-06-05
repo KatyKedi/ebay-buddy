@@ -792,10 +792,6 @@ db.once('open', async () => {
             section: sections[10]._id
         },
         {
-            name: 'Oxford Master Series in Physics Ser.: Band Theory and Electronic Properties of S',
-            section: sections[10]._id
-        },
-        {
             name: 'Funko POP! Deluxe: Dug Days #1098 DUG WITH PUPPIES Target Exclusive New',
             size: '10x9x7',
             weight: 1.4,
@@ -927,12 +923,6 @@ db.once('open', async () => {
             name: 'Funko DORBZ Nickelodeon Rugrats TOMMY 478 CHUCKIE 479 ANGELICA 480 4000 Pieces',
             size: '11x7x6',
             weight: 1.2,
-            section: sections[3]._id
-        },
-        {
-            name: 'Funko POP! Stranger Things BILLY #640 New In Box MINT',
-            size: '8x6x6',
-            weight: 0.6,
             section: sections[3]._id
         },
         {
