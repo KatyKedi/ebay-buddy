@@ -4,13 +4,11 @@ import TextField from "@mui/material/TextField";
 import { useNavigate } from 'react-router-dom'
 
 import { useItemContext } from '../../utils/GlobalState';
-import { UPDATE_ITEMS } from '../../utils/actions';
 import { UPDATE_CURRENT_KEYWORD } from '../../utils/actions'
 import { idbPromise } from '../../utils/helpers';
 
 function Search() {
     const [state, dispatch] = useItemContext();
-    const { keyword } = state;
     const navigate = useNavigate();
 
     const [itemName, setItemName] = useState('');
@@ -33,21 +31,10 @@ function Search() {
         }
     }, [itemName]);
 
-
-  const handleItemSearch = (event) => {
-    event.preventDefault();
-    navigate('/item-display', { replace: true })
-    // history.push("/item-display");
-  }
-
-  const handleTextChange = (event) => {
-    setItemName(event.target.value);
-  }
-
   console.log(itemName)
   return (
     <main className="background">
-      <form onSubmit={(event) => {handleItemSearch(event)}}>
+      <form onSubmit={(event) => navigate('/item-display', { replace: true })}>
         <div className="text-center container">
           <TextField
             className=""
@@ -55,7 +42,7 @@ function Search() {
             label="Item Name?"
             variant="outlined"
             value={itemName}
-            onChange={(event) => handleTextChange(event)}
+            onChange={(event) => setItemName(event.target.value)}
           />
         </div>
 

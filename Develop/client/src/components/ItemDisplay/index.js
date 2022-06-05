@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useItemContext } from '../../utils/GlobalState';
 import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../utils/queries';
@@ -11,14 +11,14 @@ function ItemDisplay() {
   const [state, dispatch] = useItemContext();
   const { keyword } = state;
   const { loading, data } = useQuery(QUERY_ITEMS);
-  console.log(state)
-  let filteredItems;
+
+  const [filteredItems, setFilteredItems] = useState([]);
+
+  
 
   useEffect(() => {
     if (data) {
-      console.log(keyword)
-      filteredItems = data.items.filter(item => item.name.includes(keyword));
-      console.log(filteredItems)
+      setFilteredItems(data.items.filter(item => item.name.includes(keyword)));
       dispatch({
         type: UPDATE_ITEMS,
         items: filteredItems,
@@ -34,25 +34,23 @@ function ItemDisplay() {
         });
       });
     }
-  }, [keyword, data, loading, dispatch]);
+  }, [data, loading, dispatch]);
   
   return (
   <>
     <div className="container display-container">
         <div className="text-center border">
             <ul className="display-box">
-            {/* {filteredItems.forEach(item => (<li>{item.name}</li>))} */}
-            </ul>
-            
-    </div>
+              {filteredItems.map(item => (<li>{item.name}</li>))}
+            </ul>     
         </div>
-        <div className="row button-container">
-            
-    <button className="col btn1 btn btn-primary">View / Edit</button>
-    <button className="col btn1 btn btn-danger ">Delete</button>
-    <button className="col btn1 btn btn-success">Add</button>
     </div>
-    </>
+    <div className="row button-container">       
+      <button className="col btn1 btn btn-primary">View | Edit</button>
+      <button className="col btn1 btn btn-danger ">Delete</button>
+      <button className="col btn1 btn btn-success">Add</button>
+    </div>
+  </>
   )
 }
 
