@@ -1147,7 +1147,169 @@ db.once('open', async () => {
             size: '7x5x4',
             weight: 0.5,
             section: sections[11]._id
-        }
+        },
+        {
+            name: 'LOUNGEFLY Disney Star Wars BOBA FETT Mini Backpack NWT Never opened.',
+            size:'12x7x10',
+            weight: 2.0,
+            section: 'C3'
+        },
+        {
+            name: 'Corelle SHADOW IRIS Purple Flower Green Rim Dinner/Salad Plates Lot Of 16 EUC',
+            size: '13x13x7',
+            weight: 10.4,
+            section: 'C3'
+        },
+        {
+            name: 'Porcelain Lego Music Box Guitar Shaped Victorian Painted Trinket Jewelry Box',
+            size: '9x6x3',
+            weight: 1.0,
+            section: 'C3'
+        },
+        {
+            name: 'VINTAGE Bronze Frog Pulling Nautilus Shell Green Patina Toothpick Planter',
+            size: '7x5x4',
+            weight: 0.9,
+            section: 'C3'
+        },
+        {
+            name: 'Vintage Golden Brass Family of Giraffes Set 7" Tall',
+            size: '8x7x3',
+            weight: 1.6,
+            section: 'C3'
+        },
+        {
+            name: 'Vtg Artesania Rinconada Figurines Lot of 11 Uruguay Llama Yak Buffalo Zebra....',
+            size: '10x10x5',
+            weight: 5.6,
+            section: 'C3'
+        },
+        {
+            name: 'Squishmallows Disney Pride Collection 8” STITCH Lilo & Stitch Plush LGBTQ+ NWT',
+            size: '8x6x6',
+            weight: 0.7,
+            section: 'C3'
+        },
+        {
+            name: 'Fenton Burmese Floral Hand Painted Persian Tent Candy Box No Lid Signed',
+            size: '6x5x7',
+            weight: 1.6,
+            section: 'C3'
+        },
+        {
+            name: 'Vintage 1974 METZKE Pewter Votive Holder Geese',
+            size: '6x5x3',
+            weight: 0.6,
+            section: 'C3'
+        },
+        {
+            name: 'Vintage Double Sided Hand Drum-Made Leather Hide-Wood Gut Primitive-Tribal Tan',
+            size: '7x8x3',
+            weight: 0.3,
+            section: 'C3'
+        },
+        {
+            name: 'Mary Joseph Baby Jesus Holy Family On Donkey Carved Olive Wood Jerusalem 7.5"',
+            size: '8x5x6',
+            weight: 0.9,
+            section: 'C3'
+        },
+        {
+            name: 'Squishmallows Disney Pride Collection 8” BING BONG Elephant Inside Out LGBTQ+',
+            size: '7x6x7',
+            weight: 0.7,
+            section: 'C3'
+        },
+        {
+            name: 'VINTAGE Fine de Dijon Grey Poupon MUSTARD JAR Forte Au Vin Blanc Crock France',
+            size: '7x5x4',
+            weight: 0.6,
+            section: 'C3'
+        },
+        {
+            name: 'COCO Dowley CAT Cookie Jar 1990 Blue Scarf Certified International Corp',
+            size: '15x11x12',
+            weight: 4.4,
+            section: 'D3'
+        },
+        {
+            name: `Vintage 80'S Saxton Hall Quilted Long Puffer Coat 44" Tan Womans Size Small`,
+            size: '20x14x7',
+            weight: 3.6,
+            section: 'D3'
+        },
+        {
+            name: 'Vintage Tiffany Style Elephant Accent Night Light Lamp Blue Red EUC',
+            size: '11x10x7',
+            weight: 2.4,
+            section: 'D3'
+        },
+        {
+            name: 'Kellytoy Squishmallow 8” Disney Pride Collection. Mickey, Minnie, Stitch & Bing',
+            size: '10x10x11',
+            weight: 2.5,
+            section: 'b3'
+        },
+        {
+            name: 'Funko Soda HEAT MISER The Year Without A Santa Claus CHASE & COMMON',
+            size: '6x5x7',
+            weight: 1.0,
+            section: 'B3'
+        },
+        {
+            name: 'Planters Mr. Peanut 1990 Cookie Jar, Salt & Pepper Shakers, Aluminum Peanut Bowl',
+            size: '12x6x6',
+            weight: 1.8,
+            section: 'B3'
+        },
+        {
+            name: 'Kellytoy Squishmallow 8” Disney Pride Collection. MICKEY & MINNIE MOUSE NWT',
+            size: '9x9x7',
+            weight: 1.3,
+            section: 'B3'
+        },
+        {
+            name: 'Paul Sebastian PS Porcelain Floral Pendulum Quartz Mantle Clock 1994 LE',
+            size: '10x6x8',
+            weight: 2.2,
+            section: 'B3'
+        },
+        {
+            name: 'Funko 7 Eleven SLURPEE Exclusive BLUE RASBERRY 89 BANANA 90 & CHERRY 92 Set of 3',
+            size: '12x8x7',
+            weight: 1.3,
+            section: 'C4'
+        },
+        {
+            name: 'Funko Pop! Basketball Freddy #182 2021 NYCC Fall Convention LE Exclusive',
+            size: '7x5x4',
+            weight: 0.5,
+            section: 'C4'
+        },
+        {
+            name: 'Funko POP! Disney Pinocchio BLUE FAIRY #1027 Limited CHASE Edition',
+            size: '7x5x4',
+            weight: 0.5,
+            section: 'C4'
+        },
+        {
+            name: 'Funko Pop! Mickey 90 Years - GAMER MICKEY #471 Gamestop Exclusive',
+            size: '7x5x4',
+            weight: 0.4,
+            section: 'C4'
+        },
+        {
+            name: 'Funko POP! Heroes BATMAN with SDCC Bag #284 2019 Summer Convention Exclusive',
+            size: '7x5x4',
+            weight: 0.5,
+            section: 'C4'
+        },
+        // {
+        //     name: '',
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // }
     ]);
 
     console.log('items seeded');

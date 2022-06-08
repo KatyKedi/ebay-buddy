@@ -1,8 +1,15 @@
 * {
   margin: 0;
   padding: 0;
+  text-align: center;
+  color: #0064D3;
 }
 
-body {
+body, html, #root, main {
+  overflow: auto;
   height: 100%;
+}
+
+main {
+  background-color: #86B817;
 }

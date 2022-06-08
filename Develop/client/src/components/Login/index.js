@@ -59,16 +59,18 @@ function Login() {
     return (
         <>
             <form onSubmit={(event) => { handleLoginFormSubmit(event) }}>
-                <div className='login'>
+                <div className='user-form'>
                     <h2>Login</h2>
-                    <label>Email:</label>
-                    <input type="text" name="email" id="user-email" onChange={handleLoginChange} required />
-                    <label>Password:</label>
-                    <input type="password" name="password" id="user-pass" onChange={handleLoginChange} required />
+                  
+                      <label>Email:</label>
+                      <input className='input' type="text" name="email" id="user-email" onChange={handleLoginChange} required />
+              
+                      <label>Password:</label>
+                      <input className='input' type="password" name="password" id="user-pass" onChange={handleLoginChange} required />
+                      <input type="submit" className="submitBtn"/>
                 </div>
-                <div className="submitBtn">
-                    <input type="submit" />
-                </div>
+
+                    
                 {error ? (
                     <div>
                         <p className="error-text">The provided credentials are incorrect</p>
@@ -83,16 +85,18 @@ function Login() {
         ) : null}
 
             <form onSubmit={(event) => { handleSignupFormSubmit(event) }}>
-                <div className='signup'>
+                <div className='user-form'>
                     <h2>Sign Up</h2>
-                    <label>Username:</label>
-                    <input type="text" name="Username" id="new-user-email" onChange={handleSignupChange} required />
-                    <label>Password:</label>
-                    <input type="password" name="password" id="new-user-pass" onChange={handleSignupChange} required />
+                  
+                      <label>Email:</label>
+                      <input className='input' type="text" name="email" id="new-user-email" onChange={handleSignupChange} required />
+                 
+                      <label>Password:</label>
+                      <input className='input' type="password" name="password" id="new-user-pass" onChange={handleSignupChange} required />
+                      <input type="submit" className="submitBtn"/>
                 </div>
-                <div className="submitBtn">
-                    <input type="submit" />
-                </div>
+                    
+
             </form>
         </>
     )

@@ -42,7 +42,6 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <BrowserRouter>
-      <div className="background">
         <CatalogProvider>
           <Header />
           <main>
@@ -70,7 +69,6 @@ function App() {
             </Routes>
           </main>
           </CatalogProvider>
-        </div>
       </BrowserRouter>
     </ApolloProvider>
   );

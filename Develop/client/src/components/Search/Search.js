@@ -34,6 +34,7 @@ function Search() {
     <main className="background">
       <form onSubmit={(event) => navigate('/item-display', { replace: true })}>
         <div className="text-center container">
+          <h2>Search By Item Name</h2>
           <TextField
             className=""
             id="itemName"
@@ -43,10 +44,8 @@ function Search() {
             onChange={(event) => setItemName(event.target.value)}
           />
         </div>
-
-        <div className="submitBtn">
-            <input type="submit" />
-        </div>
+            <input className="submitBtn" type="submit" />
+ 
       </form>
     </main>
   );

@@ -1,3 +1,5 @@
-.loginHeader {
-    background-color: white;
+.user-form {
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
 }
