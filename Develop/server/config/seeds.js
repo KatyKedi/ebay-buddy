@@ -1304,6 +1304,59 @@ db.once('open', async () => {
             weight: 0.5,
             section: 'C4'
         },
+        {
+            name: 'Funko Pop ALIENS 1107 Ellen Ripley with Power Loader 6" Gamestop EXCLUSIVE',
+            size: '10x8x6',
+            weight: 1.0,
+            section: 'C4'
+        },
+        {
+            name: 'Hasbro HeroQuest Board Game World of Magic 2021 New Sealed',
+            size: '20x14x6',
+            weight: 8.0,
+            section: 'B3'
+        },
+        {
+            name: 'Star Wars Vintage Collection CLONE WARS VC214 Barriss VC215 Luminara VC216 Droid',
+            size: '12x9x5',
+            weight: 0.7,
+            section: 'B3',
+            description: 'kenner'
+        },
+        {
+            name: 'SWINGLINE Heavy Duty Stapler, 160 Sheet High Capacity Black/Gray (39005)',
+            size: '16x10x6',
+            weight: 3.8,
+            section: 'B3'
+        },
+        {
+            name: 'DORITOS ROULETTE Nacho Cheese and Cool Ranch MAYBE HOT MAYBE NOT! 3oz 2 Pack',
+            size: '8x7x6',
+            weight: 0.6,
+            section: 'B3'
+        },
+        {
+            name: 'Vintage Latin Aztec Mayan Warrior Tribal Rug Wall Tapestry Hand Woven 52" x 24"',
+            size: '12x9x5',
+            weight: 1.8,
+            section: 'B3'
+        },
+        {
+            name: 'STAR WARS VINTAGE COLLECTION ROTJ 50th VC198 LUKE SKYWALKER ENDOR 3.75" FIGURE',
+            size: '11x8x3',
+            weight: 0.4,
+            section: 'B3'
+        },
+        {
+            name: '1960s Couroc of Monterey DANCING FROGS Platter Tray Barware Midcentury 15"x10"',
+            section: 'B3'
+        },
+        // {
+        //     name: '',
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
         // {
         //     name: '',
         //     size: '',
