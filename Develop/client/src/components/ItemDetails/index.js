@@ -8,14 +8,14 @@ import "./style.css";
 function ItemDetails() {
   const [state, dispatch] = useItemContext();
   const { singleItem } = state;
-  console.log(singleItem)
-  const {loading, data, error} = useQuery(QUERY_ITEM, { variables: { id: singleItem } });
+
+  const { loading, data } = useQuery(QUERY_ITEM, { variables: { id: singleItem } });
+
   const [itemDetails, setItemDetails] = useState({});
 
   useEffect(() => {
     if (data) {
       setItemDetails(data.item);
-      console.log(data)
     } 
   }, [data, loading, itemDetails]);
 

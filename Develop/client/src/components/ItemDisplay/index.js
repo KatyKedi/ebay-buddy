@@ -50,32 +50,39 @@ function ItemDisplay() {
       navigate('/item-details', { replace: true })
     }
   }
-  
-  return (
-  <>
-    <div className="container display-container">
-        <div className="text-center border">
-            <ul className="display-box">
-              {filteredItems.map(item => (
-              <li 
-                onClick={(event) => handleItemClick(event)}
-                id={item._id}>
-              {item.name}
-              </li>))}
-            </ul>     
+
+  if (filteredItems) {
+    return (
+      <>
+        <div className="container display-container">
+            <div className="text-center border">
+                <ul className="display-box">
+                  {filteredItems.map(item => (
+                  <li 
+                    onClick={(event) => handleItemClick(event)}
+                    id={item._id}>
+                  {item.name}
+                  </li>))}
+                </ul>     
+            </div>
         </div>
-    </div>
-    <div className="row button-container">       
-      <button 
-        className="col btn1 btn btn-primary"
-        onClick={(event) => handleViewClick(event)}
-      >View | Edit</button>
-      
-      <button className="col btn1 btn btn-danger ">Delete</button>
-      <button className="col btn1 btn btn-success">Add</button>
-    </div>
-  </>
-  )
+        <div className="row button-container">       
+          <button 
+            className="col btn1 btn btn-primary"
+            onClick={(event) => handleViewClick(event)}
+          >View | Edit</button>
+          
+          <button className="col btn1 btn btn-danger ">Delete</button>
+          <button className="col btn1 btn btn-success">Add</button>
+        </div>
+      </>
+    )
+  }
+  else {
+    return (
+      <h1>No items to display</h1>
+    )
+  }
 }
 
 export default ItemDisplay;

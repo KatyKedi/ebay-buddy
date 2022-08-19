@@ -5,7 +5,7 @@
   "main": "Develop/server/server.js",
   "scripts": {
     "start": "node Develop/server/server.js",
-    "develop": "concurrently \"cd Develop/server && npm run watch\" \"cd Develop/client && npm start\"",
+    "develop": "cd Develop && npm run develop",
     "install": "cd Develop/server && npm i && cd ../client && npm i",
     "seed": "cd Develop/server && npm run seed",
     "build": "cd Develop/client && npm run build"
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/KatyKedi/ebay-buddy/issues"
   },
-  "homepage": "https://github.com/KatyKedi/ebay-buddy#readme"
+  "homepage": "https://github.com/KatyKedi/ebay-buddy#readme",
+  "dependencies": {
+    "@apollo/explorer": "^1.1.1"
+  }
 }

@@ -69,13 +69,6 @@ function Login() {
                       <input className='input' type="password" name="password" id="user-pass" onChange={handleLoginChange} required />
                       <input type="submit" className="submitBtn"/>
                 </div>
-
-                    
-                {error ? (
-                    <div>
-                        <p className="error-text">The provided credentials are incorrect</p>
-                    </div>
-                    ) : null}
             </form>
 
             {error ? (
@@ -95,8 +88,6 @@ function Login() {
                       <input className='input' type="password" name="password" id="new-user-pass" onChange={handleSignupChange} required />
                       <input type="submit" className="submitBtn"/>
                 </div>
-                    
-
             </form>
         </>
     )

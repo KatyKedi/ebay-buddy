@@ -10,7 +10,7 @@ import { setContext } from '@apollo/client/link/context';
 import { CatalogProvider } from './utils/GlobalState';
 
 import Login from "./components/Login/index.js"
-import Search from "./components/Search/Search.js";
+import Search from "./components/Search/index.js";
 import Header from "./components/Header/index.js";
 import Donation from './components/Donation/index';
 import ItemDisplay from "./components/ItemDisplay/index.js";
@@ -28,7 +28,7 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      Authorization: token ? `Bearer ${token}` : '',
     },
   };
 });
@@ -51,7 +51,7 @@ function App() {
                 element={<Login />}
               />
               <Route
-                path="/search"
+                path="/dashboard"
                 element={<Search />}
               />
               <Route

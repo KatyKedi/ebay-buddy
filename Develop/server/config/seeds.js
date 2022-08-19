@@ -61,12 +61,6 @@ db.once('open', async () => {
             section: sections[0]._id
         },
         {
-            name: 'Margaret Le Van Alley Cat Figurine KATTY DIVA Purple Gown Retired',
-            size: '9x7x5',
-            weight: 1.2,
-            section: sections[0]._id
-        },
-        {
             name: 'BREYER HORSES 2021 World Of Breyer Paddock Pals COCO New in Box',
             size: '9x7x6',
             weight: 0.6,
@@ -127,12 +121,6 @@ db.once('open', async () => {
             section: sections[0]._id
         },
         {
-            name: 'O.P.I. OPI Infinite Shine System BARE FOR YOU Collection Gift Set of 4 NIB',
-            size: '9x6x6',
-            weight: 1.4,
-            section: sections[0]._id
-        },
-        {
             name: 'Squishmallows Kellytoy Disney WINNIE THE POOH and PIGLET 5" Stuffed Plush NWT',
             size: '7x6x4',
             weight: 0.5,
@@ -148,12 +136,6 @@ db.once('open', async () => {
             name: 'Margaret Le Van Priss Alley Cats LITTLE PRIS MUFFET Retired',
             size: '8x7x5',
             weight: 0.7,
-            section: sections[0]._id
-        },
-        {
-            name: 'Nightmare Before Christmas JACK SKELLINGTON Ceramic 3D Mug Walgreens 2021 New',
-            size: '10x7x6',
-            weight: 1.2,
             section: sections[0]._id
         },
         {
@@ -210,12 +192,6 @@ db.once('open', async () => {
             name: 'Funko POP! Disney Pixar WALL-E 2022 Wondrous Convention Limited Edition',
             size: '7x6x4',
             weight: 0.6,
-            section: sections[0]._id
-        },
-        {
-            name: 'Squishmallows Kellytoy Disney WOODY and BUZZ LIGHTYEAR 5" Plush Stuffed NWT',
-            size: '6x7x5',
-            weight: 0.5,
             section: sections[0]._id
         },
         {
@@ -297,16 +273,10 @@ db.once('open', async () => {
             section: sections[4]._id
         },
         {
-            name: 'Ceramic Siamese Cat and Kitten Pitcher Green/Brown 7"',
-            size: '8x7x6',
-            weight: 1.8,
-            section: sections[4]._id
-        },
-        {
             name: 'THE YALE & TOWNE MFG CO Padlock Lock Antique With Key USA',
             size: '4x4x4',
             weight: 0.8,
-            section: sections[4]._id
+            section: '1A'
         },
         {
             name: 'Funko Shop Exclusive Cereal CAPTAIN CAVEMAN Pocket Pop New in Sealed Box',
@@ -506,12 +476,6 @@ db.once('open', async () => {
             section: sections[5]._id
         },
         {
-            name: 'Funko POP! Rocks BTS DYNAMITE 7 Pack Walmart Exclusive New',
-            size: '30x7x7',
-            weight: 2.9,
-            section: sections[5]._id
-        },
-        {
             name: 'Funko POP! Alice in Wonderland CHESHIRE CAT 10" #1066 Walmart Exclusive',
             size: '16x11x9',
             weight: 2.6,
@@ -641,12 +605,6 @@ db.once('open', async () => {
             name: 'Funko Pop! Disney 10" MICKEY MOUSE #457 Black and White Target Exclusive 90 Year',
             size: '15x11x12',
             weight: 3.0,
-            section: sections[9]._id
-        },
-        {
-            name: 'Principles of Radiographic Imaging : An Art and a Science 6th Edition New',
-            size: '13x10x3',
-            weight: 4.5,
             section: sections[9]._id
         },
         {
@@ -850,7 +808,7 @@ db.once('open', async () => {
             size: '12x7x9',
             weight: 1.4,
             description: 'regular jack',
-            section: sections[15]._id
+            section: '2B'
         },
         {
             name: 'The Nightmare Before Christmas Tree Topper JACK SKELLINGTON 12" Tree Hugger NWT',
@@ -875,12 +833,6 @@ db.once('open', async () => {
             name: 'Funko POP! TV Parks and Recreation LESLIE & RON LOCKED IN Target Exclusive 2 Pk',
             size: '9x7x6',
             weight: 0.9,
-            section: sections[3]._id
-        },
-        {
-            name: 'Funko Marvel Venom CARNAGE #371 2018 Fall Convention Exclusive NIB',
-            size: '8x7x5',
-            weight: 0.7,
             section: sections[3]._id
         },
         {
@@ -941,12 +893,6 @@ db.once('open', async () => {
             name: 'Funko POP! Marvel VENOM Poison Captain America #856 Pop In A Box Exclusive',
             size: '8x7x5',
             weight: 0.5,
-            section: sections[3]._id
-        },
-        {
-            name: 'Funko Pop! Universal Studios Monsters THE WOLF MAN Walgreens Exclusive 1153 MINT',
-            size: '7x5x4',
-            weight: 0.4,
             section: sections[3]._id
         },
         {
@@ -1037,12 +983,6 @@ db.once('open', async () => {
             name: 'SALLY JACK OOGIE BOOGIE Nightmare Before Christmas MUG SET WALGREENS EXCLUSIVE',
             size: '10x10x7',
             weight: 2.6,
-            section: sections[7]._id
-        },
-        {
-            name: 'Funko POP! Stranger Things Lot ELEVEN #637 and #16, DUSTIN #18 And BOB #639',
-            size: '10x8x9',
-            weight: 1.8,
             section: sections[7]._id
         },
         {
@@ -1137,12 +1077,6 @@ db.once('open', async () => {
             section: sections[11]._id
         },
         {
-            name: 'Funko The Flintstones BABY PUSS #598 & HOPPY THE HOPPAROO #597 2019 SDCC LE',
-            size: '13x6x4',
-            weight: 0.8,
-            section: sections[11]._id
-        },
-        {
             name: 'Funko Pop GANDALF THE WHITE Sword & Staff 1203 GITD Boxlunch Earth Day Exclusive',
             size: '7x5x4',
             weight: 0.5,
@@ -1182,12 +1116,6 @@ db.once('open', async () => {
             name: 'Vtg Artesania Rinconada Figurines Lot of 11 Uruguay Llama Yak Buffalo Zebra....',
             size: '10x10x5',
             weight: 5.6,
-            section: 'C3'
-        },
-        {
-            name: 'Squishmallows Disney Pride Collection 8” STITCH Lilo & Stitch Plush LGBTQ+ NWT',
-            size: '8x6x6',
-            weight: 0.7,
             section: 'C3'
         },
         {
@@ -1305,18 +1233,6 @@ db.once('open', async () => {
             section: 'C4'
         },
         {
-            name: 'Funko Pop ALIENS 1107 Ellen Ripley with Power Loader 6" Gamestop EXCLUSIVE',
-            size: '10x8x6',
-            weight: 1.0,
-            section: 'C4'
-        },
-        {
-            name: 'Hasbro HeroQuest Board Game World of Magic 2021 New Sealed',
-            size: '20x14x6',
-            weight: 8.0,
-            section: 'B3'
-        },
-        {
             name: 'Star Wars Vintage Collection CLONE WARS VC214 Barriss VC215 Luminara VC216 Droid',
             size: '12x9x5',
             weight: 0.7,
@@ -1351,18 +1267,244 @@ db.once('open', async () => {
             name: '1960s Couroc of Monterey DANCING FROGS Platter Tray Barware Midcentury 15"x10"',
             section: 'B3'
         },
+        {
+            name: 'Stranger Things Coke Coca Cola 1985 Limited Edition Collectors Pack + Bonus',
+            size: '10x7x9',
+            weight: 5.9,
+            section: 'B3'
+        },
+        {
+            name: 'Funko Pop! Hologram Rick Clone #667 GITD Funko Shop Limited Edition MINT',
+            size: '7x5x4',
+            weight: 0.5,
+            section: 'B3'
+        },
+        {
+            name: 'Funko POP Television #852 H.R. Pufnstuf 2019 Summer Convention Exclusive',
+            size: '7x5x4',
+            weight: 0.4,
+            section: 'C4'
+        },
+        {
+            name: 'Funko Pop Wacky Races LAZY LUKE #599 2019 Summer Convention Shared Exclusive',
+            size: '7x5x4',
+            weight: 0.4,
+            section: 'B3'
+        },
+        {
+            name: 'Funko Pop #853 SIGMUND 2019 Summer Convention Shared Exclusive Sea Monsters',
+            size: '7x5x4',
+            weight: 0.4,
+            section: 'B3'
+        },
+        {
+            name: 'Comic Con SDCC 2019 50th TOUCAN Funko POP and PEZ Dispenser Shared Exclusive',
+            size: '8x6x6',
+            weight: 0.8,
+            section: 'A4'
+        },
+        {
+            name: 'Funko Pop! Funkon 2021 Ad Icon Kellogg’s Sugar Smacks SMAXEY THE SEAL Exclusive',
+            size: '7x5x4',
+            weight: 0.4,
+            section: 'C4'
+        },
+        {
+            name: 'SDCC 2021 Funko Pop! Danger Mouse 40th 40 Years Virtual Funkon 2000 Pcs Pop #984',
+            size: '7x5x4',
+            weight: 0.4,
+            section: 'C4'
+        },
+        {
+            name: 'Funko Pop! Funkon 2021 Exclusive THE ROCKETEER #1068 Mint',
+            size: '7x5x4',
+            weight: 0.4,
+            section: 'C4'
+        },
+        {
+            name: 'Funko Pop Movies Fantastic Beasts Crimes Grindelwald AUGUREY 2018 NYCC Exclusive',
+            size: '7x5x4',
+            weight: 0.4,
+            section: 'C4'
+        },
+        {
+            name: 'Funko Pop! Dragon Ball Super GOKU (ULTRA INSTINCT) #386',
+            size: '7x5x4',
+            weight: 0.4,
+            section: 'C4'
+        },
+        {
+            name: 'Vintage 1992 MICHIGAN J FROG 3" Pewter Figurine Warner Bros Looney Tunes EUC',
+            section: 'C4'
+        },
+        {
+            name: 'Squishmallow Kellytoy Disney WOODY and BUZZ LIGHTYEAR 5" Plush Stuffed NWT',
+            size: '7x5x3',
+            weight: 0.4,
+            section: 'A1'
+        },
+        {
+            name: '2018 Funko POP! Marvel Venom "CARNAGE" #367',
+            size: '7x5x4',
+            weight: 0.4,
+            section: 'A1'
+        },
+        {
+            name: 'Funko Pop Saturday Night Live BUTABI BROTHERS 2 Pack NYCC 2018 Fall Exclusive',
+            size: '9x7x4',
+            weight: 0.7,
+            section: 'A1'
+        },
+        {
+            name: 'KellyToy Squishmallows BLAKE THE BUNNY 16" Squishmallow New with Tags',
+            size: '13x13x8',
+            weight: 2.9,
+            section: 'X3'
+        },
+        {
+            name: 'Begging MILKDOG #16479 Hot Diggity Cookie Jar Canister by Westland Giftware 2010',
+            size: '11x11x9',
+            weight: 3.3,
+            section: 'A3'
+        },
+        {
+            name: 'Funko Rock Candy The Royal Tenenbaums MARGOT TENENBAUM NYCC 2018 LE 4000 pcs',
+            size: '8x4x3',
+            weight: 0.4,
+            section: 'B3'
+        },
+        {
+            name: 'Funko SCOTT PILGRIM VS THE WORLD Vegan Police 2019 Summer Convention Exclusive',
+            size: '9x7x4',
+            weight: 0.8,
+            section: 'B3'
+        },
+        {
+            name: 'Funko Pop #243 ARTHUR CURRY Shirtless Fall Convention Exclusive Aquaman Superman',
+            size: '7x5x4',
+            weight: 0.5,
+            section: 'B3'
+        },
+        {
+            name: 'NEW - Funko Pop! - ORGANIZATION 13 MICKEY (Unhooded) #334 2018 SDCC Exclusive',
+            size: '7x5x4',
+            weight: 0.5,
+            section: 'B3'
+        },
+        {
+            name: `Funko POP! Star Wars Art Series Walmart Exclusive DARTH VADER #517 (Endor)`,
+            section : '4B'
+        },
+        {
+            name: `Funko POP! Star Wars Art Series DARTH VADER 515 Mustafar 516 Hoth 517 Endor Set`,
+            section : '4B'
+        },
+        {
+            name: `POP Artist Series: Disney Treasures from The Vault - GOOFY, Amazon Exclusive`,
+            section : '4C'
+        },
+        {
+            name: `Funko Pop! SKATER FREDDY Funko With Skateboard #60 Funko Shop Exclusive`,
+            section : '4C'
+        },
+        {
+            name: `Funko Pop! XANATHAR (w/D20) #785 Dungeons & Dragons 2021 Summer Convention LE`,
+            section : '4C'
+        },
+        {
+            name: 'Vintage Silver Plates Set (10) 9" Round & (4) 7" Etched Trivet Made In England',
+            size: '11x10x11',
+            weight: 10.8,
+            section: '3A'
+        },
+        {
+            name: 'Disney MICKEY and MINNIE MOUSE Halloween Vampire and Witch 8" Plush Set NEW',
+            size: '10x6x4',
+            weight: 0.7,
+            section: '3A'
+        },
+        {
+            name: 'MONSTERS Cereal 4 Pk FRUTE BRUTE FRANKEN BERRY BOO-BERRY COUNT CHOCULA Sealed',
+            size: '11x11x11',
+            weight: 4.4,
+            section: '3A'
+        },
+        {
+            name: 'Funko POP! Marvel SPIDER-GIRL #955 PIAB Exclusive Blue Chase and Red Common',
+            size: '11x7x5',
+            weight: 1.0,
+            section: '3B'
+        },
+        {
+            name: 'ComforTrac Deluxe Home Cervical Traction Kit 2.0 With Carrying Case',
+            size: '19x13x10',
+            weight: 8.0,
+            section: '3A'
+        },
+        {
+            name: 'Funko Pop! Nightmare Before Christmas 10" OOGIE BOOGIE Blacklight #810 LE',
+            section: 'Z'
+        },
+        {
+            name: 'Loungefly Nightmare Before Christmas Mini Backpack and Wallet Hot Topic NWT',
+            section: 'Z'
+        },
+        {
+            name: 'Funko Pop HULKBUSTER vs HULK #394 Marvel Avengers Movie Moments Figure 2018 NYCC',
+            section: 'Z'
+        },
+        {
+            name: 'Funko Alice in Wonderland BlackLight ALICE CHESHIRE CAT MAD HATTER QUEEN',
+            section: 'Z'
+        },
+        {
+            name: 'Funko Star Wars Art DARTH VADER 515 Mustafar 516 Hoth 517 Endor 518 Bespin',
+            section: 'Z'
+        },
+        {
+            name: 'Funko Pop! Retro Toys Transformers UNICRON SDCC 2022 Summer Convention 10" #103',
+            section: '2X'
+        },
+        {
+            name: 'Nightmare Before Christmas Blacklight Funko SODA Jack Sally Mayor Oogie Boogie',
+            section: '2B'
+        },
+        {
+            name: 'Funko Dorbz Kelloggs Rice Krispies Snap Crackle Pop Set Funko Shop Exclusive LE',
+            section: '1A'
+        },
+        {
+            name: 'Funko POP! 4 Pack SLURPEE 7 Eleven 191 Good Diamond 192 Block,193 Blue,194 Maze',
+            section: '1A'
+        },
+        {
+            name: 'Funko Pop! DC PEACEMAKER W/ PEACE SIGN SDCC 2022 Shared Exclusive #1260',
+            section: '1A'
+        },
+        {
+            name: 'Funko POP! Star Wars Art Series Walmart Exclusive DARTH VADER #518 (Bespin)',
+            section: '1A'
+        },
+        {
+            name: 'Funko Pop! YUJI ITADORI #1163 Jujutsu Kaisen 2022 SDCC Shared Exclusive',
+            section: '1A'
+        },
+        {
+            name: 'Funko Pop! AMERICA CHAVEZ SDCC Shared Exclusive Marvel Doctor Strange #1070',
+            section: '1A'
+        },
+        {
+            name: 'Funko Pop! Marvel Guardians of the Galaxy DRAX #442 Cyber Monday Exclusive LE',
+            section: '1A'
+        },
+        {
+            name: '2022 SDCC Loungefly TUSKEN RAIDER Mini Backpack Star Wars New Sealed',
+            section: '1B'
+        },
         // {
         //     name: '',
-        //     size: '',
-        //     weight: ,
         //     section: ''
         // },
-        // {
-        //     name: '',
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // }
     ]);
 
     console.log('items seeded');
