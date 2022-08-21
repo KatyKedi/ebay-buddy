@@ -16,8 +16,10 @@ function ItemDetails() {
   useEffect(() => {
     if (data) {
       setItemDetails(data.item);
+      console.log(itemDetails)
     } 
   }, [data, loading, itemDetails]);
+
 
 
 
@@ -28,11 +30,11 @@ function ItemDetails() {
         <ul>
         
           <li id="name">Name: {itemDetails.name}</li>
-          {/* <li id="description">Description: {itemDetails.description}</li>
+          <li id="description">Description: {itemDetails.description ? itemDetails.description : 'Not Applicable'}</li>
           <li id="createdAt">Created At: {itemDetails.createdAt}</li>
-          <li id="size">Size: {itemDetails.size}</li>
-          <li id="weight">Weight: {itemDetails.weight}</li>
-          <li id="section">Section: {itemDetails.section}</li> */}
+          <li id="size">Size: {itemDetails.size ? itemDetails.size : 'Not Applicable'}</li>
+          <li id="weight">Weight: {itemDetails.weight ? itemDetails.weight : 'Not Applicable'}</li>
+          <li id="section">Section: {itemDetails.section}</li>
 
         </ul>     
       </div>

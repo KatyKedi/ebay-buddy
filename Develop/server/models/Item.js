@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const Section = require('./Section')
 // const dateFormat = require('../utils/dateFormat');
 
 const ItemSchema = new Schema(
@@ -21,9 +22,7 @@ const ItemSchema = new Schema(
             type: Number
         },
         section: {
-            type: Schema.Types.ObjectId,
-            ref: 'Section',
-            required: true
+            type: String
         }
     },
     {

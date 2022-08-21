@@ -22,7 +22,7 @@ const typeDefs = gql`
     createdAt: String
     weight: Float
     size: String
-    section: Section
+    section: String
   }
 
   type Section {

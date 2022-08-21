@@ -14,7 +14,11 @@ export const QUERY_ITEM = gql`
         item(_id: $id) {
             _id  
             name 
-            createdAt    
+            description
+            createdAt 
+            size
+            weight  
+            section 
         }
     }
 `

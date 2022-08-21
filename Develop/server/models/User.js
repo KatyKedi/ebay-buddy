@@ -1,5 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const Section = require('./Section');
+const Item = require('./Item');
 
 const UserSchema = new Schema(
     {
@@ -14,18 +16,8 @@ const UserSchema = new Schema(
             required: true,
             minlength: 8
         },
-        sections: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Section'
-            }
-        ],
-        items:[ 
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Item'
-            }
-        ]
+        sections: [Section.schema],
+        items:[Item.schema]
     },
     {
         toJSON: {
