@@ -406,12 +406,6 @@ db.once('open', async () => {
             section: '2A'
         },
         {
-            name: 'Disney Airblown Gemmy Inflatable Nightmare Before Christmas 4.5ft ZERO LED NIB',
-            size: '12x10x7',
-            weight: 4.0,
-            section: '2A'
-        },
-        {
             name: 'FRIDAY 13TH JASON VOORHEES LED ROTATING SHADOW PROJECTION LIGHT TABLETOP GEMMY',
             size: '12x9x9',
             weight: 1.5,
@@ -1502,10 +1496,10 @@ db.once('open', async () => {
             name: '2022 SDCC Loungefly TUSKEN RAIDER Mini Backpack Star Wars New Sealed',
             section: '1B'
         },
-        // {
-        //     name: '',
-        //     section: ''
-        // },
+        {
+            name: 'Funko Pop! Star Wars #548 KRRSANTAN Funko 2022 SDCC Shared Summer Convention',
+            section: '1A'
+        },
     ]);
 
     console.log('items seeded');

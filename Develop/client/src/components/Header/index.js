@@ -6,6 +6,16 @@ import Auth from '../../utils/auth';
 
 function Header() {
   const navigate = useNavigate();
+  function showLogout() {
+    if (Auth.loggedIn()) {
+      return (
+        <p onClick={(event) => {
+          Auth.logout();
+          navigate('/', { replace: true })
+        }}>Logout</p>
+      )
+    }
+  }
 
   return (
     <header>
@@ -16,10 +26,7 @@ function Header() {
           <span style={{ color: "#86B817" }}>y</span>
           <span style={{ color: "#0064D3" }}>Buddy</span>
       </h1>
-      <p onClick={(event) => {
-        Auth.logout();
-        navigate('/', { replace: true })
-      }}>Logout</p>
+      {showLogout()}
     </header>
   );
 }

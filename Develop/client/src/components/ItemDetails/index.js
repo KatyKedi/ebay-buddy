@@ -16,7 +16,6 @@ function ItemDetails() {
   useEffect(() => {
     if (data) {
       setItemDetails(data.item);
-      console.log(itemDetails)
     } 
   }, [data, loading, itemDetails]);
 
