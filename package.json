@@ -4,7 +4,7 @@
   "description": "",
   "main": "Develop/server/server.js",
   "scripts": {
-    "start": "node Develop/server/server.js",
+    "start": "concurrently \"node Develop/server/server.js\" \"cd Develop/client && npm start\"",
     "develop": "cd Develop && npm run develop",
     "install": "cd Develop/server && npm i && cd ../client && npm i",
     "seed": "cd Develop/server && npm run seed",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/KatyKedi/ebay-buddy#readme",
   "dependencies": {
-    "@apollo/explorer": "^1.1.1"
+    "@apollo/explorer": "^1.1.1",
+    "concurrently": "^7.4.0"
   }
 }
