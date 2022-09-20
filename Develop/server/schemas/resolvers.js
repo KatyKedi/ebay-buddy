@@ -158,7 +158,14 @@ const resolvers = {
     },
     deleteItem: async (parent, args, context) => {
       if (context.user) {
-        return Item.deleteOne({ _id: args._id });
+        await Item.findByIdAndDelete(args._id, function (err, docs) {
+          if (err){
+              console.log(err)
+          }
+          else{
+              console.log("Deleted : ", docs);
+          }
+        });
       }
       throw new AuthenticationError('Not logged in');
     },

@@ -21,3 +21,10 @@ export const SIGNUP_USER = gql`
     }
   }
 `
+
+export const DELETE_ITEM = gql`
+  mutation deleteItem($id: ID!) {
+    deleteItem(_id: $id) {
+      _id
+    }
+  }`

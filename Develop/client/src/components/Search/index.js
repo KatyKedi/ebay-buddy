@@ -19,6 +19,10 @@ function Search() {
       });
     }, [itemName]);
 
+    const handleAddClick = (event) => {
+      console.log('add item')
+    }
+
   return (
     <div className="background">
       <form onSubmit={(event) => {
@@ -38,7 +42,10 @@ function Search() {
       </form>
       <h2>OR</h2>
       <button className="dashBtn" type="button">View All Items</button> 
-      <button className="dashBtn" type="button">Add Item</button> 
+      <button 
+            className="col btn1 btn btn-success"
+            onClick={(event) => handleAddClick(event)}
+          >Add</button>
       <button className="dashBtn" type="button">View All Sections</button>
       <button className="dashBtn" type="button">Add Section</button>
     </div>

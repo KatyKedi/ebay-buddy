@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useItemContext } from '../../utils/GlobalState';
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../utils/queries';
 import { UPDATE_CURRENT_ITEM, UPDATE_ITEMS } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./style.css"
 import { useNavigate } from 'react-router-dom';
+import { DELETE_ITEM } from '../../utils/mutations';
 
 function ItemDisplay() {
   const [state, dispatch] = useItemContext();
   const { keyword } = state;
   const { loading, data } = useQuery(QUERY_ITEMS);
+  const [deleteItem] = useMutation(DELETE_ITEM)
   const navigate = useNavigate();
 
   const [filteredItems, setFilteredItems] = useState([]);
@@ -42,12 +44,34 @@ function ItemDisplay() {
   }, [data, loading, selectedItem, keyword, dispatch]);
 
   const handleItemClick = (event) => {
-    setSelectedItem(event.target.getAttribute('id'))
+    const clickedItem = event.target.getAttribute('id');
+    document.querySelectorAll("li").forEach(el => el.removeAttribute("class"));
+
+    if (selectedItem === clickedItem) {
+      setSelectedItem('');
+    } else {
+      setSelectedItem(clickedItem);
+      event.target.setAttribute("class", "selected-item");
+    }
   }
 
   const handleViewClick = (event) => {
     if (selectedItem) {
       navigate('/item-details', { replace: true })
+    }
+  }
+
+  const handleDeleteClick = (event) => {
+    if (selectedItem) {
+      const itemName = filteredItems.find(item => item._id === selectedItem).name;
+      const confirm = window.confirm(
+        `Are you sure you'd like to delete:
+        ${itemName}?`)
+      if (confirm) {
+        deleteItem({ variables: { id: selectedItem } })
+      }
+    } else {
+      window.alert("No item selected.")
     }
   }
 
@@ -72,8 +96,10 @@ function ItemDisplay() {
             onClick={(event) => handleViewClick(event)}
           >View | Edit</button>
           
-          <button className="col btn1 btn btn-danger ">Delete</button>
-          <button className="col btn1 btn btn-success">Add</button>
+          <button 
+            className="col btn1 btn btn-danger"
+            onClick={(event) => handleDeleteClick(event)}
+          >Delete</button>
         </div>
       </>
     )
