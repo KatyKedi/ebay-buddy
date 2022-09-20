@@ -4,7 +4,7 @@
   "description": "",
   "main": "Develop/server/server.js",
   "scripts": {
-    "start": "concurrently \"node Develop/server/server.js\" \"cd Develop/client && npm start\"",
+    "start": "node Develop/server/server.js",
     "develop": "cd Develop && npm run develop",
     "install": "cd Develop/server && npm i && cd ../client && npm i",
     "seed": "cd Develop/server && npm run seed",
