@@ -545,12 +545,6 @@ db.once('open', async () => {
             section: '2C'
         },
         {
-            name: 'WOLVERINE F2D Saturn Digital Film & Slide Scanner Converts Film Negatives Slides',
-            size: '13x10x6',
-            weight: 2.8,
-            section: '2C'
-        },
-        {
             name: 'SLIMER Ghost Busters Airblown Gemmy Self Inflatable 5ft LED Lighted NIB',
             size: '14x10x6',
             weight: 4.1,
@@ -1127,10 +1121,6 @@ db.once('open', async () => {
             section: '4C'
         },
         {
-            name: 'Vintage 1992 MICHIGAN J FROG 3" Pewter Figurine Warner Bros Looney Tunes EUC',
-            section: '4C'
-        },
-        {
             name: 'Squishmallow Kellytoy Disney WOODY and BUZZ LIGHTYEAR 5" Plush Stuffed NWT',
             size: '7x5x3',
             weight: 0.4,
@@ -1155,12 +1145,6 @@ db.once('open', async () => {
             section: 'X3'
         },
         {
-            name: 'Begging MILKDOG #16479 Hot Diggity Cookie Jar Canister by Westland Giftware 2010',
-            size: '11x11x9',
-            weight: 3.3,
-            section: '3A'
-        },
-        {
             name: 'Funko Rock Candy The Royal Tenenbaums MARGOT TENENBAUM NYCC 2018 LE 4000 pcs',
             size: '8x4x3',
             weight: 0.4,
@@ -1176,10 +1160,6 @@ db.once('open', async () => {
         },
         {
             name: `POP Artist Series: Disney Treasures from The Vault - GOOFY, Amazon Exclusive`,
-            section : '4C'
-        },
-        {
-            name: `Funko Pop! SKATER FREDDY Funko With Skateboard #60 Funko Shop Exclusive`,
             section : '4C'
         },
         {

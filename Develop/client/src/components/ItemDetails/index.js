@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client'
 import { useItemContext } from '../../utils/GlobalState';
 import { QUERY_ITEM } from '../../utils/queries';
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./style.css";
+
+import './style.css'
 
 function ItemDetails() {
   const [state, dispatch] = useItemContext();
@@ -24,16 +24,16 @@ function ItemDetails() {
 
   return (
     <div className="container display-container">
-      <h1 className="text-center "> Item Information </h1>
-      <div className="text-left border">
+      <h1 className="text-left "> Item Information </h1>
+      <div className="border">
         <ul>
         
-          <li id="name">Name: {itemDetails.name}</li>
-          <li id="description">Description: {itemDetails.description ? itemDetails.description : 'Not Applicable'}</li>
-          <li id="createdAt">Created At: {itemDetails.createdAt}</li>
-          <li id="size">Size: {itemDetails.size ? itemDetails.size : 'Not Applicable'}</li>
-          <li id="weight">Weight: {itemDetails.weight ? itemDetails.weight : 'Not Applicable'}</li>
-          <li id="section">Section: {itemDetails.section}</li>
+          <li id="name" className="text-left">Name: {itemDetails.name}</li>
+          <li id="description" className="text-left">Description: {itemDetails.description ? itemDetails.description : 'Not Applicable'}</li>
+          <li id="createdAt" className="text-left">Created At: {itemDetails.createdAt}</li>
+          <li id="size" className="text-left">Size: {itemDetails.size ? itemDetails.size : 'Not Applicable'}</li>
+          <li id="weight" className="text-left">Weight: {itemDetails.weight ? itemDetails.weight : 'Not Applicable'}</li>
+          <li id="section" className="text-left">Section: {itemDetails.section}</li>
 
         </ul>     
       </div>
