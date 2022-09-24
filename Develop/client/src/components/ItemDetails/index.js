@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client'
-import { useItemContext } from '../../utils/GlobalState';
+import { useGlobalContext } from '../../utils/GlobalState';
 import { QUERY_ITEM } from '../../utils/queries';
 
 import './style.css'
 
 function ItemDetails() {
-  const [state, dispatch] = useItemContext();
+  const [state, dispatch] = useGlobalContext();
   const { singleItem } = state;
 
   const { loading, data } = useQuery(QUERY_ITEM, { variables: { id: singleItem } });

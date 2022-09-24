@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useItemContext } from '../../utils/GlobalState';
+import { useGlobalContext } from '../../utils/GlobalState';
 import { useMutation, useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../utils/queries';
 import { UPDATE_CURRENT_ITEM, UPDATE_ITEMS } from '../../utils/actions';
@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { DELETE_ITEM } from '../../utils/mutations';
 
 function ItemDisplay() {
-  const [state, dispatch] = useItemContext();
+  const [state, dispatch] = useGlobalContext();
   const { keyword } = state;
   const { loading, data } = useQuery(QUERY_ITEMS);
   const [deleteItem] = useMutation(DELETE_ITEM)

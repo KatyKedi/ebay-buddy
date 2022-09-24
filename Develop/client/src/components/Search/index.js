@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
-import { useItemContext } from '../../utils/GlobalState';
-import { UPDATE_CURRENT_KEYWORD } from '../../utils/actions'
+import { useGlobalContext } from '../../utils/GlobalState';
+import { UPDATE_CURRENT_KEYWORD, UPDATE_CURRENT_MODAL, UPDATE_CURRENT_MODAL_STATE } from '../../utils/actions'
 import { idbPromise } from '../../utils/helpers';
-import Modal from 'react-modal';
+import { ItemModal, SectionModal } from '../Modals/index'
 
 import "./style.css";
 
+
 function Search() {
-    const [state, dispatch] = useItemContext();
+    const [state, dispatch] = useGlobalContext();
     const navigate = useNavigate();
 
     const [itemName, setItemName] = useState('');
@@ -20,15 +21,34 @@ function Search() {
       });
     }, [itemName]);
 
-    const [modalIsOpen, setIsOpen] = useState(false);
+    const [modal, setModal] = useState('')
+    const [selectedModal, setSelectedModal] = useState(<></>)
+    const [modalIsOpen, setIsOpen] = useState(false)
 
-  function openModal() {
-    setIsOpen(true);
-  }
+    useEffect(() => {
+      dispatch({
+          type: UPDATE_CURRENT_MODAL,
+          keyword: modal
+      });
+      dispatch({
+        type: UPDATE_CURRENT_MODAL_STATE,
+        keyword: modalIsOpen
+      })
+      selectModal()
+    }, [modal]);
 
-  function closeModal() {
-    setIsOpen(false);
-  }
+    function selectModal() {
+        if(modal === 'item') {
+          setIsOpen(true)
+          setSelectedModal(<ItemModal />)
+        } else if (modal ==='section'){
+          setIsOpen(true)
+          setSelectedModal(<SectionModal />)
+        } else {
+          setIsOpen(false)
+          setSelectedModal(<></>)
+        }
+    }
 
   return (
     <>
@@ -56,7 +76,9 @@ function Search() {
         </button> 
         <button 
           type="button" className="btn btn-primary"
-          onClick={() => openModal()}
+          onClick={ () => {
+            console.log(modal);
+            setModal('item')}}
           >Add Item
         </button>
         <button 
@@ -67,30 +89,11 @@ function Search() {
         <button 
           className="col btn1 btn btn-success" 
           id="add-section"
-          // onClick={(event) => handleAddClick(event)}
-          >
+          onClick={() => setModal('section')}>
           Add Section
         </button>
       </div>
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Add Item">
-          <h2>Item Details</h2>
-          <form>
-            <input 
-              type="text" 
-              id="name" 
-              required
-              minlength="1"/>
-            <input 
-              type="text" 
-              id="description"
-            />
-            <button>Submit</button>
-        </form>
-        <button onClick={closeModal}>close</button>
-      </Modal>
+      {selectedModal}
     </>
   );
 }

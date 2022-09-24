@@ -1,21 +1,25 @@
 import React, { createContext, useContext } from "react";
-import { useItemReducer } from './reducers'
+import { useGlobalReducer } from './reducers'
 
-const ItemContext = createContext();
-const { Provider } = ItemContext;
+const GlobalContext = createContext();
+const { Provider } = GlobalContext;
 
 const CatalogProvider = ({ value = [], ...props }) => {
-  const [state, dispatch] = useItemReducer({
+  const [state, dispatch] = useGlobalReducer({
     items: [],
     keyword: '',
-    singleItem: ''
+    singleItem: '',
+    modal: '',
+    modalIsOpen: false
   });
 
   return <Provider value={[state, dispatch]} {...props} />;
 };
 
-const useItemContext = () => {
-  return useContext(ItemContext);
+const useGlobalContext = () => {
+  return useContext(GlobalContext);
 };
 
-export { CatalogProvider, useItemContext };
+
+
+export { CatalogProvider, useGlobalContext };

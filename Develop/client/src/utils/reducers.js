@@ -2,7 +2,9 @@ import { useReducer } from "react";
 import {
   UPDATE_ITEMS,
   UPDATE_CURRENT_KEYWORD,
-  UPDATE_CURRENT_ITEM
+  UPDATE_CURRENT_ITEM,
+  UPDATE_CURRENT_MODAL,
+  UPDATE_CURRENT_MODAL_STATE
 } from "./actions";
 
 export const reducer = (state, action) => {
@@ -13,49 +15,6 @@ export const reducer = (state, action) => {
         ...state,
         items: [...action.items],
       };
-
-    // case ADD_TO_CART:
-    //   return {
-    //     ...state,
-    //     cartOpen: true,
-    //     cart: [...state.cart, action.product],
-    //   };
-
-    // case ADD_MULTIPLE_TO_CART:
-    //   return {
-    //     ...state,
-    //     cart: [...state.cart, ...action.products],
-    //   };
-
-    // case REMOVE_FROM_CART:
-    //   let newState = state.cart.filter(product => {
-    //     return product._id !== action._id;
-    //   });
-
-    //   return {
-    //     ...state,
-    //     cartOpen: newState.length > 0,
-    //     cart: newState
-    //   };
-
-    // case CLEAR_CART:
-    //   return {
-    //     ...state,
-    //     cartOpen: false,
-    //     cart: []
-    //   };
-
-    // case TOGGLE_CART:
-    //   return {
-    //     ...state,
-    //     cartOpen: !state.cartOpen
-    //   };
-
-    // case UPDATE_CATEGORIES:
-    //   return {
-    //     ...state,
-    //     categories: [...action.categories],
-    //   };
 
     case UPDATE_CURRENT_KEYWORD:
        return {
@@ -69,11 +28,22 @@ export const reducer = (state, action) => {
         singleItem: action.singleItem
       }
 
-    default:
+      case UPDATE_CURRENT_MODAL:
+        return {
+          ...state,
+          modal: action.modal
+        }
+      
+      case UPDATE_CURRENT_MODAL_STATE:
+        return {
+          ...state,
+          modalIsOpen: action.modalIsOpen
+        }
+
       return state;
   }
 };
 
-export function useItemReducer(initialState) {
+export function useGlobalReducer(initialState) {
   return useReducer(reducer, initialState)
 }
