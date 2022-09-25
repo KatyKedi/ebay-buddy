@@ -218,12 +218,6 @@ db.once('open', async () => {
             section: '1X'
         },
         {
-            name: '2021 Nightmare Before Christmas Exclusive Resin Presents JACK, SALLY & ZERO New',
-            size: '10x10x10',
-            weight: 5.5,
-            section: '1B'
-        },
-        {
             name: 'Loungefly Disney MICKEY MOUSE Sketch Lunch Bag Lunchbox Tote Hot Topic NWT',
             size: '13x9x6',
             weight: 1.3,
@@ -341,12 +335,6 @@ db.once('open', async () => {
             name: 'Vintage Thanksgiving Duck Set of 3 Carved Wood TII Collection Figurines',
             size: '13x10x4',
             weight: 2.2,
-            section: '2A'
-        },
-        {
-            name: 'Gemmy 4FT Wide Airblown Inflatable Disney Blinking Hanging MICKEY MOUSE SPIDER',
-            size: '10x8x6',
-            weight: 1.6,
             section: '2A'
         },
         {

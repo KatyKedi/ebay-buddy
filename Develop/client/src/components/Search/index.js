@@ -10,6 +10,7 @@ import "./style.css";
 
 function Search() {
     const [state, dispatch] = useGlobalContext();
+
     const navigate = useNavigate();
 
     const [itemName, setItemName] = useState('');
@@ -21,31 +22,25 @@ function Search() {
       });
     }, [itemName]);
 
-    const [modal, setModal] = useState('')
     const [selectedModal, setSelectedModal] = useState(<></>)
-    const [modalIsOpen, setIsOpen] = useState(false)
+    const [modalOpen, setModal] = useState('')
 
     useEffect(() => {
+      selectModal()
       dispatch({
           type: UPDATE_CURRENT_MODAL,
-          keyword: modal
+          modal: modalOpen
       });
-      dispatch({
-        type: UPDATE_CURRENT_MODAL_STATE,
-        keyword: modalIsOpen
-      })
-      selectModal()
-    }, [modal]);
+    }, [modalOpen, dispatch]);
 
-    function selectModal() {
+    const selectModal = () => {
+      const { modal } = state
         if(modal === 'item') {
-          setIsOpen(true)
           setSelectedModal(<ItemModal />)
         } else if (modal ==='section'){
-          setIsOpen(true)
           setSelectedModal(<SectionModal />)
         } else {
-          setIsOpen(false)
+          setModal("")
           setSelectedModal(<></>)
         }
     }
@@ -76,9 +71,7 @@ function Search() {
         </button> 
         <button 
           type="button" className="btn btn-primary"
-          onClick={ () => {
-            console.log(modal);
-            setModal('item')}}
+          onClick={ () => setModal('item')}
           >Add Item
         </button>
         <button 

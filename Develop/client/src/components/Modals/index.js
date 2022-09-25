@@ -10,29 +10,17 @@ import './style.css'
 
 function ItemModal() {
     const [state, dispatch] = useGlobalContext();
-    const [modalIsOpen, setIsOpen] = useState(true);
-    const [modal, setModal] = useState('item')
-
-    function closeModal() {
-        console.log('closing modal')
-        setModal('')
-        setIsOpen(false);
-    }
+    const [modalClose, setModal] = useState("item")
 
     useEffect(() => {
         dispatch({
             type: UPDATE_CURRENT_MODAL,
-            keyword: modal
+            modal: modalClose
         });
-        dispatch({
-            type: UPDATE_CURRENT_MODAL_STATE,
-            keyword: modalIsOpen
-        });
-      }, [modal, modalIsOpen]);
+      }, [modalClose]);
     
-
     return <Modal
-        isOpen={modalIsOpen}
+        isOpen={modalClose}
         contentLabel="Add Item">
             <h2>Enter Item Details</h2>
             <form>
@@ -84,27 +72,25 @@ function ItemModal() {
 
             <button>Submit</button>
         </form>
-        <button onClick={closeModal}>Close</button>
+        <button onClick={() => {setModal("")}}>Close</button>
         </Modal>
 }
 
 function SectionModal() {
     const [state, dispatch] = useGlobalContext();
-    const [modalIsOpen, setIsOpen] = useState(true);
-
-    function closeModal() {
-        setIsOpen(false);
-    }
+    const [modalClose, setModal] = useState("section")
+    
 
     useEffect(() => {
         dispatch({
-            type: UPDATE_CURRENT_MODAL_STATE,
-            keyword: modalIsOpen
+            type: UPDATE_CURRENT_MODAL,
+            modal: modalClose
         });
-      }, [modalIsOpen]);
+      }, [modalClose]);
+
 
     return <Modal
-        isOpen={modalIsOpen}
+        isOpen={modalClose}
         contentLabel="Add Section">
             <h2>Enter Section Details</h2>
             <form>
@@ -115,7 +101,7 @@ function SectionModal() {
                 name="name" 
                 required
                 minlength="1"/>
-            <label for="full">Is it completely full?</label>
+            <label for="full">Completely full:</label>
             <input 
                 type="checkbox" 
                 id="full"
@@ -125,7 +111,7 @@ function SectionModal() {
             <button>Submit</button>
         </form>
         <button onClick={() => {
-            closeModal()}}
+            setModal("")}}
             >Close</button>
         </Modal>
 }
