@@ -9,8 +9,7 @@ const CatalogProvider = ({ value = [], ...props }) => {
     items: [],
     keyword: '',
     singleItem: '',
-    modal: '',
-    modalIsOpen: false
+    modal: ''
   });
 
   return <Provider value={[state, dispatch]} {...props} />;

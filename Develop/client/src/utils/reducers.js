@@ -3,8 +3,7 @@ import {
   UPDATE_ITEMS,
   UPDATE_CURRENT_KEYWORD,
   UPDATE_CURRENT_ITEM,
-  UPDATE_CURRENT_MODAL,
-  UPDATE_CURRENT_MODAL_STATE
+  UPDATE_CURRENT_MODAL
 } from "./actions";
 
 export const reducer = (state, action) => {
@@ -33,12 +32,7 @@ export const reducer = (state, action) => {
           ...state,
           modal: action.modal
         }
-      
-      case UPDATE_CURRENT_MODAL_STATE:
-        return {
-          ...state,
-          modalIsOpen: action.modalIsOpen
-        }
+    
 
       return state;
   }

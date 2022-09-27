@@ -417,12 +417,6 @@ db.once('open', async () => {
             section: '2B'
         },
         {
-            name: "Disney THE NIGHTMARE BEFORE CHRISTMAS Gemmy Airblown Inflatable 5' PUMPKIN KING",
-            size: '14x10x7',
-            weight: 4.0,
-            section: '2B'
-        },
-        {
             name: 'Funko POP! Game of Thrones THE CREATORS New York Comic Con Official Sticker 2018',
             size: '11x8x6',
             weight: 1.0,
@@ -1133,12 +1127,6 @@ db.once('open', async () => {
             section: 'X3'
         },
         {
-            name: 'Funko Rock Candy The Royal Tenenbaums MARGOT TENENBAUM NYCC 2018 LE 4000 pcs',
-            size: '8x4x3',
-            weight: 0.4,
-            section: '3B'
-        },
-        {
             name: `Funko POP! Star Wars Art Series Walmart Exclusive DARTH VADER #517 (Endor)`,
             section : '4B'
         },
@@ -1509,12 +1497,6 @@ db.once('open', async () => {
             section: '1C'
         },
         {
-            name: `LOUNGEFLY Nightmare Before Christmas Glow In The Dark ZERO Mini Backpack NWT`,
-            size: '12x10x11',
-            weight: 2.3,
-            section: '1C'
-        },
-        {
             name: `DISNEY Halloween Mini LIGHT UP Pumpkin VILLAINS SET Maleficent Ursula Cruella`,
             size: '8x6x5',
             weight: 0.5,
@@ -1581,12 +1563,6 @@ db.once('open', async () => {
             section: '1C'
         },
         {
-            name: `Disney THE NIGHTMARE BEFORE CHRISTMAS Gemmy Airblown Inflatable 5' PUMPKIN KING`,
-            size: '13x8x9',
-            weight: 4.1,
-            section: '1D'
-        },
-        {
             name: `Hyde And Eek! Boutique LED Rotating Tabletop Indoor Ghost Light`,
             size: '8x7x9',
             weight: 0.9,
@@ -1604,12 +1580,6 @@ db.once('open', async () => {
             size: '11x7x6',
             weight: 1.4,
             section: '4C'
-        },
-        {
-            name: `Disney Airblown Gemmy Inflatable Nightmare Before Christmas 5.5ft SHOCK LED NIB`,
-            size: '12x9x7',
-            weight: 3.9,
-            section: '1A'
         },
         {
             name: `Gemmy Airblown Inflatable Nightmare Before Christmas 3.5ft Sally W/ Pumpkin LED`,
