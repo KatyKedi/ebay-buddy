@@ -10,12 +10,14 @@ import { setContext } from '@apollo/client/link/context';
 import { CatalogProvider } from './utils/GlobalState';
 
 import Login from "./components/Login/index.js"
+import SignUp from './components/SignUp/index';
 import Search from "./components/Search/index.js";
 import Header from "./components/Header/index.js";
 import Donation from './components/Donation/index';
 import ItemDisplay from "./components/ItemDisplay/index.js";
 import ItemDetails from "./components/ItemDetails/index.js";
 
+import { Navbar } from 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -44,11 +46,15 @@ function App() {
       <BrowserRouter>
         <CatalogProvider>
           <Header />
-          <main>
+          <main className='mx-4 m-4 border border-success rounded bg-light'>
             <Routes>
               <Route
                 path="/"
                 element={<Login />}
+              />
+              <Route
+                path="/sign-up"
+                element={<SignUp />}
               />
               <Route
                 path="/dashboard"
@@ -60,15 +66,19 @@ function App() {
               />
               <Route
                 path="/item-details"
-                element={<ItemDetails/>}
+                element={<ItemDetails />}
               />
               <Route
                 path="/donation"
                 element={<Donation />}
               />
             </Routes>
+            <footer className='w-100 p-1 mt-5 text-center text-light bg-success'>Made with love for Kelly</footer>
           </main>
-          </CatalogProvider>
+          
+          
+       
+        </CatalogProvider>
       </BrowserRouter>
     </ApolloProvider>
   );

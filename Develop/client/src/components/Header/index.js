@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./style.css";
+import { Button } from 'react-bootstrap'
 
 import Auth from '../../utils/auth';
 
@@ -9,17 +10,20 @@ function Header() {
   function showLogout() {
     if (Auth.loggedIn()) {
       return (
-        <p onClick={(event) => {
+        <Button
+          variant='warning'
+          className='text-white m-2'
+          onClick={(event) => {
           Auth.logout();
           navigate('/', { replace: true })
-        }}>Logout</p>
+        }}>Logout</Button>
       )
     }
   }
 
   return (
-    <header>
-      <h1>
+    <header className='border-bottom border-white'>
+      <h1 className='m-2'>
           <span style={{ color: "#e53238" }}>e</span>
           <span style={{ color: "#0064D3" }}>b</span>
           <span style={{ color: "#f5af02" }}>a</span>

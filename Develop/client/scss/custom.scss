@@ -1,0 +1,10 @@
+$theme-colors: (
+  "primary": #0064D3,
+  "danger": #e53238,
+  "success": #86B817,
+  "warning": #f5af02
+);
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";

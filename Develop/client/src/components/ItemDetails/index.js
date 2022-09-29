@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client'
 import { useGlobalContext } from '../../utils/GlobalState';
 import { QUERY_ITEM } from '../../utils/queries';
+import { Container } from 'react-bootstrap'
 
 import './style.css'
 
@@ -23,13 +24,13 @@ function ItemDetails() {
 
 
   return (
-    <div className="container display-container">
-      <h1 className="text-left "> Item Information </h1>
-      <div className="border">
-        <ul>
+    <Container className='my-3'>
+      <h2 > Item Information </h2>
+      <div className="border border-warning rounded">
+        <ul className='p-2 list-unstyled'>
         
           <li id="name" className="text-left">Name: {itemDetails.name}</li>
-          <li id="description" className="text-left">Description: {itemDetails.description ? itemDetails.description : 'Not Applicable'}</li>
+          {itemDetails.description ? (<li id="description" className="text-left">Description: {itemDetails.description}</li> ) : false }
           <li id="createdAt" className="text-left">Created At: {itemDetails.createdAt}</li>
           <li id="size" className="text-left">Size: {itemDetails.size ? itemDetails.size : 'Not Applicable'}</li>
           <li id="weight" className="text-left">Weight: {itemDetails.weight ? itemDetails.weight : 'Not Applicable'}</li>
@@ -37,7 +38,7 @@ function ItemDetails() {
 
         </ul>     
       </div>
-    </div>
+    </Container>
   )
 }
 

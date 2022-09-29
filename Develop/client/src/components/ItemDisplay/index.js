@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./style.css"
 import { useNavigate } from 'react-router-dom';
 import { DELETE_ITEM } from '../../utils/mutations';
+import { Container, Row, Col, Button } from 'react-bootstrap'
 
 function ItemDisplay() {
   const [state, dispatch] = useGlobalContext();
@@ -45,13 +46,13 @@ function ItemDisplay() {
 
   const handleItemClick = (event) => {
     const clickedItem = event.target.getAttribute('id');
-    document.querySelectorAll("li").forEach(el => el.removeAttribute("class"));
+    document.querySelectorAll("li").forEach(el => el.classList.remove("bg-warning"));
 
     if (selectedItem === clickedItem) {
       setSelectedItem('');
     } else {
       setSelectedItem(clickedItem);
-      event.target.setAttribute("class", "selected-item");
+      event.target.classList.add("bg-warning");
     }
   }
 
@@ -78,35 +79,42 @@ function ItemDisplay() {
   if (filteredItems) {
     return (
       <>
-        <div className="container display-container">
-            <div className="text-center border">
-                <ul className="display-box">
-                  {filteredItems.map(item => (
-                  <li 
+        <Container className='m-0 h-100'>
+          <Row>
+            <Col>
+              {keyword ? (<h2 className='text-center'>Items matching <span>{keyword}</span></h2>) : (<h2 className='text-center'>All Items</h2>)}
+              <ul className='text-left list-unstyled'>
+                {filteredItems.map(item => (
+                  <li
                     onClick={(event) => handleItemClick(event)}
-                    id={item._id}>
-                  {item.name}
+                    id={item._id}
+                    className='my-2 p-1 border border-warning rounded bg-gradient'>
+                    {item.name}
                   </li>))}
-                </ul>     
-            </div>
-        </div>
-        <div className="row button-container">       
-          <button 
-            className="col btn1 btn btn-primary"
-            onClick={(event) => handleViewClick(event)}
-          >View | Edit</button>
-          
-          <button 
-            className="col btn1 btn btn-danger"
-            onClick={(event) => handleDeleteClick(event)}
-          >Delete</button>
-        </div>
+              </ul>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Button
+                variant="outline-primary"
+                onClick={(event) => handleViewClick(event)}
+              >View | Edit</Button>
+            </Col>
+            <Col>
+              <Button
+                variant="outline-danger"
+                onClick={(event) => handleDeleteClick(event)}
+              >Delete</Button>
+            </Col>
+          </Row>
+        </Container>
       </>
     )
   }
   else {
     return (
-      <h1>No items to display</h1>
+      <h2>No items to display for "{keyword}"</h2>
     )
   }
 }

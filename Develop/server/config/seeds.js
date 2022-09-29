@@ -509,12 +509,6 @@ db.once('open', async () => {
             section: '2C'
         },
         {
-            name: 'Disney 14" MICKEY MOUSE Squishmallows Plush Stuffed Kelly Toys New with Tags',
-            size: '15x11x12',
-            weight: 2.6,
-            section: '2C'
-        },
-        {
             name: 'CHI-Volumizer 4-in-1 Blowout Brush Nozzle Paddle Brush Diffuser and Round Brush',
             size: '15x10x5',
             weight: 2.5,
@@ -1321,12 +1315,6 @@ db.once('open', async () => {
             size: '10x9x7',
             weight: 1.0,
             section: '4A'
-        },
-        {
-            name: `The Nightmare Before Christmas Light Up Decorated Tree Disney 16" Tall Walgreens`,
-            size: '14x4x7',
-            weight: 2.2,
-            section: '1A'
         },
         {
             name: `STRANGER THINGS Upside Down Drink Kit with Sprinkle Mix Straws Retro Beverage`,

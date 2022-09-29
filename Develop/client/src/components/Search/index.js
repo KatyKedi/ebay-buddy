@@ -4,97 +4,119 @@ import { useGlobalContext } from '../../utils/GlobalState';
 import { UPDATE_CURRENT_KEYWORD, UPDATE_CURRENT_MODAL } from '../../utils/actions'
 import { idbPromise } from '../../utils/helpers';
 import { ItemModal, SectionModal } from '../Modals/index'
-
+import { Button, Container, Row, Col, Form } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css'
 import "./style.css";
-import { Modal, Button } from "react-bootstrap";
+
 
 
 function Search() {
-    const [state, dispatch] = useGlobalContext();
-   
-    const navigate = useNavigate();
+  const [state, dispatch] = useGlobalContext();
 
-    const [itemName, setItemName] = useState('');
+  const navigate = useNavigate();
 
-    useEffect(() => {
-      dispatch({
-          type: UPDATE_CURRENT_KEYWORD,
-          keyword: itemName
-      });
-    }, [itemName]);
+  const [itemName, setItemName] = useState('');
 
-    const [modalDisplay, setModalDisplay] = useState(<></>)
-    const [modalType, setModal] = useState('')
+  useEffect(() => {
+    dispatch({
+      type: UPDATE_CURRENT_KEYWORD,
+      keyword: itemName
+    });
+  }, [itemName]);
 
-    useEffect(() => {
-      selectModal()
-        dispatch({
-          type: UPDATE_CURRENT_MODAL,
-          modal: modalType
-        })
-    }, [modalType, dispatch]);
+  const [modalDisplay, setModalDisplay] = useState(<></>)
+  const [modalType, setModal] = useState('')
 
-    const selectModal = () => {
-      const { modal } = state
-      if (modal === 'item'){
-        setModalDisplay(<ItemModal />)
-      }
-      else if (modal === 'section') {
-        setModalDisplay(<SectionModal />)
-      } else {
-        setModal("")
-        setModalDisplay(<></>)
-      }
+  useEffect(() => {
+    selectModal()
+    dispatch({
+      type: UPDATE_CURRENT_MODAL,
+      modal: modalType
+    })
+  }, [modalType, dispatch]);
+
+  const selectModal = () => {
+    const { modal } = state
+    if (modal === 'item') {
+      setModalDisplay(<ItemModal />)
     }
-    return ( 
-      <div>
-        <div>
-        <form onSubmit={(event) => {
-          event.preventDefault();
-          navigate('/item-display', { replace: true });
-          }}>
-          <div className="text-center container">
+    else if (modal === 'section') {
+      setModalDisplay(<SectionModal />)
+    } else {
+      setModal("")
+      setModalDisplay(<></>)
+    }
+  }
+  return (
+    <Container className='m-0 p-0 text-center h-100'>
+      <Row className='m-4'>
+        <Col className='mt-2'>
+          <Form>
             <h2>Search By Name</h2>
-            <input
-              className="input"
-              value={itemName}
-              onChange={(event) => setItemName(event.target.value)}
-            />
-          </div>
-          <button className="col btn1 btn btn-light" type="submit">View Items</button>
+            <Form.Group className='mt-3'>
+              <Form.Control
+                type='text'
+                value={itemName}
+                onChange={(event) => setItemName(event.target.value)}
+              />
+            </Form.Group>
+          </Form>
+          <Button
+            className='mt-2'
+            variant='outline-primary'
+            type='submit'
+            onClick={() => {
+              navigate('/item-display', { replace: true });
+            }}
+          >View Items</Button>
+        </Col>
+      </Row>
+      <Row className="m-4">
+        <h2>Items</h2>
+        <Col className='mt-2'>
 
-        </form>
-        <h2>OR</h2>
-        <button 
-          className="col btn1 btn btn-primary" 
-          type="button">
-          View All Items
-        </button> 
-        <Button 
-          variant='success'
-          onClick={ (e) => {
-            setModal('item')
-          }}
+          <Button
+            className='mb-3'
+            variant="outline-primary"
+            onClick={() => {
+              setItemName('')
+              navigate('/item-display', { replace: true })
+            }}
+          >View All Items
+          </Button>
+          <Button
+            className='mb-3'
+            variant='outline-success'
+            onClick={() => {
+              setModal('item')
+            }}
           >Add Item
-        </Button>
-        <button 
-          className="col btn1 btn btn-primary" 
-          type="button">
-          View All Sections
-        </button>
-        <button 
-          className="col btn1 btn btn-success" 
-          id="add-section"
-          onClick={(e) => {
-            setModal('section')
+          </Button>
+        </Col>
+      </Row>
+      <Row className="m-4">
+        <h2>Sections</h2>
+        <Col className='mt-2 mb-4'>
+          <Button
+            className='mb-3'
+            variant="outline-primary"
+            onClick={() => {
+              navigate('/section-display', { replace: true })
+            }}
+          >View All Sections
+          </Button>
+          <Button
+            className='mb-3'
+            variant="outline-success"
+            onClick={() => {
+              setModal('section')
             }}>
-          Add Section
-        </button>
-      </div> 
-    
+            Add Section
+          </Button>
+        </Col>
+      </Row>
       {modalDisplay}
-      
-      </div>
+    </Container >
   );
 }
 export default Search;

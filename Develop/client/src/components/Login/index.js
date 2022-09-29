@@ -1,96 +1,90 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER, SIGNUP_USER } from '../../utils/mutations';
+import { LOGIN_USER } from '../../utils/mutations';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Form, Button } from 'react-bootstrap'
 import './style.css'
-
 import Auth from '../../utils/auth';
 
 
 function Login() {
+  const navigate = useNavigate();
 
-    const [loginFormState, setLoginFormState] = useState({ email: '', password: '' });
-    const [login, {error}] = useMutation(LOGIN_USER);
+  if(Auth.loggedIn()) {
+    navigate('/dashboard', { replace: true })
+  }
 
-    const handleLoginFormSubmit = async (event) => {
-        event.preventDefault();
-        try {
-          const mutationResponse = await login({
-            variables: { email: loginFormState.email, password: loginFormState.password },
-          });
-          const token = mutationResponse.data.login.token;
-          Auth.login(token);
-        } catch (e) {
-          console.log(e);
-        }
-      };
+  const [loginFormState, setLoginFormState] = useState({ email: '', password: '' });
+  const [login, { error }] = useMutation(LOGIN_USER);
 
-    const handleLoginChange = (event) => {
-        const { name, value } = event.target;
-        setLoginFormState({
-          ...loginFormState,
-          [name]: value,
-        });
-    };
+  const handleLoginFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const mutationResponse = await login({
+        variables: { email: loginFormState.email, password: loginFormState.password },
+      });
+      const token = mutationResponse.data.login.token;
+      Auth.login(token);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
-    const [signupFormState, setSignupFormState] = useState({ email: '', password: ''});
-    const [signup] = useMutation(SIGNUP_USER);
+  const handleLoginChange = (event) => {
+    const { name, value } = event.target;
+    setLoginFormState({
+      ...loginFormState,
+      [name]: value,
+    });
+  };
+  
+  return (
+    <>
+      <Form className='m-4' onSubmit={(event) => { handleLoginFormSubmit(event) }}>
+        <h2>Login</h2>
+        <Form.Group>
 
-    const handleSignupFormSubmit = async (event) => {
-        event.preventDefault();
-        try {
-          const mutationResponse = await signup({
-            variables: { email: signupFormState.email, password: signupFormState.password },
-          });
-          const token = mutationResponse.data.login.token;
-          Auth.login(token);
-        } catch (e) {
-          console.log(e);
-        }
-      };
+          <Form.Label>Email:</Form.Label>
+          <Form.Control type="text" name="email" onChange={handleLoginChange} required />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Password:</Form.Label>
+            <Form.Control type="password" name="password" onChange={handleLoginChange} required />
+          
+          
+        </Form.Group>
+        <Button
+          className='my-4'
+          variant='outline-primary'
+          type='submit'>
+          Login
+        </Button>
+        <Form.Group className='my-2'>
+        <Form.Text className="text-muted">
+          New to Ebay Buddy? Click the "go to sign-up" button below!
+        </Form.Text>
+        
+        </Form.Group>
+        <Button
+        className='mb-5'
+        variant='outline-success'
+        onClick={() => navigate('/sign-up', { replace: true })}>
+          Go to Sign-Up
+        </Button>
+      </Form>
 
-    const handleSignupChange = (event) => {
-        const { name, value } = event.target;
-        setSignupFormState({
-          ...signupFormState,
-          [name]: value,
-        });
-    };
 
-    return (
-        <>
-            <form onSubmit={(event) => { handleLoginFormSubmit(event) }}>
-                <div className='user-form'>
-                    <h2>Login</h2>
-                  
-                      <label>Email:</label>
-                      <input className='input' type="text" name="email" id="user-email" onChange={handleLoginChange} required />
-              
-                      <label>Password:</label>
-                      <input className='input' type="password" name="password" id="user-pass" onChange={handleLoginChange} required />
-                      <input type="submit" className="submitBtn"/>
-                </div>
-            </form>
 
-            {error ? (
-          <div>
-            <p className="error-text">The provided credentials are incorrect</p>
-          </div>
-        ) : null}
+      {error ? (
+        <div>
+          <p className="error-text">The provided credentials are incorrect</p>
+        </div>
+      ) : null}
 
-            <form onSubmit={(event) => { handleSignupFormSubmit(event) }}>
-                <div className='user-form'>
-                    <h2>Sign Up</h2>
-                  
-                      <label>Email:</label>
-                      <input className='input' type="text" name="email" id="new-user-email" onChange={handleSignupChange} required />
-                 
-                      <label>Password:</label>
-                      <input className='input' type="password" name="password" id="new-user-pass" onChange={handleSignupChange} required />
-                      <input type="submit" className="submitBtn"/>
-                </div>
-            </form>
-        </>
-    )
+     
+    </>
+  )
 }
 
 export default Login;

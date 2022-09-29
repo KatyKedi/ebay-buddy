@@ -4,7 +4,7 @@ import { UPDATE_CURRENT_MODAL } from '../../utils/actions';
 import { useQuery } from '@apollo/client'
 import { QUERY_ITEM } from '../../utils/queries';
 
-import { Modal, Button, Form } from 'react-bootstrap'
+import { Modal, Button, Form, CloseButton } from 'react-bootstrap'
 import './style.css'
 
 
@@ -21,10 +21,12 @@ function ItemModal() {
 
     return <Modal
         show={modalOpen}
-        contentLabel="Add Item">
+        contentLabel="Add Item"
+        >
 
-        <Modal.Header closeButton>
-            <Modal.Title>Enter Item Details</Modal.Title>
+        <Modal.Header>
+            <Modal.Title className='text-primary'>Enter Item Details</Modal.Title>
+            <CloseButton onClick={() => setModal('')}/>
         </Modal.Header>
 
         <Modal.Body>
@@ -32,7 +34,7 @@ function ItemModal() {
             <Form>
 
                 <Form.Group className="mb-3" controlId="name">
-                    <Form.Label>Name:</Form.Label>
+                    <Form.Label>Name: (required)</Form.Label>
                     <Form.Control
                         type="name" placeholder="Enter name of item"
                     />
@@ -72,7 +74,7 @@ function ItemModal() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId='section'>
-                    <Form.Label>Choose a section:</Form.Label>
+                    <Form.Label>Choose a section: (required)</Form.Label>
                     <Form.Select name="section" id="section" multiple className='form-control'>
                         <option value="">Option</option>
                         <option value="">Option</option>
@@ -86,13 +88,13 @@ function ItemModal() {
 
         <Modal.Footer>
             <Button
-                variant='success'
+                variant='outline-success'
                 onClick={() => {
                     setModal('')
                 }}
             >Submit</Button>
             <Button
-                variant='danger'
+                variant='outline-danger'
                 onClick={() => {
                     setModal('')
                 }}
@@ -115,8 +117,9 @@ function SectionModal() {
     return <Modal
         show={modalOpen}
         contentLabel="Add Section">
-        <Modal.Header closeButton>
-            <Modal.Title>Enter Section Details</Modal.Title>
+        <Modal.Header>
+            <Modal.Title className='text-primary'>Enter Section Details</Modal.Title>
+            <CloseButton onClick={() => setModal('')}/>
         </Modal.Header>
 
         <Modal.Body>
@@ -124,7 +127,7 @@ function SectionModal() {
             <Form>
 
                 <Form.Group className='mb-3' controlId='name'>
-                    <Form.Label>Name:</Form.Label>
+                    <Form.Label>Name: (required)</Form.Label>
                     <Form.Control
                         type="name"
                     />
@@ -144,13 +147,13 @@ function SectionModal() {
 
         <Modal.Footer>
             <Button
-                variant='success'
+                variant='outline-success'
                 onClick={() => {
                     setModal('')
                 }}
             >Submit</Button>
             <Button
-                variant='danger'
+                variant='outline-danger'
                 onClick={() => {
                     setModal('')
                 }}

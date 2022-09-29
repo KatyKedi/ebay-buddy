@@ -1,14 +1,30 @@
-* {
-  margin: 0;
-  padding: 0;
-  color: #0064D3;
+html, #root {
+  min-height: 100vh;
+  font-family: 'Work Sans', sans-serif;
 }
 
-body, html, #root, main {
-  overflow: auto;
-  height: 100%;
+#root {
+  background-color: rgba(134, 184, 23, 0.3)
+}
+
+h1 {
+  font-family: 'Karla', sans-serif;
+}
+
+h2 {
+  color: var(--bs-primary)
+}
+
+ul {
+  list-style: none;
 }
 
 main {
-  background-color: #86B817;
+  position: relative;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 2rem;
 }
