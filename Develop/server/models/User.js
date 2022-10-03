@@ -17,7 +17,7 @@ const UserSchema = new Schema(
             minlength: 8
         },
         sections: [Section.schema],
-        items:[Item.schema]
+        items: [Item.schema]
     },
     {
         toJSON: {

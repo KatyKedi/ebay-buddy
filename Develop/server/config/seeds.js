@@ -603,12 +603,6 @@ db.once('open', async () => {
             section: '2D'
         },
         {
-            name: 'Funko POP! Marvel PROFESSOR HULK #705 6" PX Previews Exclusive',
-            size: '8x9x9',
-            weight: 1.3,
-            section: '2D'
-        },
-        {
             name: 'Funko Disneyland 65th Minnie Mouse #06 Mickey Mouse #03 Casey Jr. Circus Train',
             size: '10x8x7',
             weight: 1.3,
@@ -655,12 +649,6 @@ db.once('open', async () => {
             size: '12x7x7',
             weight: 2.4,
             section: '3C'
-        },
-        {
-            name: 'COFRA 00040-CU4 Thermic Insulated Met Guard Composite Toe Boot Orange 10.5',
-            size: '21x14x6',
-            weight: 6.3,
-            section: '3D'
         },
         {
             name: 'Mickey Mouse 90th Anniversary 10-Piece Collectible Figure Set BRAND NEW',
@@ -1341,12 +1329,6 @@ db.once('open', async () => {
             section: '2C'
         },
         {
-            name: `Hyde and Eek Animated Cat Plush 2021 NWT Dances Meows Music Target Exclusive`,
-            size: '9x7x6',
-            weight: 0.8,
-            section: '1D'
-        },
-        {
             name: `FUNKO Pop! MOVIES ANASTASIA (DIAMOND) #1240 SDCC SUMMER EXCLUSIVE LE NEW IN BOX`,
             size: '7x5x4',
             weight: 0.5,
@@ -1537,12 +1519,6 @@ db.once('open', async () => {
             size: '7x6x5',
             weight: 0.7,
             section: '4C'
-        },
-        {
-            name: `Gemmy 4FT Wide Airblown Inflatable Disney Blinking Hanging MICKEY MOUSE SPIDER`,
-            size: '11x10x7',
-            weight: 1.8,
-            section: '1C'
         },
         {
             name: `Funko Pop! Michelangelo #1141 Jumbo 10" - Walmart - Teenage Mutant Ninja Turtles`,

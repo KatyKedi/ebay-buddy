@@ -79,7 +79,7 @@ function ItemDisplay() {
   if (filteredItems) {
     return (
       <>
-        <Container className='m-0 h-100'>
+        <Container className='my-4 h-100'>
           <Row>
             <Col>
               {keyword ? (<h2 className='text-center'>Items matching <span>{keyword}</span></h2>) : (<h2 className='text-center'>All Items</h2>)}

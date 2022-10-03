@@ -16,9 +16,7 @@ import Header from "./components/Header/index.js";
 import Donation from './components/Donation/index';
 import ItemDisplay from "./components/ItemDisplay/index.js";
 import ItemDetails from "./components/ItemDetails/index.js";
-
-import { Navbar } from 'react-bootstrap'
-import "bootstrap/dist/css/bootstrap.min.css";
+import SectionDisplay from "./components/SectionDisplay/index"
 import "./App.css";
 
 const httpLink = createHttpLink({
@@ -69,11 +67,15 @@ function App() {
                 element={<ItemDetails />}
               />
               <Route
+                path="/section-display"
+                element={<SectionDisplay />}
+              />
+              <Route
                 path="/donation"
                 element={<Donation />}
               />
             </Routes>
-            <footer className='w-100 p-1 mt-5 text-center text-light bg-success'>Made with love for Kelly</footer>
+            {/* <footer className='w-100 p-1 mt-5 text-center text-light bg-success'>Made with love for Kelly</footer> */}
           </main>
           
           

@@ -11,8 +11,8 @@ function Header() {
     if (Auth.loggedIn()) {
       return (
         <Button
-          variant='warning'
-          className='text-white m-2'
+          variant='outline-warning'
+          className='text-primary m-2'
           onClick={(event) => {
           Auth.logout();
           navigate('/', { replace: true })

@@ -19,7 +19,7 @@ function SignUp() {
             const mutationResponse = await signup({
                 variables: { email: signupFormState.email, password: signupFormState.password },
             });
-            const token = mutationResponse.data.login.token;
+            const token = mutationResponse.data.addUser.token;
             Auth.login(token);
         } catch (e) {
             console.log(e);
@@ -57,7 +57,7 @@ function SignUp() {
                 </Button>
                 <Button
                     className='mt-4'
-                    variant='outline-secondary'
+                    variant='outline-success'
                     onClick={() => { navigate('/', { replace: true }) }}>
                     Back to Login
                 </Button>

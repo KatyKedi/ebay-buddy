@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/KatyKedi/ebay-buddy#readme",
   "dependencies": {
-    "@apollo/explorer": "^1.1.1",
-    "concurrently": "^7.4.0"
+    "@apollo/explorer": "^1.1.1"
   }
 }

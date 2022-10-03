@@ -55,10 +55,10 @@ const typeDefs = gql`
     logout: User
     addUser(email: String!, password: String!): Auth
     addSection(name: String!, full: Boolean): Section
-    editSection(_id: ID!, name: String, full: Boolean): Section
+    editSection(_id: ID!, name: String!, full: Boolean): Section
     deleteSection(_id: ID!): Section
-    addItem(name: String!, section: String!, input: ItemInput): Item
-    editItem(_id: ID!, name: String, section: String, input: ItemInput): Item
+    addItem(name: String!, section: String!, description: String, size: String, weight: Float): Item
+    editItem(_id: ID!, name: String!, section: String!, description: String, size: String, weight: Float): Item
     deleteItem(_id: ID!): Item
   }
 `;

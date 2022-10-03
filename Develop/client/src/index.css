@@ -1,3 +1,4 @@
+
 html, #root {
   min-height: 100vh;
   font-family: 'Work Sans', sans-serif;
@@ -19,12 +20,13 @@ ul {
   list-style: none;
 }
 
+/* 
 main {
   position: relative;
-}
+} */
 
-footer {
+/* footer {
   position: absolute;
   bottom: 0;
   height: 2rem;
-}
+} */

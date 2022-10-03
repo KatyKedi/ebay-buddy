@@ -48,7 +48,7 @@ function Search() {
     }
   }
   return (
-    <Container className='m-0 p-0 text-center h-100'>
+    <Container fluid className='m-0 p-0 text-center h-100'>
       <Row className='m-4'>
         <Col className='mt-2'>
           <Form>
@@ -116,7 +116,7 @@ function Search() {
         </Col>
       </Row>
       {modalDisplay}
-    </Container >
+    </Container>
   );
 }
 export default Search;
