@@ -49,3 +49,11 @@ export const ADD_SECTION = gql`
     }
   }
 `
+
+export const DELETE_SECTION = gql`
+  mutation deleteSection($id: ID!) {
+    deleteSection(_id: $id) {
+      _id
+    }
+  }
+`

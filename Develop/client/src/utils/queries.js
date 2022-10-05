@@ -22,3 +22,13 @@ export const QUERY_ITEM = gql`
         }
     }
 `
+
+export const QUERY_SECTIONS = gql`
+    query {
+        sections {
+            _id
+            name
+            full
+        }
+    }
+`

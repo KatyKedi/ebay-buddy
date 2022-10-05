@@ -17,6 +17,8 @@ import Donation from './components/Donation/index';
 import ItemDisplay from "./components/ItemDisplay/index.js";
 import ItemDetails from "./components/ItemDetails/index.js";
 import SectionDisplay from "./components/SectionDisplay/index"
+
+
 import "./App.css";
 
 const httpLink = createHttpLink({
@@ -44,7 +46,8 @@ function App() {
       <BrowserRouter>
         <CatalogProvider>
           <Header />
-          <main className='mx-4 m-4 border border-success rounded bg-light'>
+          <div className='row justify-content-center'>
+          <main className='mx-4 m-4 col-10 col-sm-8 col-md-7 col-lg-6 border border-success rounded bg-light'>
             <Routes>
               <Route
                 path="/"
@@ -78,7 +81,7 @@ function App() {
             {/* <footer className='w-100 p-1 mt-5 text-center text-light bg-success'>Made with love for Kelly</footer> */}
           </main>
           
-          
+          </div>
        
         </CatalogProvider>
       </BrowserRouter>

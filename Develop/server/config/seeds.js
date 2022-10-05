@@ -344,12 +344,6 @@ db.once('open', async () => {
             section: '2A'
         },
         {
-            name: 'Gemmy Airblown Inflatable 101 Dalmatians 5ft CRUELLA DE VIL LED New',
-            size: '14x10x7',
-            weight: 4.4,
-            section: '2A'
-        },
-        {
             name: 'FRIDAY 13TH JASON VOORHEES LED ROTATING SHADOW PROJECTION LIGHT TABLETOP GEMMY',
             size: '12x9x9',
             weight: 1.5,
@@ -686,12 +680,6 @@ db.once('open', async () => {
             weight: 1.4,
             description: 'regular jack',
             section: '2B'
-        },
-        {
-            name: 'The Nightmare Before Christmas Tree Topper JACK SKELLINGTON 12" Tree Hugger NWT',
-            size: '18x13x7',
-            weight: 1.7,
-            section: '1X'
         },
         {
             name: 'Disney Nightmare Before Christmas Slow Cooker Crock Pot Jack Skellington NBC-73',

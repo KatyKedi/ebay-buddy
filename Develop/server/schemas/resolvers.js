@@ -133,11 +133,6 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
     addItem: async (parent, args, context) => {
-      console.log(
-        `
-        ADDING!!!!!!!!!!!!!!!!!!!!!!!!!!
-        `
-      )
       if (context.user) {
         const item = await Item.create({ ...args});
 
@@ -162,16 +157,12 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
     deleteItem: async (parent, args, context) => {
+      await Item.findOneAndDelete({ _id: args._id })
       if (context.user) {
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $pull: { items: args.id } }, 
-          function (err, docs) {
-            if (err){
-              console.log(err)
-            }
-        });
-      }
+          { $pull: { items: args._id } }
+        )}
       throw new AuthenticationError('Not logged in');
     },
   }
