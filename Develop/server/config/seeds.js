@@ -1580,12 +1580,6 @@ db.once('open', async () => {
             section: '1A'
         },
         {
-            name: `HYDE and EEK Ghost Stake Lights 5 Ghosts 8 FT Halloween Decor New`,
-            size: '13x10x4',
-            weight: 1.8,
-            section: '1D'
-        },
-        {
             name: `DISNEY Halloween Mini LIGHT UP Pumpkin VILLAINS SET Maleficent Ursula Cruella`,
             size: '8x6x5',
             weight: 0.5,

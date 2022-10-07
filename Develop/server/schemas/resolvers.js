@@ -74,7 +74,7 @@ const resolvers = {
 				success_url: `${url}/`,
 				cancel_url: `${url}/donation`
 			});
-			  
+
 			return { session: session.id }; 
     }
   },

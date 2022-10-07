@@ -63,10 +63,10 @@ function SignUp() {
                 </Button>
             </Form>
             {/* {error ? (
-        <div>
-          <p className="error-text">The provided credentials are incorrect</p>
-        </div>
-      ) : null} */}
+                <div>
+                    <p className="error-text">The provided credentials are incorrect</p>
+                </div>
+            ) : null} */}
         </>
     )
 }

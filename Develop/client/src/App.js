@@ -82,7 +82,7 @@ function App() {
           </main>
           
           </div>
-       
+
         </CatalogProvider>
       </BrowserRouter>
     </ApolloProvider>

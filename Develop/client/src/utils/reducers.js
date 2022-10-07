@@ -16,9 +16,9 @@ export const reducer = (state, action) => {
       };
 
     case UPDATE_CURRENT_KEYWORD:
-       return {
-         ...state,
-         keyword: action.keyword
+      return {
+        ...state,
+        keyword: action.keyword
       }
 
     case UPDATE_CURRENT_ITEM:
