@@ -437,12 +437,6 @@ db.once('open', async () => {
             section: '2C'
         },
         {
-            name: 'Spectra S2 Plus Double Electric Breast Pump - Pink Ultra Quiet New in Open Box',
-            size: '13x9x11',
-            weight: 5.0,
-            section: '2C'
-        },
-        {
             name: 'SCOOBY-DOO Christmas Stocking 4.5 Ft. Gemmy Airblown Lighted Inflatable Walmart',
             size: '11x10x7',
             weight: 4.2,
@@ -540,12 +534,6 @@ db.once('open', async () => {
             name: 'Disney Frozen OLAF Squishmallow 10" KellyToy New With Tags',
             size: '11x10x7',
             weight: 1.2,
-            section: '2D'
-        },
-        {
-            name: 'Nightmare Before Christmas Animated Plush OOGIE BOOGIE W/ LIGHTS 12" Walgreens',
-            size: '12x10x11',
-            weight: 1.9,
             section: '2D'
         },
         {
@@ -740,12 +728,6 @@ db.once('open', async () => {
             name: 'Vynl Hanna Barbera HUCKLEBERRY HOUND + SNAGGLEPUSS 2018 Fall Convention 3000 PCS',
             size: '11x8x5',
             weight: 1.1,
-            section: '4B'
-        },
-        {
-            name: 'SALLY JACK OOGIE BOOGIE Nightmare Before Christmas MUG SET WALGREENS EXCLUSIVE',
-            size: '10x10x7',
-            weight: 2.6,
             section: '4B'
         },
         {
