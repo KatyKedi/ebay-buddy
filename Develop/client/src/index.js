@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './scss/custom.scss';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker.js';
+import * as serviceWorker from './serviceWorker';
 
 createRoot(document.getElementById('root')).render(
   <App  />
