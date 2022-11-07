@@ -116,12 +116,6 @@ db.once('open', async () => {
             section: '1A'
         },
         {
-            name: 'Wacom Intuos CTL-4100 Small Drawing Tablet - Black For Mac PC Chromebook Android',
-            size: '11x8x5',
-            weight: 1.6,
-            section: '1A'
-        },
-        {
             name: 'Nightmare Before Christmas Hallmark Ornaments JACK SALLY OOGIE LOCK SHOCK BARREL',
             size: '10x8x6',
             weight: 1.5,
@@ -613,12 +607,6 @@ db.once('open', async () => {
             size: '18x12x13',
             weight: 5.2,
             section: '3D'
-        },
-        {
-            name: 'Gemmy Airblown Inflatable Dr. Seuss THE GRINCH Christmas 11 Ft LED Heart New',
-            size: '18x14x12',
-            weight: 9.2,
-            section: '1X'
         },
         {
             name: 'Walgreens NIGHTMARE BEFORE CHRISTMAS Animated Plush Doll JACK SKELLINGTON New',
@@ -1509,7 +1497,6 @@ db.once('open', async () => {
             weight: 5.1,
             section: 'Z'
         },
-
         {
             name: `NYCC Bundle Exclusive Nightmare Before Christmas Funko ZERO Pop + Mini Backpack`,
             size: '15x10x12',
@@ -1522,7 +1509,6 @@ db.once('open', async () => {
             weight: 0.4,
             section: '4C'
         },
-
         {
             name: `Awesafe Gun Safe with Fingerprint Identification and Biometric Lock New`,
             size: '13x13x6',
@@ -1535,7 +1521,6 @@ db.once('open', async () => {
             weight: 2.4,
             section: '2D'
         },
-
         {
             name: `NYCC Exclusive Nightmare Before Christmas Dr. FINKELSTEIN Mini Backpack SEALED`,
             size: '12x12x8',
@@ -1548,7 +1533,6 @@ db.once('open', async () => {
             weight: 0.7,
             section: '2C'
         },
-
         {
             name: `Loungefly Nightmare Before Christmas Jack & Sally Graveyard Mini Backpack NWT`,
             size: '13x9x10',
@@ -1561,7 +1545,6 @@ db.once('open', async () => {
             weight: 0.4,
             section: '4C'
         },
-
         {
             name: `Hallmark National Lampoons Vacation Cousin Eddie's RV Christmas Ornament NEW`,
             size: '7x5x4',
@@ -1574,7 +1557,6 @@ db.once('open', async () => {
             weight: 3.2,
             section: '2D'
         },
-
         {
             name: `Hallmark Harry Potter Luggage Trolley Walmart Red Box Hedwig Ornament NEW 2022`,
             size: '7x5x4',
@@ -1587,7 +1569,6 @@ db.once('open', async () => {
             weight: 0.5,
             section: '4C'
         },
-
         {
             name: `D-1029A Facial Skin Scanner/Analyzer Diagnosis Machine 110V-120V Ships From USA`,
             size: '18x14x10',
@@ -1634,20 +1615,12 @@ db.once('open', async () => {
             weight: 4.8,
             section: '1D'
         },
-
-        {
-            name: `Loungefly Nightmare Before Christmas Jack Skellington PUMPKIN KING Mini Backpack`,
-            size: '12x7x10',
-            weight: 1.2,
-            section: '2B'
-        },
         {
             name: `Star Wars The Mandalorian THE CHILD with Stocking Airblown Inflatable 4.5 FT`,
             size: '11x10x7',
             weight: 3.4,
             section: '2B'
         },
-
         {
             name: `Loungefly Nightmare Before Christmas Jack Skellington PUMPKIN KING Mini Backpack`,
             size: '11x10x6',
@@ -1660,7 +1633,6 @@ db.once('open', async () => {
             weight: 0.4,
             section: '1A'
         },
-
         {
             name: `Funko Pop! Disney Art Series Amazon Exclusive #25 #26 #28 #29 #30 #31 #37 #40`,
             size: '18x12x9',
@@ -1673,7 +1645,6 @@ db.once('open', async () => {
             weight: 0.3,
             section: '1B'
         },
-
         {
             name: `NEW Animated Mariachi Puppy Plays "MACARENA" Plush Dog Music Shaking Maracas`,
             size: '12x10x9',
@@ -1686,7 +1657,6 @@ db.once('open', async () => {
             weight: 3.8,
             section: '2A'
         },
-
         {
             name: `Loungefly Nightmare Before Christmas Jack Skellington PUMPKIN KING Mini Backpack`,
             size: '13x9x9',
@@ -1699,7 +1669,6 @@ db.once('open', async () => {
             weight: 3.3,
             section: '1B'
         },
-
         {
             name: `Loungefly Funko Pop! Disney JACK SKELLINGTON & ZERO GITD Backpack & Wallet`,
             size: '15x12x7',
@@ -1712,7 +1681,6 @@ db.once('open', async () => {
             weight: 1.8,
             section: '2C'
         },
-
         {
             name: `Loungefly Exclusive JACK SKELLINGTON Pumpkin Crossbody Purse Glow in The Dark`,
             size: '12x9x7',
@@ -1742,12 +1710,6 @@ db.once('open', async () => {
             size: '17x13x12',
             weight: 5.3,
             section: '1D'
-        },
-        {
-            name: `Hodgman Caster Neoprene Cleated Bootfoot Chest Waders Size 10 Has Box & Tags`,
-            size: '18x14x7',
-            weight: 10.0,
-            section: '1C'
         },
         // {
         //     name: ``,
