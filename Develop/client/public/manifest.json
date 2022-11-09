@@ -22,6 +22,7 @@
   "publicPath": "./",
   "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "theme_color": "#0064d3",
   "background_color": "#86b817"
 }

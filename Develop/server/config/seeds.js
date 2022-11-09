@@ -983,12 +983,6 @@ db.once('open', async () => {
             section: '4C'
         },
         {
-            name: 'Squishmallow Kellytoy Disney WOODY and BUZZ LIGHTYEAR 5" Plush Stuffed NWT',
-            size: '7x5x3',
-            weight: 0.4,
-            section: '1A'
-        },
-        {
             name: '2018 Funko POP! Marvel Venom "CARNAGE" #367',
             size: '7x5x4',
             weight: 0.4,

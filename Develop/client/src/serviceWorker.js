@@ -8,7 +8,7 @@ const isLocalhost = Boolean(
   )
 );
 
-export function register(config) {
+export function register() {
   if (
     process.env.NODE_ENV === 'production' &&
     'serviceWorker' in navigator) {
@@ -30,7 +30,7 @@ export function register(config) {
       if (isLocalhost) {
         console.log("yep, this is localhost")
         // This is running on localhost. Let's check if a service worker still exists or not.
-        checkValidServiceWorker(swUrl, config);
+        checkValidServiceWorker(swUrl);
 
         // Add some additional logging to localhost, pointing developers to the
         // service worker/PWA documentation.
@@ -42,15 +42,14 @@ export function register(config) {
         });
       } else {
         // Is not localhost. Just register service worker
-        registerValidSW(swUrl, config);
+        registerValidSW(swUrl);
       }
     });
   }
 }
 
-function registerValidSW(swUrl, config) {
+function registerValidSW(swUrl) {
   console.log(swUrl)
-  console.log(config)
   navigator.serviceWorker
     .register(swUrl, {scope: './'})
     .then(registration => {
@@ -72,19 +71,19 @@ function registerValidSW(swUrl, config) {
               );
 
               // Execute callback
-              if (config && config.onUpdate) {
-                config.onUpdate(registration);
-              }
-            } else {
-              // At this point, everything has been precached.
-              // It's the perfect time to display a
-              // "Content is cached for offline use." message.
-              console.log('Content is cached for offline use.');
+            //   if (config && config.onUpdate) {
+            //     config.onUpdate(registration);
+            //   }
+            // } else {
+            //   // At this point, everything has been precached.
+            //   // It's the perfect time to display a
+            //   // "Content is cached for offline use." message.
+            //   console.log('Content is cached for offline use.');
 
-              // Execute callback
-              if (config && config.onSuccess) {
-                config.onSuccess(registration);
-              }
+            //   // Execute callback
+            //   if (config && config.onSuccess) {
+            //     config.onSuccess(registration);
+            //   }
             }
           }
         };
@@ -95,7 +94,7 @@ function registerValidSW(swUrl, config) {
     });
 }
 
-function checkValidServiceWorker(swUrl, config) {
+function checkValidServiceWorker(swUrl) {
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl, {
     headers: { 'Service-Worker': 'script' },
@@ -115,7 +114,7 @@ function checkValidServiceWorker(swUrl, config) {
         });
       } else {
         // Service worker found. Proceed as normal.
-        registerValidSW(swUrl, config);
+        registerValidSW(swUrl);
       }
     })
     .catch(() => {
