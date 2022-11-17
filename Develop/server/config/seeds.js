@@ -965,12 +965,6 @@ db.once('open', async () => {
             section: '3B'
         },
         {
-            name: 'Funko Pop #853 SIGMUND 2019 Summer Convention Shared Exclusive Sea Monsters',
-            size: '7x5x4',
-            weight: 0.4,
-            section: '3B'
-        },
-        {
             name: 'Comic Con SDCC 2019 50th TOUCAN Funko POP and PEZ Dispenser Shared Exclusive',
             size: '8x6x6',
             weight: 0.8,
@@ -1486,12 +1480,6 @@ db.once('open', async () => {
             section: '4C'
         },
         {
-            name: `Awesafe Gun Safe with Fingerprint Identification and Biometric Lock New`,
-            size: '13x13x6',
-            weight: 11.8,
-            section: '2C'
-        },
-        {
             name: `NYCC Exclusive Nightmare Before Christmas Dr. FINKELSTEIN Mini Backpack SEALED`,
             size: '14x10x7',
             weight: 2.4,
@@ -1562,12 +1550,6 @@ db.once('open', async () => {
             size: '7x7x5',
             weight: 1.0,
             section: '2B'
-        },
-        {
-            name: `Funko POP! Art Series Disney MICKEY MOUSE Walmart Set of 5 #18 19 20 21 22 NEW`,
-            size: '11x11x11',
-            weight: 2.8,
-            section: '2A'
         },
         {
             name: `Country Charm 2021 Holiday Time Christmas Village MEADOW BROOK FARM Lights Up`,

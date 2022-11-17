@@ -128,7 +128,11 @@ const resolvers = {
     },
     deleteSection: async (parent, args, context) => {
       if (context.user) {
-        return Section.deleteOne({ _id: args._id });
+        await Section.deleteOne({ _id: args._id });
+        return await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $pull: { sections: { _id: args._id } } }
+        )
       }
       throw new AuthenticationError('Not logged in');
     },
@@ -157,12 +161,14 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
     deleteItem: async (parent, args, context) => {
-      await Item.findOneAndDelete({ _id: args._id })
+      console.log(args)
       if (context.user) {
-        await User.findByIdAndUpdate(
+        await Item.deleteOne({ _id: args._id })
+        return await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $pull: { items: args._id } }
-        )}
+          { $pull: { items: { _id: args._id } } }
+        )
+      }
       throw new AuthenticationError('Not logged in');
     },
   }
