@@ -1043,10 +1043,6 @@ db.once('open', async () => {
             section: '3A'
         },
         {
-            name: 'Funko Alice in Wonderland BlackLight ALICE CHESHIRE CAT MAD HATTER QUEEN',
-            section: '3A'
-        },
-        {
             name: 'Funko Star Wars Art DARTH VADER 515 Mustafar 516 Hoth 517 Endor 518 Bespin',
             section: '3A'
         },
