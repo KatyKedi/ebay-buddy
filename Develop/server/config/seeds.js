@@ -248,12 +248,6 @@ db.once('open', async () => {
             section: '1C'
         },
         {
-            name: 'MICHAEL MYERS PENNYWISE CHUCKY GRADY TWINS Speaking Waddler Halloween Plush NWT',
-            size: '15x13x8',
-            weight: 3.8,
-            section: '1C'
-        },
-        {
             name: 'The Shining THE GRADY TWINS Animated Plush Spooky Creepy Phrases New with Tags',
             size: '15x11x6',
             weight: 1.9,
@@ -989,12 +983,6 @@ db.once('open', async () => {
             section: '4A'
         },
         {
-            name: 'KellyToy Squishmallows BLAKE THE BUNNY 16" Squishmallow New with Tags',
-            size: '13x13x8',
-            weight: 2.9,
-            section: 'X3'
-        },
-        {
             name: `Funko POP! Star Wars Art Series Walmart Exclusive DARTH VADER #517 (Endor)`,
             section : '4B'
         },
@@ -1488,18 +1476,6 @@ db.once('open', async () => {
             section: '2C'
         },
         {
-            name: `Swatch SUOZ337 Mickey Blanc Sur Noir & GZ352 Mouse Meriniere By Keith Haring NEW`,
-            size: '12x6x4',
-            weight: 0.7,
-            section: '2C'
-        },
-        {
-            name: `Loungefly Nightmare Before Christmas Jack & Sally Graveyard Mini Backpack NWT`,
-            size: '13x9x10',
-            weight: 2.0,
-            section: '3A'
-        },
-        {
             name: `Loungefly Coraline Doll Split Passport Crossbody Bag Purse SEALED NWT`,
             size: '7x5x4',
             weight: 0.4,
@@ -1594,12 +1570,6 @@ db.once('open', async () => {
             section: '1D'
         },
         {
-            name: `Funko POP! Disney Pixar PIPER & HERMIT CRAB Funko Limited Edition Exclusive`,
-            size: '9x7x6',
-            weight: 0.3,
-            section: '1B'
-        },
-        {
             name: `NEW Animated Mariachi Puppy Plays "MACARENA" Plush Dog Music Shaking Maracas`,
             size: '12x10x9',
             weight: 1.9,
@@ -1610,12 +1580,6 @@ db.once('open', async () => {
             size: '10x10x6',
             weight: 3.8,
             section: '2A'
-        },
-        {
-            name: `Loungefly Nightmare Before Christmas Jack Skellington PUMPKIN KING Mini Backpack`,
-            size: '13x9x9',
-            weight: 1.9,
-            section: '1A'
         },
         {
             name: `Loungefly Funko Pop! Disney JACK SKELLINGTON & ZERO GITD Backpack & Wallet`,

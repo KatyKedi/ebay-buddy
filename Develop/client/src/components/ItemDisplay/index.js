@@ -8,7 +8,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./style.css"
 import { useNavigate } from 'react-router-dom';
 import { DELETE_ITEM } from '../../utils/mutations';
-import { Container, Row, Col, Button } from 'react-bootstrap'
+import { Container, Row, Col, Button, Accordion } from 'react-bootstrap'
+import { ItemModal } from '../Modals/index'
+import ItemDetails from '../ItemDetails/index'
 
 function ItemDisplay() {
   const [state, dispatch] = useGlobalContext();
@@ -21,6 +23,7 @@ function ItemDisplay() {
   const [selectedItem, setSelectedItem] = useState('');
 
   useEffect(() => {
+    console.log(data)
     if (data) {
       setFilteredItems(data.items.filter(item => item.name.includes(keyword)));
       dispatch({
@@ -42,27 +45,15 @@ function ItemDisplay() {
       type: UPDATE_CURRENT_ITEM,
       singleItem: selectedItem
     })
-  }, [data, loading, selectedItem, keyword, dispatch]);
+  }, [data, deleteItem]);
 
-  const handleItemClick = (event) => {
-    const clickedItem = event.target.getAttribute('id');
-    document.querySelectorAll("li").forEach(el => el.classList.remove("bg-warning"));
-
-    if (selectedItem === clickedItem) {
-      setSelectedItem('');
-    } else {
-      setSelectedItem(clickedItem);
-      event.target.classList.add("bg-warning");
-    }
-  }
-
-  const handleViewClick = (event) => {
+  const handleEditClick = () => {
     if (selectedItem) {
       navigate('/item-details', { replace: true })
     }
   }
 
-  const handleDeleteClick = (event) => {
+  const handleDeleteClick = () => {
     if (selectedItem) {
       const itemName = filteredItems.find(item => item._id === selectedItem).name;
       const confirm = window.confirm(
@@ -83,29 +74,26 @@ function ItemDisplay() {
           <Row>
             <Col>
               {keyword ? (<h2 className='text-center'>Items matching <span>{keyword}</span></h2>) : (<h2 className='text-center'>All Items</h2>)}
-              <ul className='text-left list-unstyled'>
-                {filteredItems.map(item => (
-                  <li
-                    onClick={(event) => handleItemClick(event)}
-                    id={item._id}
-                    className='my-2 p-1 border border-warning rounded bg-gradient'>
-                    {item.name}
-                  </li>))}
-              </ul>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Button
-                variant="outline-primary"
-                onClick={(event) => handleViewClick(event)}
-              >View | Edit</Button>
-            </Col>
-            <Col>
-              <Button
-                variant="outline-danger"
-                onClick={(event) => handleDeleteClick(event)}
-              >Delete</Button>
+              <Accordion>
+                {filteredItems.map((item, index) => (
+                  <Accordion.Item
+                    className="list-item"
+                    eventKey={index}
+                    >
+                    <Accordion.Header onClick={() => setSelectedItem(item._id)}>{item.name}</Accordion.Header>
+                    <Accordion.Body>
+                      <ItemDetails item={item}/>
+                      <Button
+                        variant="outline-primary"
+                        onClick={handleEditClick}
+                      >Edit</Button>
+                      <Button
+                        variant="outline-danger"
+                        onClick={handleDeleteClick}
+                      >Delete</Button>
+                    </Accordion.Body>
+                  </Accordion.Item>))}
+              </Accordion>
             </Col>
           </Row>
         </Container>

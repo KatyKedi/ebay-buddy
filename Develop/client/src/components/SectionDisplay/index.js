@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import { DELETE_SECTION } from '../../utils/mutations';
 import { Container, Row, Col, Button } from 'react-bootstrap'
+import { SectionModal } from '../Modals/index'
 
 function SectionDisplay() {
   const [state, dispatch] = useGlobalContext();
@@ -45,7 +46,7 @@ function SectionDisplay() {
 
   const handleEditClick = (event) => {
     if (selectedSection) {
-      console.log('edit click')
+      const sectionName = sections.find(section => section._id === selectedSection).name;
     }
   }
 
