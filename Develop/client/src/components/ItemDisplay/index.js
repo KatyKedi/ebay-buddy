@@ -6,7 +6,6 @@ import { UPDATE_CURRENT_ITEM, UPDATE_ITEMS } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./style.css"
-import { useNavigate } from 'react-router-dom';
 import { DELETE_ITEM } from '../../utils/mutations';
 import { Container, Row, Col, Button, Accordion } from 'react-bootstrap'
 import { ItemModal } from '../Modals/index'
@@ -14,16 +13,15 @@ import ItemDetails from '../ItemDetails/index'
 
 function ItemDisplay() {
   const [state, dispatch] = useGlobalContext();
-  const { keyword } = state;
+  const { keyword, modal } = state;
   const { loading, data } = useQuery(QUERY_ITEMS);
   const [deleteItem] = useMutation(DELETE_ITEM)
-  const navigate = useNavigate();
 
   const [filteredItems, setFilteredItems] = useState([]);
   const [selectedItem, setSelectedItem] = useState('');
+  const [modalDisplay, setModalDisplay] = useState(<></>)
 
   useEffect(() => {
-    console.log(data)
     if (data) {
       setFilteredItems(data.items.filter(item => item.name.includes(keyword)));
       dispatch({
@@ -45,12 +43,10 @@ function ItemDisplay() {
       type: UPDATE_CURRENT_ITEM,
       singleItem: selectedItem
     })
-  }, [data, deleteItem]);
+  }, [loading, data, deleteItem]);
 
   const handleEditClick = () => {
-    if (selectedItem) {
-      navigate('/item-details', { replace: true })
-    }
+    setModalDisplay(<ItemModal />)
   }
 
   const handleDeleteClick = () => {
@@ -79,10 +75,10 @@ function ItemDisplay() {
                   <Accordion.Item
                     className="list-item"
                     eventKey={index}
-                    >
+                  >
                     <Accordion.Header onClick={() => setSelectedItem(item._id)}>{item.name}</Accordion.Header>
                     <Accordion.Body>
-                      <ItemDetails item={item}/>
+                      <ItemDetails item={item} />
                       <Button
                         variant="outline-primary"
                         onClick={handleEditClick}
@@ -96,6 +92,7 @@ function ItemDisplay() {
               </Accordion>
             </Col>
           </Row>
+          {modalDisplay}
         </Container>
       </>
     )

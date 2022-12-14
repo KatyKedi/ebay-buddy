@@ -38,12 +38,6 @@ db.once('open', async () => {
             section: '1A'
         },
         {
-            name: 'Hallmark Christmas Ornaments Disney MICKEY & MINNIE Sparkle Ball Ears 2021 New',
-            size: '6x6x4',
-            weight: 0.8,
-            section: '1A'
-        },
-        {
             name: 'Yeti Abominable Snowman Animated Monster Dances and Sings WHITE CHRISTMAS New',
             size: '9x6x6',
             weight: 1.0,
@@ -601,7 +595,6 @@ db.once('open', async () => {
             name: 'Disney Nightmare Before Christmas Slow Cooker Crock Pot Jack Skellington NBC-73',
             size: '15x10x15',
             weight: 15.6,
-            stock: 2,
             section: '2X'
         },
         {
@@ -1446,12 +1439,6 @@ db.once('open', async () => {
             section: '1C'
         },
         {
-            name: `22" Tall Holiday Time Light Up Plush PINK PIG Christmas Yard Decoration NEW`,
-            size: '24x12x12',
-            weight: 5.1,
-            section: 'Z'
-        },
-        {
             name: `NYCC Bundle Exclusive Nightmare Before Christmas Funko ZERO Pop + Mini Backpack`,
             size: '15x10x12',
             weight: 3.1,
@@ -1552,12 +1539,6 @@ db.once('open', async () => {
             section: '2B'
         },
         {
-            name: `Loungefly Nightmare Before Christmas Jack Skellington PUMPKIN KING Mini Backpack`,
-            size: '11x10x6',
-            weight: 1.3,
-            section: '1B'
-        },
-        {
             name: `Loungefly Disney Nightmare Before Christmas Wallet Oogie Boogie Lock Shock NEW`,
             size: '8x7x3',
             weight: 0.4,
@@ -1568,12 +1549,6 @@ db.once('open', async () => {
             size: '18x12x9',
             weight: 7.4,
             section: '1D'
-        },
-        {
-            name: `NEW Animated Mariachi Puppy Plays "MACARENA" Plush Dog Music Shaking Maracas`,
-            size: '12x10x9',
-            weight: 1.9,
-            section: '1A'
         },
         {
             name: `Disney STITCH With Pumpkin Light Up Airblown Inflatable 3 FT NIB`,
@@ -1629,6 +1604,174 @@ db.once('open', async () => {
             weight: 5.3,
             section: '1D'
         },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
         // {
         //     name: ``,
         //     size: '',
