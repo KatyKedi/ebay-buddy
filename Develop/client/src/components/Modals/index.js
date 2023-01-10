@@ -10,7 +10,7 @@ import { Modal, Button, Form, CloseButton } from 'react-bootstrap'
 import './style.css'
 
 
-function ItemModal() {
+function ItemModal(props) {
     const [state, dispatch] = useGlobalContext();
     const [modalOpen, setModal] = useState('item')
 

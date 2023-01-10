@@ -61,8 +61,11 @@ function Search() {
               />
             </Form.Group>
           </Form>
+        </Col>
+      </Row>
+      <Row className="m-4">
+        <Col className='d-flex flex-column'>
           <Button
-            className='mt-2'
             variant='outline-primary'
             type='submit'
             onClick={() => {
@@ -72,9 +75,8 @@ function Search() {
         </Col>
       </Row>
       <Row className="m-4">
-        <h2>Items</h2>
-        <Col className='mt-2'>
-
+        <Col className='d-flex flex-column mt-2'>
+          <h2>Items</h2>
           <Button
             className='mb-3'
             variant="outline-primary"
@@ -93,10 +95,8 @@ function Search() {
           >Add Item
           </Button>
         </Col>
-      </Row>
-      <Row className="m-4">
-        <h2>Sections</h2>
-        <Col className='mt-2 mb-4'>
+        <Col className='d-flex flex-column mt-2'>
+          <h2>Sections</h2>
           <Button
             className='mb-3'
             variant="outline-primary"

@@ -449,12 +449,6 @@ db.once('open', async () => {
             section: '2C'
         },
         {
-            name: 'Funko Pop! Disney 10" MICKEY MOUSE #457 Black and White Target Exclusive 90 Year',
-            size: '15x11x12',
-            weight: 3.0,
-            section: '2C'
-        },
-        {
             name: 'SLIMER Ghost Busters Airblown Gemmy Self Inflatable 5ft LED Lighted NIB',
             size: '14x10x6',
             weight: 4.1,
@@ -504,12 +498,6 @@ db.once('open', async () => {
             name: 'Hotel Style FULL 1200 Thread Count Limited Ed 6 Piece Sheet Set Gray Pumice New',
             size: '11x7x9',
             weight: 5.1,
-            section: '2D'
-        },
-        {
-            name: 'Vintage Handpainted Delft Blue Duck Figurine 9" x 11"',
-            size: '11x9x6',
-            weight: 2.3,
             section: '2D'
         },
         {
@@ -706,12 +694,6 @@ db.once('open', async () => {
             section: '4B'
         },
         {
-            name: 'Fluffballs My Little Pony FLUTTERSHY, TWILIGHT SPARKLE, PINKIE PIE, RAINBOW DASH',
-            size: '8x5x7',
-            weight: 0.8,
-            section: '4B'
-        },
-        {
             name: 'Vynl Hanna Barbera HUCKLEBERRY HOUND + SNAGGLEPUSS 2018 Fall Convention 3000 PCS',
             size: '11x8x5',
             weight: 1.1,
@@ -891,12 +873,6 @@ db.once('open', async () => {
             size: '9x9x7',
             weight: 1.3,
             section: '3B'
-        },
-        {
-            name: 'Funko 7 Eleven SLURPEE Exclusive BLUE RASBERRY 89 BANANA 90 & CHERRY 92 Set of 3',
-            size: '12x8x7',
-            weight: 1.3,
-            section: '4C'
         },
         {
             name: 'Funko POP! Disney Pinocchio BLUE FAIRY #1027 Limited CHASE Edition',
@@ -1493,12 +1469,6 @@ db.once('open', async () => {
             section: '4C'
         },
         {
-            name: `D-1029A Facial Skin Scanner/Analyzer Diagnosis Machine 110V-120V Ships From USA`,
-            size: '18x14x10',
-            weight: 21.8,
-            section: 'Z'
-        },
-        {
             name: `2022 Funko POP! Art Series Star Wars #535 DARTH VADER Target Exclusive`,
             size: '7x7x5',
             weight: 1.0,
@@ -1549,12 +1519,6 @@ db.once('open', async () => {
             size: '18x12x9',
             weight: 7.4,
             section: '1D'
-        },
-        {
-            name: `Disney STITCH With Pumpkin Light Up Airblown Inflatable 3 FT NIB`,
-            size: '10x10x6',
-            weight: 3.8,
-            section: '2A'
         },
         {
             name: `Loungefly Funko Pop! Disney JACK SKELLINGTON & ZERO GITD Backpack & Wallet`,

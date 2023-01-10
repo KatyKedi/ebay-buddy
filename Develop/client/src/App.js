@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap"
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,6 +9,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { CatalogProvider } from './utils/GlobalState';
+import Auth from './utils/auth';
 
 import Login from "./components/Login/index.js"
 import SignUp from './components/SignUp/index';
@@ -46,20 +48,17 @@ function App() {
       <BrowserRouter>
         <CatalogProvider>
           <Header />
-          <div className='row justify-content-center'>
-          <main className='mx-4 m-4 col-10 col-sm-8 col-md-7 col-lg-6 border border-success rounded bg-light'>
+          <Container>
+          <Row className='justify-content-center'>
+          <Col className='mx-4 m-4 col-11 col-sm-10 col-md-7 col-lg-6 border border-success rounded bg-light'>
             <Routes>
               <Route
                 path="/"
-                element={<Login />}
+                element={(Auth.loggedIn()) ? ( <Search /> ) : ( <Login /> )}
               />
               <Route
                 path="/sign-up"
                 element={<SignUp />}
-              />
-              <Route
-                path="/dashboard"
-                element={<Search />}
               />
               <Route
                 path="/item-display"
@@ -79,9 +78,10 @@ function App() {
               />
             </Routes>
             {/* <footer className='w-100 p-1 mt-5 text-center text-light bg-success'>Made with love for Kelly</footer> */}
-          </main>
+          </Col>
           
-          </div>
+          </Row>
+          </Container>
 
         </CatalogProvider>
       </BrowserRouter>

@@ -23,7 +23,10 @@ function Header() {
 
   return (
     <header className='border-bottom border-white'>
-      <h1 className='m-2'>
+      <h1 
+      className='m-2'
+      onClick={() => navigate('/', { replace: true })}
+      >
           <span style={{ color: "#e53238" }}>e</span>
           <span style={{ color: "#0064D3" }}>b</span>
           <span style={{ color: "#f5af02" }}>a</span>

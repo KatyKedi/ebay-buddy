@@ -12,7 +12,7 @@ function Login() {
   const navigate = useNavigate();
 
   if(Auth.loggedIn()) {
-    navigate('/dashboard', { replace: true })
+    navigate('/', { replace: true })
   }
 
   const [loginFormState, setLoginFormState] = useState({ email: '', password: '' });
