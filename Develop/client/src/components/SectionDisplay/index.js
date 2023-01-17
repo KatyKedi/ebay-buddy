@@ -7,13 +7,15 @@ import { idbPromise } from '../../utils/helpers';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import { DELETE_SECTION } from '../../utils/mutations';
-import { Container, Row, Col, Button } from 'react-bootstrap'
+import { Container, Row, Col, Button, ToggleButton, Accordion } from 'react-bootstrap'
 import { SectionModal } from '../Modals/index'
 
 function SectionDisplay() {
   const [state, dispatch] = useGlobalContext();
   const { loading, data } = useQuery(QUERY_SECTIONS);
   const [deleteSection] = useMutation(DELETE_SECTION)
+
+  const navigate = useNavigate();
 
   const [sections, setSections] = useState([]);
   const [selectedSection, setSelectedSection] = useState('');
@@ -26,28 +28,21 @@ function SectionDisplay() {
       // });
       setSections(data.sections)
     }
-    // dispatch({
-    //   type: UPDATE_CURRENT_SECTION,
-    //   singleSection: selectedSection
-    // })
+    dispatch({
+      type: UPDATE_CURRENT_SECTION,
+      section: selectedSection
+    })
   }, [data, loading, selectedSection, dispatch]);
 
-  const handleSectionClick = (event) => {
-    const clickedSection = event.target.getAttribute('id');
-    document.querySelectorAll("li").forEach(el => el.classList.remove("bg-warning"));
-
-    if (selectedSection === clickedSection) {
-      setSelectedSection('');
-    } else {
-      setSelectedSection(clickedSection);
-      event.target.classList.add("bg-warning");
-    }
+  const handleViewItems = () => {
+    navigate('/item-display', { replace: true })
   }
 
-  const handleEditClick = (event) => {
-    if (selectedSection) {
-      const sectionName = sections.find(section => section._id === selectedSection).name;
-    }
+  const handleEditClick = (e) => {
+    console.log(sections)
+
+    const sectionName = sections.find(section => section._id === e.target.id);
+    console.log(sectionName)
   }
 
   const handleDeleteClick = (event) => {
@@ -70,29 +65,40 @@ function SectionDisplay() {
         <Row>
           <Col>
             <h2 className='text-center'>All Sections</h2>
-            <ul className='text-left list-unstyled'>
-              {sections.map(section => (
-                <li
-                  onClick={(event) => handleSectionClick(event)}
+            <Accordion>
+              {sections.map((section, index) => (
+                <Accordion.Item
                   id={section._id}
+                  eventKey={index}
                   className='my-2 p-1 border border-warning rounded bg-gradient'>
-                  {section.name}
-                </li>))}
-            </ul>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <Button
-              variant="outline-primary"
-              onClick={(event) => handleEditClick(event)}
-            >Edit</Button>
-          </Col>
-          <Col>
-            <Button
-              variant="outline-danger"
-              onClick={(event) => handleDeleteClick(event)}
-            >Delete</Button>
+                  <Accordion.Header onClick={() => setSelectedSection(section.name)}>{section.name}</Accordion.Header>
+                  <Accordion.Body>
+                    <Container>
+                      <Row className='justify-content-between'>
+                        <Col>
+                          <Button
+                            variant="outline-warning"
+                            onClick={handleViewItems}
+                          >View Items</Button>
+                        </Col>
+                        <Col>
+                          <Button
+                            variant="outline-primary"
+                            onClick={handleEditClick}
+                          >Edit</Button>
+                        </Col>
+                        <Col>
+                          <Button
+                            variant="outline-danger"
+                            onClick={handleDeleteClick}
+                          >Delete</Button>
+                        </Col>
+                      </Row>
+                    </Container>
+                  </Accordion.Body>
+                </Accordion.Item>
+              ))}
+            </Accordion>
           </Col>
         </Row>
       </Container>

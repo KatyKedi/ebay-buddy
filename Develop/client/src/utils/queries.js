@@ -5,6 +5,7 @@ export const QUERY_ITEMS = gql`
         items {
             _id
             name
+            section
         }
     }
 `

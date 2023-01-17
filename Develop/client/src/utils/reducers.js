@@ -3,11 +3,11 @@ import {
   UPDATE_ITEMS,
   UPDATE_CURRENT_KEYWORD,
   UPDATE_CURRENT_ITEM,
-  UPDATE_CURRENT_MODAL
+  UPDATE_CURRENT_MODAL,
+  UPDATE_CURRENT_SECTION
 } from "./actions";
 
 export const reducer = (state, action) => {
-  console.log(action)
   switch (action.type) {
     case UPDATE_ITEMS:
       return {
@@ -27,14 +27,16 @@ export const reducer = (state, action) => {
         singleItem: action.singleItem
       }
 
-      case UPDATE_CURRENT_MODAL:
-        return {
-          ...state,
-          modal: action.modal
-        }
-    
-
-      return state;
+    case UPDATE_CURRENT_MODAL:
+      return {
+        ...state,
+        modal: action.modal
+      }
+    case UPDATE_CURRENT_SECTION:
+      return {
+        ...state,
+        section: action.section
+      }
   }
 };
 

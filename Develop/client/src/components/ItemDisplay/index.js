@@ -12,7 +12,7 @@ import ItemDetails from '../ItemDetails/index'
 
 function ItemDisplay() {
   const [state, dispatch] = useGlobalContext();
-  const { keyword } = state;
+  const { keyword, section } = state;
   const { loading, data } = useQuery(QUERY_ITEMS);
   const [deleteItem] = useMutation(DELETE_ITEM)
 
@@ -28,12 +28,14 @@ function ItemDisplay() {
       modal: modalType
     })
     if (data) {
+      (section) ?
+      setFilteredItems(data.items.filter(item =>  item.section === section)) :
       setFilteredItems(data.items.filter(item => item.name.includes(keyword)));
       dispatch({
         type: UPDATE_ITEMS,
         items: filteredItems,
       });
-      filteredItems.forEach((item) => {
+      filteredItems.forEach((item) => {       
         idbPromise('items', 'put', item);
       });
     } else if (!loading) {
@@ -48,7 +50,8 @@ function ItemDisplay() {
       type: UPDATE_CURRENT_ITEM,
       singleItem: selectedItem
     })
-  }, [loading, data, deleteItem, modalType]);
+    
+  }, [loading, data, section, deleteItem, modalType]);
 
   const selectModal = () => {
     const { modal } = state

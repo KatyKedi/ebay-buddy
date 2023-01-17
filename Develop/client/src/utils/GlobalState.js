@@ -9,7 +9,8 @@ const CatalogProvider = ({ value = [], ...props }) => {
     items: [],
     keyword: '',
     singleItem: '',
-    modal: ''
+    modal: '',
+    section: ''
   });
 
   return <Provider value={[state, dispatch]} {...props} />;
@@ -18,7 +19,5 @@ const CatalogProvider = ({ value = [], ...props }) => {
 const useGlobalContext = () => {
   return useContext(GlobalContext);
 };
-
-
 
 export { CatalogProvider, useGlobalContext };
