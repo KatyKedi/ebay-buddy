@@ -37,10 +37,10 @@ function Search() {
   const selectModal = () => {
     const { modal } = state
     if (modal === 'item') {
-      setModalDisplay(<ItemModal />)
+      setModalDisplay(<ItemModal item={ { _id: 0 } }/>)
     }
     else if (modal === 'section') {
-      setModalDisplay(<SectionModal />)
+      setModalDisplay(<SectionModal section={ { _id: 0 } }/>)
     } else {
       setModal("")
       setModalDisplay(<></>)
