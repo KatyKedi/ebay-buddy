@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client'
 import { QUERY_ITEM } from '../../utils/queries';
+import { UPDATE_CURRENT_ITEM } from '../../utils/actions';
 import { Container, Table } from 'react-bootstrap'
 import dayjs from 'dayjs';
+import { useGlobalContext } from '../../utils/GlobalState';
 
 function ItemDetails({ item }) {
+  const [state, dispatch] = useGlobalContext()
   const { data } = useQuery(QUERY_ITEM, { variables: { id: item._id } });
   const [itemDetails, setItemDetails] = useState({});
 
   useEffect(() => {
     if (data) {
       setItemDetails(data.item);
+      dispatch({
+        type: UPDATE_CURRENT_ITEM,
+        singleItem: itemDetails
+      })
     }
   }, [data]);
 

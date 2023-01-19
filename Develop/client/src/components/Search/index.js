@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
 import { useGlobalContext } from '../../utils/GlobalState';
-import { UPDATE_CURRENT_KEYWORD, UPDATE_CURRENT_MODAL } from '../../utils/actions'
+import { UPDATE_CURRENT_KEYWORD, UPDATE_CURRENT_MODAL, UPDATE_CURRENT_SECTION } from '../../utils/actions'
 import { idbPromise } from '../../utils/helpers';
 import { ItemModal, SectionModal } from '../Modals/index'
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import "./style.css";
-
-
 
 function Search() {
   const [state, dispatch] = useGlobalContext();
-
   const navigate = useNavigate();
-
   const [itemName, setItemName] = useState('');
 
   useEffect(() => {
     dispatch({
       type: UPDATE_CURRENT_KEYWORD,
       keyword: itemName
+    });
+    dispatch({
+      type: UPDATE_CURRENT_SECTION,
+      section: null
     });
   }, [itemName]);
 
@@ -69,7 +68,7 @@ function Search() {
             variant='outline-primary'
             type='submit'
             onClick={() => {
-              navigate('/item-display', { replace: true });
+              navigate('/item-display');
             }}
           >View Items</Button>
         </Col>
@@ -82,7 +81,7 @@ function Search() {
             variant="outline-primary"
             onClick={() => {
               setItemName('')
-              navigate('/item-display', { replace: true })
+              navigate('/item-display')
             }}
           >View All Items
           </Button>
@@ -90,7 +89,7 @@ function Search() {
             className='mb-3'
             variant='outline-success'
             onClick={() => {
-              setModal('item')
+              setModal('item')             
             }}
           >Add Item
           </Button>
@@ -101,7 +100,7 @@ function Search() {
             className='mb-3'
             variant="outline-primary"
             onClick={() => {
-              navigate('/section-display', { replace: true })
+              navigate('/section-display')
             }}
           >View All Sections
           </Button>

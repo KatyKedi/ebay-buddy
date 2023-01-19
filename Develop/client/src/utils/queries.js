@@ -18,6 +18,9 @@ export const QUERY_ITEM = gql`
             description
             createdAt 
             size
+            length
+            width
+            height
             weight  
             section 
         }

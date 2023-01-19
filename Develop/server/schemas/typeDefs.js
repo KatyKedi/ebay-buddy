@@ -22,6 +22,9 @@ const typeDefs = gql`
     createdAt: String
     weight: Float
     size: String
+    length: Int
+    width: Int
+    height: Int
     section: String
   }
 

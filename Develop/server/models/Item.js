@@ -25,12 +25,44 @@ const ItemSchema = new Schema(
     },
     {
         toJSON: {
+            // like their own properties but are just mutated data from another
             virtuals: true,
+            // the data is immediately mutated and the mutated version becomes the property itself
+            getters: true
+        },
+        toObject: {
+            // like their own properties but are just mutated data from another
+            virtuals: true,
+            // the data is immediately mutated and the mutated version becomes the property itself
             getters: true
         },
         id: false
     }
 );
+
+ItemSchema.virtual('length').get(function () {
+    if (this.size) {
+        return this.size.split('x')[0];
+    } else {
+        return null
+    }
+});
+
+ItemSchema.virtual('width').get(function () {
+    if (this.size) {
+        return this.size.split('x')[1];
+    } else {
+        return null
+    }
+});
+
+ItemSchema.virtual('height').get(function () {
+    if (this.size) {
+        return this.size.split('x')[2];
+    } else {
+        return null
+    }
+});
 
 const Item = model('Item', ItemSchema);
 
