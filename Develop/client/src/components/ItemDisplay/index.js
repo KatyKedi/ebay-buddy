@@ -21,15 +21,22 @@ function ItemDisplay() {
   const [modalDisplay, setModalDisplay] = useState(<></>)
   const [modalType, setModal] = useState('')
 
+  const filterItems = (data) => {
+    (section) ?
+      setFilteredItems(data.items.filter(item => item.section === section)) :
+      setFilteredItems(data.items.filter(item => item.name.includes(keyword)));
+    if (keyword) {
+      (filteredItems === data.items) && setFilteredItems([])
+    } 
+  }
+
   useEffect(() => {
     dispatch({
       type: UPDATE_CURRENT_MODAL,
       modal: modalType
     })
     if (data) {
-      (section) ?
-        setFilteredItems(data.items.filter(item => item.section === section)) :
-        setFilteredItems(data.items.filter(item => item.name.includes(keyword)));
+      filterItems(data)
       dispatch({
         type: UPDATE_ITEMS,
         items: filteredItems,
@@ -49,8 +56,9 @@ function ItemDisplay() {
       type: UPDATE_CURRENT_ITEM,
       singleItem: selectedItem
     })
-    console.log(data)
-  }, [loading, data, section, deleteItem, modalType, selectedItem]);
+    console.log(filteredItems)
+    console.log(keyword)
+  }, [data, deleteItem, modalType, selectedItem]);
 
   const handleEditClick = () => {
     setModal('item')
@@ -69,12 +77,14 @@ function ItemDisplay() {
     }
   }
 
+
+  console.log(filteredItems)
   return (
     <Container fluid className='my-4 h-100'>
       <Row>
-        {filteredItems ? (
+        {(filteredItems.length !== 0) ? (
           <Col>
-            {keyword ? (<h2 className='text-center'>Items matching <span>{keyword}</span></h2>) : (<h2 className='text-center'>All Items</h2>)}
+            {keyword ? (<h2 className='text-center'>Items matching <em className='text-warning'>{keyword}</em></h2>) : (<h2 className='text-center'>All Items</h2>)}
             <Accordion>
               {filteredItems.map((item, index) => (
                 <Accordion.Item
@@ -107,7 +117,7 @@ function ItemDisplay() {
             </Accordion>
           </Col>
         ) : (
-          <Col>No items to display for <span>{keyword}</span>"</Col>
+          <Col><h2 className='text-center'>No items to display for <em className='text-warning'>{keyword}</em></h2></Col>
         )}
       </Row>
       {modalDisplay}
