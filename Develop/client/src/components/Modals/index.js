@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useGlobalContext } from '../../utils/GlobalState';
 import { UPDATE_CURRENT_MODAL } from '../../utils/actions';
 import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_ITEM } from '../../utils/queries';
+import { QUERY_ITEM, QUERY_SECTIONS } from '../../utils/queries';
 import { ADD_ITEM, ADD_SECTION } from '../../utils/mutations';
 import { Modal, Button, Form, CloseButton } from 'react-bootstrap'
 
@@ -10,20 +10,25 @@ function ItemModal(props) {
     const [state, dispatch] = useGlobalContext();
     const [modalOpen, setModal] = useState('item')
     const [formState, setFormState] = useState({});
+    const [sectionState, setSectionState] = useState([])
+    const sections = useQuery(QUERY_SECTIONS).data
     const [addItem, { error }] = useMutation(ADD_ITEM);
     const { item } = props
     const { data } = useQuery(QUERY_ITEM, { variables: { id: item._id } });
 
     useEffect(() => {
         if (data) {
-            console.log(data.item)
             setFormState(data.item)
+        }
+        if (sections) {
+            console.log(sections.sections)
+            setSectionState(sections.sections)
         }
         dispatch({
             type: UPDATE_CURRENT_MODAL,
             modal: modalOpen
         })
-    }, [modalOpen, data])
+    }, [modalOpen, data, sections])
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -96,7 +101,7 @@ function ItemModal(props) {
                         <Form.Control
                             type="width"
                             onChange={handleFormChange}
-                            value={formState.size ? formState.width : ''}
+                            value={formState.width ? formState.width : ''}
                         />
                     </Form.Group>
                     <Form.Group className="mb-1" controlId="height">
@@ -104,7 +109,7 @@ function ItemModal(props) {
                         <Form.Control
                             type="height"
                             onChange={handleFormChange}
-                            value={formState.size ? formState.height : ''}
+                            value={formState.height ? formState.height : ''}
                         />
                     </Form.Group>
                     <Form.Group controlId='weight'>
@@ -122,8 +127,7 @@ function ItemModal(props) {
                             id="section"
                             multiple
                             onChange={handleFormChange} required>
-                            { }
-                            <option value={formState.section}></option>
+                            {sectionState && sectionState.map((section) => (<option value={section}>{section.name}</option>))}                           
                         </Form.Select>
                     </Form.Group>
                     <Button

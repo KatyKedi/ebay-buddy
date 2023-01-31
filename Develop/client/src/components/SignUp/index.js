@@ -11,7 +11,7 @@ import Auth from '../../utils/auth';
 function SignUp() {
     const navigate = useNavigate()
     const [signupFormState, setSignupFormState] = useState({ email: '', password: '' });
-    const [signup] = useMutation(SIGNUP_USER);
+    const [signup, {error}] = useMutation(SIGNUP_USER);
 
     const handleSignupFormSubmit = async (event) => {
         event.preventDefault();
@@ -35,20 +35,17 @@ function SignUp() {
     };
 
     return (
-
         <>
             <Form className='m-4' onSubmit={(event) => { handleSignupFormSubmit(event) }}>
                 <h2>Sign Up</h2>
                 <Form.Group>
                     <Form.Label>Email:</Form.Label>
                     <Form.Control type="text" name="email" onChange={handleSignupChange} required />
-
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Password:</Form.Label>
                     <Form.Control type="password" name="password" onChange={handleSignupChange} required />
                 </Form.Group>
-
                 <Button
                     className='mt-4'
                     variant='outline-primary'
@@ -62,11 +59,11 @@ function SignUp() {
                     Back to Login
                 </Button>
             </Form>
-            {/* {error ? (
+            {error ? (
                 <div>
                     <p className="error-text">The provided credentials are incorrect</p>
                 </div>
-            ) : null} */}
+            ) : null}
         </>
     )
 }

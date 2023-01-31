@@ -9,7 +9,7 @@ function Header() {
   const [showLogout, setShowLogout] = useState(<></>)
 
   useEffect(() => {
-    Auth.loggedIn() && setShowLogout(
+    Auth.loggedIn() ? setShowLogout(
       <Button
         variant='outline-warning'
         className='text-primary m-2'
@@ -17,7 +17,8 @@ function Header() {
           Auth.logout();
           navigate('/')
         }}
-      >Logout</Button>)
+      >Logout</Button>) :
+      setShowLogout(<></>)
   }, [Auth])
   
 

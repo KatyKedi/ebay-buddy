@@ -58,10 +58,6 @@ function App() {
                         element={<Search />}
                       />
                       <Route
-                        path="/sign-up"
-                        element={<SignUp />}
-                      />
-                      <Route
                         path="/item-display"
                         element={<ItemDisplay />}
                       />
@@ -71,10 +67,16 @@ function App() {
                       />
                     </>
                   ) : (
-                    <Route
-                      path="*"
-                      element={<Login />}
-                    />
+                    <>
+                      <Route
+                        path="*"
+                        element={<Login />}
+                      />
+                      <Route
+                        path="/sign-up"
+                        element={<SignUp />}
+                      />
+                    </>
                   )}
                   < Route
                     path="/donation"

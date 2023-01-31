@@ -4,15 +4,14 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Form, Button } from 'react-bootstrap'
-import './style.css'
 import Auth from '../../utils/auth';
 
 
 function Login() {
   const navigate = useNavigate();
 
-  if(Auth.loggedIn()) {
-    navigate('/', { replace: true })
+  if (Auth.loggedIn()) {
+    navigate('/')
   }
 
   const [loginFormState, setLoginFormState] = useState({ email: '', password: '' });
@@ -38,7 +37,7 @@ function Login() {
       [name]: value,
     });
   };
-  
+
   return (
     <>
       <Form className='m-4' onSubmit={(event) => { handleLoginFormSubmit(event) }}>
@@ -47,12 +46,10 @@ function Login() {
 
           <Form.Label>Email:</Form.Label>
           <Form.Control type="text" name="email" onChange={handleLoginChange} required />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Password:</Form.Label>
-            <Form.Control type="password" name="password" onChange={handleLoginChange} required />
-          
-          
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Password:</Form.Label>
+          <Form.Control type="password" name="password" onChange={handleLoginChange} required />
         </Form.Group>
         <Button
           className='my-4'
@@ -61,20 +58,18 @@ function Login() {
           Login
         </Button>
         <Form.Group className='my-2'>
-        <Form.Text className="text-muted">
-          New to Ebay Buddy? Click the "go to sign-up" button below!
-        </Form.Text>
-        
+          <Form.Text className="text-muted">
+            New to Ebay Buddy? Click the "go to sign-up" button below!
+          </Form.Text>
+
         </Form.Group>
         <Button
-        className='mb-5'
-        variant='outline-success'
-        onClick={() => navigate('/sign-up', { replace: true })}>
+          className='mb-5'
+          variant='outline-success'
+          onClick={() => navigate('/sign-up')}>
           Go to Sign-Up
         </Button>
       </Form>
-
-
 
       {error ? (
         <div>
