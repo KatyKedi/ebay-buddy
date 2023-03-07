@@ -278,12 +278,6 @@ db.once('open', async () => {
             section: '1D'
         },
         {
-            name: 'Loungefly WINNIE THE POOH Bee Bundle w/ Funko Box Lunch #1034 and Enamel Pin NEW',
-            size: '16x11x9',
-            weight: 3.1,
-            section: '2A'
-        },
-        {
             name: 'ROBLOX Classics Series 6 Action Figures 23pcs 12 Virtual Codes Target Exclusive',
             size: '15x13x6',
             weight: 0.4,
@@ -333,10 +327,6 @@ db.once('open', async () => {
             section: '2A'
         },
         {
-            name: 'Funko Nightmare Before Christmas JACK SKELLINGTON 18" Backpack New with Tags',
-            section: '2A'
-        },
-        {
             name: 'Nightmare Before Christmas JACK SKELLINGTON One-Piece Hood PJs Pajamas XL 16/18',
             section: '2A'
         },
@@ -363,21 +353,9 @@ db.once('open', async () => {
             section: '2B'
         },
         {
-            name: 'Funko POP! Game of Thrones THE CREATORS New York Comic Con Official Sticker 2018',
-            size: '11x8x6',
-            weight: 1.0,
-            section: '2B'
-        },
-        {
             name: 'Ravensburger Disney JUNGLE CRUISE ADVENTURE Game Amazon Exclusive New SEALED',
             size: '13x11x4',
             weight: 3.0,
-            section: '2B'
-        },
-        {
-            name: 'Funko Pop! Loungefly Disney MICKEY MOUSE Pin Trader Cosplay Mini Backpack NWT',
-            size: '13x9x9',
-            weight: 2.3,
             section: '2B'
         },
         {
@@ -474,12 +452,6 @@ db.once('open', async () => {
             name: 'Squishmallows Kellytoy Disney 10" MIKE & SULLEY Plush Stuffed Monsters Inc. NWT',
             size: '14x11x7',
             weight: 1.8,
-            section: '2D'
-        },
-        {
-            name: 'N S GUSTIN Mouse Eating Cookie Jar VINTAGE 1970\'s 11" Tall EUC',
-            size: '9x9x14',
-            weight: 5.3,
             section: '2D'
         },
         {
@@ -779,12 +751,6 @@ db.once('open', async () => {
             section: '4C'
         },
         {
-            name: 'Nightmare Before Christmas DEADLY NIGHT SHADE Faux Succulent Plant Ceramic 7”',
-            size: '11x8x6',
-            weight: 1.1,
-            section: '4C'
-        },
-        {
             name: 'Funko Pop GANDALF THE WHITE Sword & Staff 1203 GITD Boxlunch Earth Day Exclusive',
             size: '7x5x4',
             weight: 0.5,
@@ -913,12 +879,6 @@ db.once('open', async () => {
             name: 'Stranger Things Coke Coca Cola 1985 Limited Edition Collectors Pack + Bonus',
             size: '10x7x9',
             weight: 5.9,
-            section: '3B'
-        },
-        {
-            name: 'Funko Pop! Hologram Rick Clone #667 GITD Funko Shop Limited Edition MINT',
-            size: '7x5x4',
-            weight: 0.5,
             section: '3B'
         },
         {
