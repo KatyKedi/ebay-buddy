@@ -11,7 +11,7 @@ import { SectionModal } from '../Modals/index'
 
 function SectionDisplay() {
   const [state, dispatch] = useGlobalContext();
-  const { data } = useQuery(QUERY_SECTIONS);
+  const { data } = useQuery(QUERY_SECTIONS, { fetchPolicy: "no-cache" });
   const [deleteSection] = useMutation(DELETE_SECTION)
   const navigate = useNavigate();
   const [sections, setSections] = useState([]);
@@ -45,6 +45,7 @@ function SectionDisplay() {
               <Accordion>
                 {sections.map((section, index) => (
                   <Accordion.Item
+                    key={section._id}
                     id={section._id}
                     eventKey={index}
                     className='my-2 p-1 border border-warning rounded bg-gradient'>

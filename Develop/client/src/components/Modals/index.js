@@ -16,19 +16,19 @@ function ItemModal(props) {
     const { item } = props
     const { data } = useQuery(QUERY_ITEM, { variables: { id: item._id } });
 
-    useEffect(() => {
-        if (data) {
-            setFormState(data.item)
-        }
-        if (sections) {
-            console.log(sections.sections)
-            setSectionState(sections.sections)
-        }
-        dispatch({
-            type: UPDATE_CURRENT_MODAL,
-            modal: modalOpen
-        })
-    }, [modalOpen, data, sections])
+    // useEffect(() => {
+    //     if (data) {
+    //         setFormState(data.item)
+    //     }
+    //     if (sections) {
+    //         console.log(sections.sections)
+    //         setSectionState(sections.sections)
+    //     }
+    //     dispatch({
+    //         type: UPDATE_CURRENT_MODAL,
+    //         modal: modalOpen
+    //     })
+    // }, [modalOpen, data, sections])
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -59,7 +59,7 @@ function ItemModal(props) {
     return (
         <Modal
             show={modalOpen && true}
-            contentLabel="Add Item"
+            label="Add Item"
         >
             <Modal.Header>
                 <Modal.Title className='text-primary'>Enter Item Details</Modal.Title>
@@ -75,7 +75,7 @@ function ItemModal(props) {
                             type="name"
                             placeholder="Enter name of item"
                             onChange={handleFormChange}
-                            value={formState.name}
+                            value={formState.name || ""}
                             required
                         />
                     </Form.Group>
@@ -127,7 +127,7 @@ function ItemModal(props) {
                             id="section"
                             multiple
                             onChange={handleFormChange} required>
-                            {sectionState && sectionState.map((section) => (<option value={section}>{section.name}</option>))}                           
+                            {sectionState && sectionState.map((section) => (<option key={section._id} value={section}>{section.name}</option>))}                           
                         </Form.Select>
                     </Form.Group>
                     <Button
@@ -193,7 +193,7 @@ function SectionModal(props) {
 
     return <Modal
         show={modalOpen && true}
-        contentLabel="Add Section">
+        label="Add Section">
         <Modal.Header>
             <Modal.Title className='text-primary'>Enter Section Details</Modal.Title>
             <CloseButton onClick={() => {
