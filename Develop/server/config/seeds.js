@@ -1528,96 +1528,96 @@ db.once('open', async () => {
             weight: 5.3,
             section: '1D'
         },
-        // {
-        //     name: ``,
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // },
-        // {
-        //     name: ``,
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // },
-        // {
-        //     name: ``,
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // },
-        // {
-        //     name: ``,
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // },
-        // {
-        //     name: ``,
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // },
-        // {
-        //     name: ``,
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // },
-        // {
-        //     name: ``,
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // },
-        // {
-        //     name: ``,
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // },
-        // {
-        //     name: ``,
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // },
-        // {
-        //     name: ``,
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // },
-        // {
-        //     name: ``,
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // },
-        // {
-        //     name: ``,
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // },
-        // {
-        //     name: ``,
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // },
-        // {
-        //     name: ``,
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // },
-        // {
-        //     name: ``,
-        //     size: '',
-        //     weight: ,
-        //     section: ''
-        // },
+        {
+            name: `Funko 7 Eleven SLURPEE Exclusive BLUE RASBERRY 89 & CHERRY 92 Glitter Set of 2`,
+            size: '8x7x5',
+            weight: 1.0,
+            section: '4A'
+        },
+        {
+            name: `Funko Nightmare Before Christmas JACK SKELLINGTON 18" Backpack New with Tags`,
+            size: '23x13x3',
+            weight: 2.0,
+            section: '3X'
+        },
+        {
+            name: `Funko POP! Ad Icons 10 Inch BOB'S BIG BOY #92 Funko Shop Exclusive New LE`,
+            size: '16x13x11',
+            weight: 4.0,
+            section: '3X'
+        },
+        {
+            name: `Funko Soda CHASE YZMA with Science Flask Emperor's New Groove 2022 WonderCon LE`,
+            size: '8x5x4',
+            weight: 0.6,
+            section: '4C'
+        },
+        {
+            name: `FUNKO POP! MOVIES #1203 GANDALF THE WHITE LORD OF RINGS GLOWS BOXLUNCH EXCLUSIVE`,
+            size: '7x5x4',
+            weight: 0.6,
+            section: '4C'
+        },
+        {
+            name: `Funko Pop! Alice in Wonderland WALRUS AND THE CARPENTER #1070 Funkon Exclusive`,
+            size: '7x5x4',
+            weight: 0.6,
+            section: '4C'
+        },
+        {
+            name: `Funko POP! Disney Alice in Wonderland CHESHIRE CAT #1059 BAM Exclusive GITD`,
+            size: '7x5x4',
+            weight: 0.5,
+            section: '4C'
+        },
+        {
+            name: `Funko POP! ORGANIZATION 13 MICKEY # 334 Disney Kingdom Hearts 2018 Summer Con`,
+            size: '7x5x4',
+            weight: 0.6,
+            section: '4C'
+        },
+        {
+            name: `Funko Pop! The Nightmare Before Christmas: Blacklight - Oogie Boogie #39`,
+            size: '7x5x4',
+            weight: 0.6,
+            section: '4C'
+        },
+        {
+            name: `Funko 3 Liter Soda Villian Maleficent Dragon NYCC Shared Exclusive Common`,
+            size: '13x13x6',
+            weight: 2.0,
+            section: '3X'
+        },
+        {
+            name: `Funko POP! Disney CRUELLA (MAKING ART) #1038 101 Dalmatians New`,
+            size: '7x5x4',
+            weight: 0.6,
+            section: '4B'
+        },
+        {
+            name: `Funko Vynl QUISP + QUAKE Vinyl Figures 2019 Summer Convention Limited Edition`,
+            size: '9x7x4',
+            weight: 1.0,
+            section: '4B'
+        },
+        {
+            name: `Funko POP! Hanna Barbera JABBERJAW #435 DUM DUM #435 BABA LOOEY #281 NYCC Shared`,
+            size: '11x8x6',
+            weight: 1.5,
+            section: '3D'
+        },
+        {
+            name: `Funko Pop! Loungefly Disney MICKEY MOUSE Pin Trader Cosplay Mini Backpack NWT`,
+            size: '12x10x10',
+            weight: 2.3,
+            section: '2B'
+        },
+        {
+            name: `Jim Shore For Enesco Heartwood Creek Winter Wonderland Santa Figurine, 9.75-Inch`,
+            size: '14x10x7',
+            weight: 2.8,
+            section: '1B'
+        },
         // {
         //     name: ``,
         //     size: '',
