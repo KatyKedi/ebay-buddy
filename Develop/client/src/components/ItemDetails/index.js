@@ -6,20 +6,16 @@ import { Container, Table } from 'react-bootstrap'
 import dayjs from 'dayjs';
 import { useGlobalContext } from '../../utils/GlobalState';
 
-function ItemDetails({ item }) {
+function ItemDetails({ selectedId, setSelectedItem }) {
   const [state, dispatch] = useGlobalContext()
-  const { data } = useQuery(QUERY_ITEM, { variables: { id: item._id } });
+  const { data } = useQuery(QUERY_ITEM, { variables: { id: selectedId } });
   const [itemDetails, setItemDetails] = useState({});
 
-  // useEffect(() => {
-  //   if (data) {
-  //     setItemDetails(data.item);
-  //     dispatch({
-  //       type: UPDATE_CURRENT_ITEM,
-  //       singleItem: itemDetails
-  //     })
-  //   }
-  // }, [data]);
+  useEffect(() => {
+    if (data) {
+      setSelectedItem(data.item);
+    }
+  }, [data]);
 
   if (data && data.item) {
     return (
