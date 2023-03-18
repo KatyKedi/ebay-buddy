@@ -83,7 +83,7 @@ function ItemDisplay() {
     }
   }, [data]);
 
-  if (!displayData.length) return <p>Loading...</p>
+  if (!displayData.length && originalData.length === 0) return <p>Loading...</p>
 
   return (
     <>
@@ -102,52 +102,44 @@ function ItemDisplay() {
                       onChange={((e) => setFilter(e.target.value))}
                     />
                   </Col>
-                  <Col sm="4" md="3" lg="2">
-                    <Button
-                      variant='outline-primary'
-                      type='submit'
-                    >Go</Button>
-                  </Col>
                 </Row>
               </Container>
             </Form.Group>
           </Form>
         </Row>
-
-        <Row className='m-4'>
-          <Accordion activeKey={itemIndex}>
-            {displayData.map((item, index) => (
-              <Accordion.Item key={item._id} className="list-item" eventKey={index}>
-                <Accordion.Header onClick={() => {
-                  if (!itemIndex) {
-                    setItemIndex(index) 
-                    setSelectedId(item._id)
-                  } else {
-                    setItemIndex(null);
-                    setSelectedId(null)
-                  }
-                  
-                }}>{item.name}</Accordion.Header>
-                <Accordion.Body>
-                  <Container>
-                    <Row>
-                      <ItemDetails selectedId={selectedId} setSelectedItem={setSelectedItem} />
-                    </Row>
-                    <Row className='justify-content-between'>
-                      <Col>
-                        <Button variant="outline-primary" onClick={handleEditClick}>Edit</Button>
-                      </Col>
-                      <Col>
-                        <Button variant="outline-danger" onClick={() => setDeletePrompt(true)}>Delete</Button>
-                      </Col>
-                    </Row>
-                  </Container>
-                </Accordion.Body>
-              </Accordion.Item>
-            ))}
-          </Accordion>
-        </Row>
-
+        {displayData.length !== 0 ? (
+          <Row className='m-4'>
+            <Accordion activeKey={itemIndex}>
+              {displayData.map((item, index) => (
+                <Accordion.Item key={item._id} className="list-item" eventKey={index}>
+                  <Accordion.Header onClick={() => {
+                    if (!itemIndex) {
+                      setItemIndex(index)
+                      setSelectedId(item._id)
+                    } else {
+                      setItemIndex(null);
+                      setSelectedId(null)
+                    }
+                  }}>{item.name}</Accordion.Header>
+                  <Accordion.Body>
+                    <Container>
+                      <Row>
+                        <ItemDetails selectedId={selectedId} setSelectedItem={setSelectedItem} />
+                      </Row>
+                      <Row className='justify-content-between'>
+                        <Col>
+                          <Button variant="outline-primary" onClick={handleEditClick}>Edit</Button>
+                        </Col>
+                        <Col>
+                          <Button variant="outline-danger" onClick={() => setDeletePrompt(true)}>Delete</Button>
+                        </Col>
+                      </Row>
+                    </Container>
+                  </Accordion.Body>
+                </Accordion.Item>))}
+              </Accordion>
+            </Row>)
+        : (<Col>No items matching {filter}</Col>)}
         {pagination && pagination.pages && (
           <Row className='m-4'>
             <ButtonToolbar aria-label="Toolbar with button groups">
@@ -159,16 +151,13 @@ function ItemDisplay() {
                       key={page}
                       style={{ cursor: "pointer" }}
                       onClick={() => setSettings({ ...settings, currentPage: page })}
-                    >
-                      {page}
-                    </Button>
+                    >{page}</Button>
                   ))}
                 </Col>
               </ButtonGroup>
             </ButtonToolbar>
           </Row>
         )}
-
       </Container>
 
       {modal && modalDisplay}
