@@ -13,7 +13,7 @@ import Auth from './utils/auth';
 
 import Login from "./components/Login/index.js"
 import SignUp from './components/SignUp/index';
-import Search from "./components/Search/index.js";
+import Search from "./components/Dashboard/index.js";
 import Header from "./components/Header/index.js";
 import Donation from './components/Donation/index';
 import ItemDisplay from "./components/ItemDisplay/index.js";
@@ -21,6 +21,7 @@ import SectionDisplay from "./components/SectionDisplay/index"
 
 
 import "./App.css";
+import Dashboard from './components/Dashboard/index.js';
 
 const httpLink = createHttpLink({
   uri: "/graphql"
@@ -55,7 +56,7 @@ function App() {
                     <>
                       <Route
                         path="/"
-                        element={<Search />}
+                        element={<Dashboard />}
                       />
                       <Route
                         path="/item-display"
@@ -83,10 +84,10 @@ function App() {
                     element={<Donation />}
                   />
                 </Routes>
-                {/* <footer className='w-100 p-1 mt-5 text-center text-light bg-success'>Made with love for Kelly</footer> */}
               </Col>
             </Row>
           </Container>
+          <footer className='w-100 p-1 mt-5 text-center text-light bg-success'>Made with love for Kelly</footer>
         </CatalogProvider>
       </BrowserRouter>
     </ApolloProvider>

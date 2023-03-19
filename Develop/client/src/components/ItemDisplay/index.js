@@ -94,7 +94,7 @@ function ItemDisplay() {
             <Form.Group className='p-0 mt-3'>
               <Container>
                 <Row>
-                  <Col sm="8" md="9" lg="10">
+                  <Col>
                     <Form.Control
                       type='text'
                       name="filter"

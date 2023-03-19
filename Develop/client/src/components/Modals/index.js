@@ -6,7 +6,8 @@ import { QUERY_ITEM, QUERY_SECTIONS } from '../../utils/queries';
 import { ADD_ITEM, ADD_SECTION } from '../../utils/mutations';
 import { Modal, Button, Form, CloseButton } from 'react-bootstrap'
 
-function ItemModal({ modal, setModal, selectedItem, setSelectedItem }) {
+function ItemModal({ modal, setModal, selectedItem }) {
+    const [itemState, setItemState] = useState(selectedItem)
     const [sections, setSections] = useState([])
     const { data }= useQuery(QUERY_SECTIONS)
     const [addItem, { error }] = useMutation(ADD_ITEM);
@@ -20,11 +21,11 @@ function ItemModal({ modal, setModal, selectedItem, setSelectedItem }) {
         try {
             await addItem({
                 variables: {
-                    name: selectedItem.name,
-                    description: selectedItem.description,
-                    size: `${selectedItem.length}x${selectedItem.width}x${selectedItem.height}`,
-                    weight: parseFloat(selectedItem.weight),
-                    section: selectedItem.section
+                    name: itemState.name,
+                    description: itemState.description,
+                    size: `${itemState.length}x${itemState.width}x${itemState.height}`,
+                    weight: parseFloat(itemState.weight),
+                    section: itemState.section
                 },
             });
             setModal(false)
@@ -35,8 +36,8 @@ function ItemModal({ modal, setModal, selectedItem, setSelectedItem }) {
 
     const handleFormChange = (event) => {
         const { id, value } = event.target;
-        setSelectedItem({
-            ...selectedItem,
+        setItemState({
+            ...itemState,
             [id]: value,
         });
     };
@@ -61,7 +62,7 @@ function ItemModal({ modal, setModal, selectedItem, setSelectedItem }) {
                             type="name"
                             placeholder="Enter name of item"
                             onChange={handleFormChange}
-                            value={selectedItem.name || ""}
+                            value={itemState.name || ""}
                             required
                         />
                     </Form.Group>
@@ -71,7 +72,7 @@ function ItemModal({ modal, setModal, selectedItem, setSelectedItem }) {
                             type="description"
                             placeholder="Enter item description"
                             onChange={handleFormChange}
-                            value={selectedItem.description ? selectedItem.description : ''}
+                            value={itemState.description || ''}
                         />
                     </Form.Group>
                     <Form.Group className="mb-1" controlId="length">
@@ -79,7 +80,7 @@ function ItemModal({ modal, setModal, selectedItem, setSelectedItem }) {
                         <Form.Control
                             type="length"
                             onChange={handleFormChange}
-                            value={selectedItem.length ? selectedItem.length : ''}
+                            value={itemState.length || ''}
                         />
                     </Form.Group>
                     <Form.Group className="mb-1" controlId="width">
@@ -87,7 +88,7 @@ function ItemModal({ modal, setModal, selectedItem, setSelectedItem }) {
                         <Form.Control
                             type="width"
                             onChange={handleFormChange}
-                            value={selectedItem.width ? selectedItem.width : ''}
+                            value={itemState.width || ''}
                         />
                     </Form.Group>
                     <Form.Group className="mb-1" controlId="height">
@@ -95,7 +96,7 @@ function ItemModal({ modal, setModal, selectedItem, setSelectedItem }) {
                         <Form.Control
                             type="height"
                             onChange={handleFormChange}
-                            value={selectedItem.height ? selectedItem.height : ''}
+                            value={itemState.height || ''}
                         />
                     </Form.Group>
                     <Form.Group controlId='weight'>
@@ -103,7 +104,7 @@ function ItemModal({ modal, setModal, selectedItem, setSelectedItem }) {
                         <Form.Control
                             type="weight"
                             onChange={handleFormChange}
-                            value={selectedItem.weight ? selectedItem.weight : ''}
+                            value={itemState.weight || ''}
                         />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId='section'>
@@ -111,6 +112,7 @@ function ItemModal({ modal, setModal, selectedItem, setSelectedItem }) {
                         <Form.Select
                             name="section"
                             id="section"
+                            type="section"
                             multiple
                             onChange={handleFormChange} required>
                             {sections&& sections.map((section) => (<option key={section._id} value={section}>{section.name}</option>))}                           
