@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
+
 import { QUERY_ITEMS } from '../../utils/queries';
 import { DELETE_ITEM } from '../../utils/mutations';
+import paginate from '../../utils/paginate';
+
 import { ItemModal } from '../Modals/index'
 import ItemDetails from '../ItemDetails/index'
-import paginate from '../../utils/paginate';
+
 import { Container, Row, Col, ButtonToolbar, ButtonGroup, Button, Accordion, Form, Modal, CloseButton } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-function ItemDisplay() {
+function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
   const { loading, data } = useQuery(QUERY_ITEMS);
   const [deleteItem] = useMutation(DELETE_ITEM)
 
@@ -31,19 +34,15 @@ function ItemDisplay() {
   })
 
   const [pagination, setPagination] = useState({})
-  const [modal, setModal] = useState(false)
 
-  //  page 1: 0   page 2:  19   page: 39
   const paginateData = (page, dataset) => {
     const pageObj = paginate({ ...settings, currentPage: page, totalItems: dataset.length })
     setPagination(pageObj)
     setDisplayData(dataset.slice(pageObj.startIndex, pageObj.endIndex + 1))
-
   }
 
   const handleEditClick = () => {
     setModal('item')
-    console.log(selectedItem)
     setModalDisplay(<ItemModal modal={true} setModal={setModal} selectedItem={selectedItem} setSelectedItem={setSelectedItem} />)
   }
 
@@ -84,6 +83,7 @@ function ItemDisplay() {
   }, [data]);
 
   if (!displayData.length && originalData.length === 0) return <p>Loading...</p>
+  if (data && originalData.length === 0) return <p>No item data to display</p>
 
   return (
     <>
@@ -111,7 +111,10 @@ function ItemDisplay() {
           <Row className='m-4'>
             <Accordion activeKey={itemIndex}>
               {displayData.map((item, index) => (
-                <Accordion.Item key={item._id} className="list-item" eventKey={index}>
+                <Accordion.Item
+                  key={item._id}
+                  className="list-item"
+                  eventKey={index}>
                   <Accordion.Header onClick={() => {
                     if (!itemIndex) {
                       setItemIndex(index)
@@ -137,9 +140,9 @@ function ItemDisplay() {
                     </Container>
                   </Accordion.Body>
                 </Accordion.Item>))}
-              </Accordion>
-            </Row>)
-        : (<Col>No items matching {filter}</Col>)}
+            </Accordion>
+          </Row>)
+          : (<Col>No items matching {filter}</Col>)}
         {pagination && pagination.pages && (
           <Row className='m-4'>
             <ButtonToolbar aria-label="Toolbar with button groups">

@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap"
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,20 +7,20 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+
 import { CatalogProvider } from './utils/GlobalState';
 import Auth from './utils/auth';
 
 import Login from "./components/Login/index.js"
 import SignUp from './components/SignUp/index';
-import Search from "./components/Dashboard/index.js";
+import Dashboard from "./components/Dashboard/index.js";
 import Header from "./components/Header/index.js";
 import Donation from './components/Donation/index';
 import ItemDisplay from "./components/ItemDisplay/index.js";
 import SectionDisplay from "./components/SectionDisplay/index"
 
-
+import { Container, Row, Col } from "react-bootstrap"
 import "./App.css";
-import Dashboard from './components/Dashboard/index.js';
 
 const httpLink = createHttpLink({
   uri: "/graphql"
@@ -43,6 +42,9 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [modal, setModal] = useState(false)
+  const [selectedSection, setSelectedSection] = useState({})
+
   return (
     <ApolloProvider client={client}>
       <BrowserRouter>
@@ -60,11 +62,11 @@ function App() {
                       />
                       <Route
                         path="/item-display"
-                        element={<ItemDisplay />}
+                        element={<ItemDisplay modal={modal} setModal={setModal} selectedSection={selectedSection} setSelectedSection={setSelectedSection} />}
                       />
                       <Route
                         path="/section-display"
-                        element={<SectionDisplay />}
+                        element={<SectionDisplay modal={modal} setModal={setModal} selectedSection={selectedSection} setSelectedSection={setSelectedSection} />}
                       />
                     </>
                   ) : (

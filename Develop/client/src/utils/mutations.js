@@ -34,6 +34,18 @@ export const ADD_ITEM = gql`
   }
 `
 
+export const EDIT_ITEM = gql`
+  mutation editItem($id: ID!, $name: String!, $description: String, $size: String, $weight: Float, $section: String!) {
+    editItem(_id: $id, name: $name, description: $description, size: $size, weight: $weight, section: $section) {
+      name
+      description
+      size
+      weight
+      section
+    }
+  }
+`
+
 export const DELETE_ITEM = gql`
   mutation deleteItem($id: ID!) {
     deleteItem(_id: $id) {
@@ -44,6 +56,15 @@ export const DELETE_ITEM = gql`
 export const ADD_SECTION = gql`
   mutation addSection($name: String!, $full: Boolean) {
     addSection(name: $name, full: $full) {
+      name
+      full
+    }
+  }
+`
+
+export const EDIT_SECTION = gql`
+  mutation editSection($id: ID!, $name: String!, $full: Boolean) {
+    editSection(_id: $id, name: $name, full: $full) {
       name
       full
     }

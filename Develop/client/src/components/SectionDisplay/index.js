@@ -1,33 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { useGlobalContext } from '../../utils/GlobalState';
 import { useMutation, useQuery } from '@apollo/client';
-import { QUERY_SECTIONS } from '../../utils/queries';
-import { UPDATE_CURRENT_SECTION } from '../../utils/actions';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
+
+import { QUERY_SECTIONS } from '../../utils/queries';
 import { DELETE_SECTION } from '../../utils/mutations';
-import { Container, Row, Col, Button, Accordion, Form, Modal, CloseButton } from 'react-bootstrap'
+
 import { SectionModal } from '../Modals/index'
 
-function SectionDisplay() {
-  const [state, dispatch] = useGlobalContext();
+import { Container, Row, Col, Button, Accordion, Form, Modal, CloseButton } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+function SectionDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
   const { data } = useQuery(QUERY_SECTIONS, { fetchPolicy: "no-cache" });
   const [deleteSection] = useMutation(DELETE_SECTION)
+
   const navigate = useNavigate();
   const [sections, setSections] = useState([]);
-  const [selectedSection, setSelectedSection] = useState({});
   const [modalDisplay, setModalDisplay] = useState(<></>)
   const [deletePrompt, setDeletePrompt] = useState(false)
-
-  useEffect(() => {
-    if (!sections.length && data) {
-      setSections(data.sections)
-    }
-    dispatch({
-      type: UPDATE_CURRENT_SECTION,
-      section: selectedSection
-    })
-  }, [data, selectedSection, sections, dispatch]);
+  const [sectionIndex, setSectionIndex] = useState(null)
 
   const handleDeleteClick = async () => {
     await deleteSection({ variables: { id: selectedSection._id } })
@@ -35,58 +27,71 @@ function SectionDisplay() {
     setSelectedSection({})
   }
 
+  useEffect(() => {
+    if (!sections.length && data) {
+      setSections(data.sections)
+    }
+  }, [data]);
+
+  if (!data && sections.length === 0) return <p>Loading...</p>
+  if (data && sections.length === 0) return <p>No section data to display</p>
+
   return (
     <>
       <Container className='my-4 h-100'>
         <Row>
-          {(sections.length !== 0) ? (
-            <Col>
-              <h2 className='text-center'>All Sections</h2>
-              <Accordion>
-                {sections.map((section, index) => (
-                  <Accordion.Item
-                    key={section._id}
-                    id={section._id}
-                    eventKey={index}
-                    className='my-2 p-1 border border-warning rounded bg-gradient'>
-                    <Accordion.Header onClick={() => setSelectedSection(section)}>{section.name}</Accordion.Header>
-                    <Accordion.Body>
-                      <Container>
-                        <Row className='justify-content-between gy-2'>
-                          <Col sm={12} md={4} >
-                            <Button
-                              className='w-100 h-100'
-                              variant="outline-warning"
-                              onClick={() => navigate('/item-display')}
-                            >View Items</Button>
-                          </Col>
-                          <Col sm={6} md={4}>
-                            <Button
-                              className='w-100 h-100'
-                              variant="outline-primary"
-                              onClick={() => setModalDisplay(<SectionModal section={section} />)}
-                            >Edit</Button>
-                          </Col>
-                          <Col sm={6} md={4}>
-                            <Button
-                              className='w-100 h-100'
-                              variant="outline-danger"
-                              onClick={() => setDeletePrompt(true)}
-                            >Delete</Button>
-                          </Col>
-                        </Row>
-                      </Container>
-                    </Accordion.Body>
-                  </Accordion.Item>
-                ))}
-              </Accordion>
-            </Col>
-          ) : (
-            <h2 className='text-center'>No Sections to Display</h2>
-          )}
+          <Col>
+            <h2 className='text-center'>All Sections</h2>
+            <Accordion activeKey={sectionIndex}>
+              {sections.map((section, index) => (
+                <Accordion.Item
+                  key={section._id}
+                  eventKey={index}
+                  className='list-item'>
+                  <Accordion.Header onClick={() => {
+                    if (!sectionIndex) {
+                      setSectionIndex(index)
+                      setSelectedSection(section)
+                    } else {
+                      setSectionIndex(null);
+                      setSelectedSection(null)
+                    }
+                  }}>{section.name}</Accordion.Header>
+                  <Accordion.Body>
+                    <Container>
+                      <Row className='justify-content-between gy-2'>
+                        <Col sm={12} md={4} >
+                          <Button
+                            className='w-100 h-100'
+                            variant="outline-warning"
+                            onClick={() => navigate('/item-display')}
+                          >View Items</Button>
+                        </Col>
+                        <Col sm={6} md={4}>
+                          <Button
+                            className='w-100 h-100'
+                            variant="outline-primary"
+                            onClick={() => setModalDisplay(<SectionModal modal={modal} setModal={setModal} section={selectedSection} />)}
+                          >Edit</Button>
+                        </Col>
+                        <Col sm={6} md={4}>
+                          <Button
+                            className='w-100 h-100'
+                            variant="outline-danger"
+                            onClick={() => setDeletePrompt(true)}
+                          >Delete</Button>
+                        </Col>
+                      </Row>
+                    </Container>
+                  </Accordion.Body>
+                </Accordion.Item>
+              ))}
+            </Accordion>
+          </Col>
         </Row>
       </Container>
       {modalDisplay}
+      {selectedSection && (
       <Modal
         show={deletePrompt}
         contentLabel="Delete Section">
@@ -116,6 +121,7 @@ function SectionDisplay() {
           >Close</Button>
         </Modal.Footer>
       </Modal>
+      )}
     </>
   )
 }

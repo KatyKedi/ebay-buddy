@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useGlobalContext } from '../../utils/GlobalState';
-import { UPDATE_CURRENT_MODAL } from '../../utils/actions';
 import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_ITEM, QUERY_SECTIONS } from '../../utils/queries';
-import { ADD_ITEM, ADD_SECTION } from '../../utils/mutations';
+
+import { QUERY_SECTIONS } from '../../utils/queries';
+import { ADD_ITEM, EDIT_ITEM, ADD_SECTION, EDIT_SECTION } from '../../utils/mutations';
+
 import { Modal, Button, Form, CloseButton } from 'react-bootstrap'
 
 function ItemModal({ modal, setModal, selectedItem }) {
     const [itemState, setItemState] = useState(selectedItem)
     const [sections, setSections] = useState([])
-    const { data }= useQuery(QUERY_SECTIONS)
-    const [addItem, { error }] = useMutation(ADD_ITEM);
+    const { data } = useQuery(QUERY_SECTIONS)
+    const [addItem] = useMutation(ADD_ITEM)
+    const [editItem] = useMutation(EDIT_ITEM)
 
     useEffect(() => {
         data && setSections(data.sections)
@@ -18,19 +19,37 @@ function ItemModal({ modal, setModal, selectedItem }) {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        try {
-            await addItem({
-                variables: {
-                    name: itemState.name,
-                    description: itemState.description,
-                    size: `${itemState.length}x${itemState.width}x${itemState.height}`,
-                    weight: parseFloat(itemState.weight),
-                    section: itemState.section
-                },
-            });
-            setModal(false)
-        } catch (e) {
-            console.log(e);
+        if (itemState._id) {
+            try {
+                await editItem({
+                    variables: {
+                        id: itemState._id,
+                        name: itemState.name,
+                        description: itemState.description,
+                        size: `${itemState.length}x${itemState.width}x${itemState.height}`,
+                        weight: parseFloat(itemState.weight),
+                        section: itemState.section
+                    },
+                });
+                window.location.reload()
+            } catch (e) {
+                console.log(e);
+            }
+        } else {
+            try {
+                await addItem({
+                    variables: {
+                        name: itemState.name,
+                        description: itemState.description,
+                        size: `${itemState.length}x${itemState.width}x${itemState.height}`,
+                        weight: parseFloat(itemState.weight),
+                        section: itemState.section
+                    },
+                });
+                window.location.reload()
+            } catch (e) {
+                console.log(e);
+            }
         }
     };
 
@@ -113,9 +132,8 @@ function ItemModal({ modal, setModal, selectedItem }) {
                             name="section"
                             id="section"
                             type="section"
-                            multiple
                             onChange={handleFormChange} required>
-                            {sections&& sections.map((section) => (<option key={section._id} value={section}>{section.name}</option>))}                           
+                            {sections && sections.map((section) => (<option key={section._id} value={section}>{section.name}</option>))}
                         </Form.Select>
                     </Form.Group>
                     <Button
@@ -132,60 +150,61 @@ function ItemModal({ modal, setModal, selectedItem }) {
                     }}
                 >Close</Button>
             </Modal.Footer>
-            {error ? (
-                <div>
-                    <p className="error-text">The provided values are invalid</p>
-                </div>
-            ) : null}
         </Modal>
     )
 }
 
-function SectionModal(props) {
-    const { section } = props
-    const [state, dispatch] = useGlobalContext();
-    const [modalOpen, setModal] = useState('section')
-
-    useEffect(() => {
-        dispatch({
-            type: UPDATE_CURRENT_MODAL,
-            modal: modalOpen
-        })
-    }, [modalOpen, dispatch])
-
-    const [selectedItem, setselectedItem] = useState(section);
-    const [addSection, { error }] = useMutation(ADD_SECTION);
+function SectionModal({ modal, setModal, selectedSection }) {
+    const [sectionState, setSectionState] = useState(selectedSection)
+    const [addSection] = useMutation(ADD_SECTION)
+    const [editSection] = useMutation(EDIT_SECTION)
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        try {
-            await addSection({
-                variables: {
-                    name: selectedItem.name,
-                    full: selectedItem.full
-                },
-            });
-            setModal('')
-        } catch (e) {
-            console.log(e);
+        if (sectionState._id) {
+            try {
+                await editSection({
+                    variables: {
+                        id: sectionState._id,
+                        name: sectionState.name,
+                        full: sectionState.full
+                    },
+                });
+                setModal(false)
+            } catch (e) {
+                console.log(e);
+            }
+        } else {
+            try {
+                await addSection({
+                    variables: {
+                        name: sectionState.name,
+                        full: sectionState.full
+                    },
+                });
+                setModal(false)
+            } catch (e) {
+                console.log(e);
+            }
         }
     };
 
     const handleFormChange = (event) => {
         const { id, value } = event.target;
-        setselectedItem({
-            ...selectedItem,
+        setSectionState({
+            ...sectionState,
             [id]: value,
         });
     };
 
     return <Modal
-        show={modalOpen && true}
+        show={modal ? true : false}
+        onHide={() => setModal(false)}
         label="Add Section">
         <Modal.Header>
             <Modal.Title className='text-primary'>Enter Section Details</Modal.Title>
             <CloseButton onClick={() => {
-                setModal('')
+                setModal(false)
             }} />
         </Modal.Header>
         <Modal.Body>
@@ -195,7 +214,7 @@ function SectionModal(props) {
                     <Form.Control
                         type="name"
                         onChange={handleFormChange}
-                        value={selectedItem.name}
+                        value={sectionState.name}
                     />
                 </Form.Group>
                 <Form.Group className='mb-3' controlId='full'>
@@ -204,7 +223,7 @@ function SectionModal(props) {
                         id="full"
                         label="Completely Full?"
                         onChange={handleFormChange}
-                        checked={selectedItem.full}
+                        checked={sectionState.full}
                     />
                 </Form.Group>
                 <Button
@@ -217,7 +236,7 @@ function SectionModal(props) {
             <Button
                 variant='outline-danger'
                 onClick={() => {
-                    setModal('')
+                    setModal(false)
                 }}
             >Close</Button>
         </Modal.Footer>
