@@ -7,7 +7,18 @@ import { ADD_ITEM, EDIT_ITEM, ADD_SECTION, EDIT_SECTION } from '../../utils/muta
 import { Modal, Button, Form, CloseButton } from 'react-bootstrap'
 
 function ItemModal({ modal, setModal, selectedItem }) {
-    const [itemState, setItemState] = useState(selectedItem)
+    const [itemState, setItemState] = useState(selectedItem || {
+        name: '',
+        description: '',
+        size: '',
+        length: '',
+        width: '',
+        height: '',
+        weight: '',
+        section: ''
+    })
+
+    
     const [sections, setSections] = useState([])
     const { data } = useQuery(QUERY_SECTIONS)
     const [addItem] = useMutation(ADD_ITEM)
@@ -81,7 +92,7 @@ function ItemModal({ modal, setModal, selectedItem }) {
                             type="name"
                             placeholder="Enter name of item"
                             onChange={handleFormChange}
-                            value={itemState.name || ""}
+                            value={itemState.name}
                             required
                         />
                     </Form.Group>
@@ -91,7 +102,7 @@ function ItemModal({ modal, setModal, selectedItem }) {
                             type="description"
                             placeholder="Enter item description"
                             onChange={handleFormChange}
-                            value={itemState.description || ''}
+                            value={itemState.description}
                         />
                     </Form.Group>
                     <Form.Group className="mb-1" controlId="length">
@@ -99,7 +110,7 @@ function ItemModal({ modal, setModal, selectedItem }) {
                         <Form.Control
                             type="length"
                             onChange={handleFormChange}
-                            value={itemState.length || ''}
+                            value={itemState.length}
                         />
                     </Form.Group>
                     <Form.Group className="mb-1" controlId="width">
@@ -107,7 +118,7 @@ function ItemModal({ modal, setModal, selectedItem }) {
                         <Form.Control
                             type="width"
                             onChange={handleFormChange}
-                            value={itemState.width || ''}
+                            value={itemState.width}
                         />
                     </Form.Group>
                     <Form.Group className="mb-1" controlId="height">
@@ -115,7 +126,7 @@ function ItemModal({ modal, setModal, selectedItem }) {
                         <Form.Control
                             type="height"
                             onChange={handleFormChange}
-                            value={itemState.height || ''}
+                            value={itemState.height}
                         />
                     </Form.Group>
                     <Form.Group controlId='weight'>
@@ -123,7 +134,7 @@ function ItemModal({ modal, setModal, selectedItem }) {
                         <Form.Control
                             type="weight"
                             onChange={handleFormChange}
-                            value={itemState.weight || ''}
+                            value={itemState.weight}
                         />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId='section'>
@@ -154,13 +165,14 @@ function ItemModal({ modal, setModal, selectedItem }) {
     )
 }
 
-function SectionModal({ modal, setModal, selectedSection }) {
-    const [sectionState, setSectionState] = useState(selectedSection)
+function SectionModal({ modal, setModal, selectedSection, setSelectedSection }) {
+    const [sectionState, setSectionState] = useState(selectedSection || { name: '', full: false })
     const [addSection] = useMutation(ADD_SECTION)
     const [editSection] = useMutation(EDIT_SECTION)
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+        console.log(sectionState)
         if (sectionState._id) {
             try {
                 await editSection({
@@ -189,13 +201,20 @@ function SectionModal({ modal, setModal, selectedSection }) {
         }
     };
 
-    const handleFormChange = (event) => {
-        const { id, value } = event.target;
+    const handleNameChange = (event) => {
+        const { value } = event.target;
         setSectionState({
             ...sectionState,
-            [id]: value,
+            name: value,
         });
     };
+
+    const handleFullToggle = (event) => {
+        setSectionState({
+            ...sectionState,
+            full: event.target.checked
+        })
+    }
 
     return <Modal
         show={modal ? true : false}
@@ -213,7 +232,7 @@ function SectionModal({ modal, setModal, selectedSection }) {
                     <Form.Label>Name: (required)</Form.Label>
                     <Form.Control
                         type="name"
-                        onChange={handleFormChange}
+                        onChange={handleNameChange}
                         value={sectionState.name}
                     />
                 </Form.Group>
@@ -222,8 +241,7 @@ function SectionModal({ modal, setModal, selectedSection }) {
                         type="checkbox"
                         id="full"
                         label="Completely Full?"
-                        onChange={handleFormChange}
-                        checked={sectionState.full}
+                        onChange={handleFullToggle}
                     />
                 </Form.Group>
                 <Button
@@ -241,6 +259,7 @@ function SectionModal({ modal, setModal, selectedSection }) {
             >Close</Button>
         </Modal.Footer>
     </Modal>
+
 }
 
 export { ItemModal, SectionModal } 

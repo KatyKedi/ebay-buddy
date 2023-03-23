@@ -118,7 +118,7 @@ const resolvers = {
     },
     editSection: async (parent, args, context) => {
       if (context.user) {
-        return Section.findByIdAndUpdate(
+        return await Section.findByIdAndUpdate(
           { _id: args._id },
           args,
           { new: true }
@@ -161,7 +161,6 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
     deleteItem: async (parent, args, context) => {
-      console.log(args)
       if (context.user) {
         await Item.deleteOne({ _id: args._id })
         return await User.findByIdAndUpdate(

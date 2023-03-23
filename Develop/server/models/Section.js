@@ -7,8 +7,7 @@ const SectionSchema = new Schema(
             required: true
         },
         full: {
-            type: Boolean,
-            default: false
+            type: Boolean
         },
         items: [
             {

@@ -1284,12 +1284,6 @@ db.once('open', async () => {
             section: '4C'
         },
         {
-            name: `Funko Pop! Michelangelo #1141 Jumbo 10" - Walmart - Teenage Mutant Ninja Turtles`,
-            size: '15x12x12',
-            weight: 4.0,
-            section: '1C'
-        },
-        {
             name: `Hyde And Eek! Boutique LED Rotating Tabletop Indoor Ghost Light`,
             size: '8x7x9',
             weight: 0.9,

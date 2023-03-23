@@ -6,9 +6,7 @@ const { Provider } = GlobalContext;
 
 const CatalogProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useGlobalReducer({
-    items: [],
-    keyword: '',
-    singleItem: '',
+    items:[],
     modal: '',
     section: ''
   });

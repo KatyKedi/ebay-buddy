@@ -56,7 +56,7 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
   }
 
   useEffect(() => {
-    if (filter.length > 3) {
+    if (filter.length > 2) {
       let foundItems = []
       originalData.forEach(item => {
         if (item.name.toLowerCase().includes(filter.toLowerCase()) || (item.description && item.description.toLowerCase().includes(filter.toLowerCase()))) {
@@ -116,7 +116,7 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
                   className="list-item"
                   eventKey={index}>
                   <Accordion.Header onClick={() => {
-                    if (!itemIndex) {
+                    if (itemIndex !== index) {
                       setItemIndex(index)
                       setSelectedId(item._id)
                     } else {

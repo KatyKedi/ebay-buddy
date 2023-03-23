@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function SectionDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
-  const { data } = useQuery(QUERY_SECTIONS, { fetchPolicy: "no-cache" });
+  const { data, refetch } = useQuery(QUERY_SECTIONS, { fetchPolicy: "no-cache" });
   const [deleteSection] = useMutation(DELETE_SECTION)
 
   const navigate = useNavigate();
@@ -30,8 +30,21 @@ function SectionDisplay({ modal, setModal, selectedSection, setSelectedSection }
   useEffect(() => {
     if (!sections.length && data) {
       setSections(data.sections)
+    } else {
+      setSections([])
+      refetch()
     }
   }, [data]);
+
+  useEffect(() => {
+    console.log(selectedSection)
+    modal && setModalDisplay(
+    <SectionModal 
+      modal={modal} 
+      setModal={setModal} 
+      selectedSection={selectedSection} 
+      setSelectedSection={setSelectedSection}/>)
+  }, [modal])
 
   if (!data && sections.length === 0) return <p>Loading...</p>
   if (data && sections.length === 0) return <p>No section data to display</p>
@@ -49,14 +62,14 @@ function SectionDisplay({ modal, setModal, selectedSection, setSelectedSection }
                   eventKey={index}
                   className='list-item'>
                   <Accordion.Header onClick={() => {
-                    if (!sectionIndex) {
+                    if (sectionIndex !== index) {
                       setSectionIndex(index)
                       setSelectedSection(section)
                     } else {
                       setSectionIndex(null);
                       setSelectedSection(null)
                     }
-                  }}>{section.name}</Accordion.Header>
+                  }}>{section.name} {section.full && <span>(full)</span>}</Accordion.Header>
                   <Accordion.Body>
                     <Container>
                       <Row className='justify-content-between gy-2'>
@@ -71,7 +84,7 @@ function SectionDisplay({ modal, setModal, selectedSection, setSelectedSection }
                           <Button
                             className='w-100 h-100'
                             variant="outline-primary"
-                            onClick={() => setModalDisplay(<SectionModal modal={modal} setModal={setModal} section={selectedSection} />)}
+                            onClick={() => setModal(true)}
                           >Edit</Button>
                         </Col>
                         <Col sm={6} md={4}>
@@ -90,7 +103,7 @@ function SectionDisplay({ modal, setModal, selectedSection, setSelectedSection }
           </Col>
         </Row>
       </Container>
-      {modalDisplay}
+      {modal && modalDisplay}
       {selectedSection && (
       <Modal
         show={deletePrompt}

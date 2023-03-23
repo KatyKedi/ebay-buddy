@@ -50,15 +50,15 @@ function App() {
       <BrowserRouter>
         <CatalogProvider>
           <Header />
-          <Container>
+          <Container className='mb-4'>
             <Row className='justify-content-center'>
               <Col className='mx-4 m-4 col-11 col-sm-10 col-md-7 col-lg-6 border border-success rounded bg-light'>
                 <Routes>
                   {(Auth.loggedIn()) ? (
                     <>
                       <Route
-                        path="/"
-                        element={<Dashboard />}
+                        path="*"
+                        element={<Dashboard modal={modal} setModal={setModal} />}
                       />
                       <Route
                         path="/item-display"
@@ -89,7 +89,9 @@ function App() {
               </Col>
             </Row>
           </Container>
-          <footer className='w-100 p-1 mt-5 text-center text-light bg-success'>Made with love for Kelly</footer>
+          <Container fluid className='fixed-bottom p-0'>
+            <footer className='w-100 p-2 mt-5 text-center text-light bg-success'>Made with love for Kelly</footer>
+          </Container>
         </CatalogProvider>
       </BrowserRouter>
     </ApolloProvider>
