@@ -17,7 +17,6 @@ function ItemModal({ modal, setModal, selectedItem }) {
         weight: '',
         section: ''
     })
-
     
     const [sections, setSections] = useState([])
     const { data } = useQuery(QUERY_SECTIONS)
@@ -165,23 +164,24 @@ function ItemModal({ modal, setModal, selectedItem }) {
     )
 }
 
-function SectionModal({ modal, setModal, selectedSection, setSelectedSection }) {
+function SectionModal({ modal, setModal, selectedSection, setSelectedSection, refetch }) {
     const [sectionState, setSectionState] = useState(selectedSection || { name: '', full: false })
     const [addSection] = useMutation(ADD_SECTION)
     const [editSection] = useMutation(EDIT_SECTION)
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        console.log(sectionState)
         if (sectionState._id) {
             try {
-                await editSection({
+                const result = await editSection({
                     variables: {
                         id: sectionState._id,
                         name: sectionState.name,
                         full: sectionState.full
                     },
                 });
+                console.log(result)
+                setSelectedSection(null)
                 setModal(false)
             } catch (e) {
                 console.log(e);
@@ -194,6 +194,7 @@ function SectionModal({ modal, setModal, selectedSection, setSelectedSection }) 
                         full: sectionState.full
                     },
                 });
+                refetch()
                 setModal(false)
             } catch (e) {
                 console.log(e);
@@ -242,6 +243,7 @@ function SectionModal({ modal, setModal, selectedSection, setSelectedSection }) 
                         id="full"
                         label="Completely Full?"
                         onChange={handleFullToggle}
+                        checked={sectionState.full}
                     />
                 </Form.Group>
                 <Button

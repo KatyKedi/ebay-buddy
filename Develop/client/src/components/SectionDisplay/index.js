@@ -30,20 +30,17 @@ function SectionDisplay({ modal, setModal, selectedSection, setSelectedSection }
   useEffect(() => {
     if (!sections.length && data) {
       setSections(data.sections)
-    } else {
-      setSections([])
-      refetch()
     }
   }, [data]);
 
   useEffect(() => {
-    console.log(selectedSection)
     modal && setModalDisplay(
     <SectionModal 
       modal={modal} 
       setModal={setModal} 
       selectedSection={selectedSection} 
-      setSelectedSection={setSelectedSection}/>)
+      setSelectedSection={setSelectedSection}
+      refetch={refetch}/>)
   }, [modal])
 
   if (!data && sections.length === 0) return <p>Loading...</p>
