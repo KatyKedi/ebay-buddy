@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function SectionDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
-  const { data, refetch } = useQuery(QUERY_SECTIONS, { fetchPolicy: "no-cache" });
+  const { data, refetch } = useQuery(QUERY_SECTIONS);
   const [deleteSection] = useMutation(DELETE_SECTION)
 
   const navigate = useNavigate();

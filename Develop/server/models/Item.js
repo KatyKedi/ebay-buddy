@@ -20,7 +20,8 @@ const ItemSchema = new Schema(
             type: Number
         },
         section: {
-            type: String
+            type: String,
+            ref: 'Section'
         }
     },
     {

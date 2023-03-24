@@ -118,11 +118,17 @@ const resolvers = {
     },
     editSection: async (parent, args, context) => {
       if (context.user) {
-        return await Section.findByIdAndUpdate(
+        const section = await Section.findByIdAndUpdate(
           { _id: args._id },
           args,
           { new: true }
         );
+        await User.findOneAndUpdate(
+          { _id: context.user._id, 'sections._id': args._id },
+          { $set: { 'sections.$': section  } },
+          { new: true }
+        );
+        return section
       }
       throw new AuthenticationError('Not logged in');
     },
@@ -145,18 +151,23 @@ const resolvers = {
           { $addToSet: { items: item } },
           { new: true }
         );
-
         return item;
       }
       throw new AuthenticationError('Not logged in');
     },
     editItem: async (parent, args, context) => {
       if (context.user) {
-        return await Item.findByIdAndUpdate(
+        const item = await Item.findByIdAndUpdate(
           { _id: args._id },
           args,
           { new: true }
         );
+        await User.findOneAndUpdate(
+          { _id: context.user._id, 'items._id': args._id },
+          { $set: { 'items.$': item  } },
+          { new: true }
+        );
+        return item
       }
       throw new AuthenticationError('Not logged in');
     },
