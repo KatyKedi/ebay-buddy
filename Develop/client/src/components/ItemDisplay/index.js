@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
 
-import { QUERY_ITEMS } from '../../utils/queries';
+import { QUERY_ITEMS, QUERY_SECTIONS } from '../../utils/queries';
 import { DELETE_ITEM } from '../../utils/mutations';
 import paginate from '../../utils/paginate';
 
 import { ItemModal } from '../Modals/index'
 import ItemDetails from '../ItemDetails/index'
 
-import { Container, Row, Col, ButtonToolbar, ButtonGroup, Button, Accordion, Form, Modal, CloseButton } from 'react-bootstrap'
+import { Container, Row, Col, ButtonToolbar, ButtonGroup, Button, Accordion, Form, Modal, CloseButton, Card } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
-  const { loading, data } = useQuery(QUERY_ITEMS);
+  const itemsData = useQuery(QUERY_ITEMS)
+  const sectionsData = useQuery(QUERY_SECTIONS)
   const [deleteItem] = useMutation(DELETE_ITEM)
 
-  const [selectedItem, setSelectedItem] = useState({});
+  const [selectedItem, setSelectedItem] = useState({})
   const [selectedId, setSelectedId] = useState('')
   const [modalDisplay, setModalDisplay] = useState(<></>)
   const [deletePrompt, setDeletePrompt] = useState(false)
   const [itemIndex, setItemIndex] = useState(null)
-
+  const [sections, setSections] = useState([])
+  const [sectionFilter, setSectionFilter] = useState({})
   const [filter, setFilter] = useState("")
   const [displayData, setDisplayData] = useState([])
   const [originalData, setOriginalData] = useState([])
@@ -76,32 +78,51 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
   }, [settings, originalData])
 
   useEffect(() => {
-    if (!loading && originalData.length === 0) {
-      setSettings({ ...settings, totalItems: data.items.length })
-      setOriginalData(data.items)
+    if (!itemsData.loading && originalData.length === 0) {
+      setSettings({ ...settings, totalItems: itemsData.data.items.length })
+      setOriginalData(itemsData.data.items)
     }
-  }, [data]);
+  }, [itemsData.data]);
+
+  useEffect(() => {
+    if (!sectionsData.loading && sections.length === 0) {
+      setSections(sectionsData.data.sections)
+    }
+  }, [sectionsData.data]);
 
   if (!displayData.length && originalData.length === 0) return <p>Loading...</p>
-  if (data && originalData.length === 0) return <p>No item data to display</p>
+  if (!sections.length) return <p>Loading...</p>
+  if (itemsData.data && originalData.length === 0) return <p>No item data to display</p>
 
   return (
     <>
       <Container fluid className='my-4 h-100'>
         <Row className='m-4'>
           <Form className='p-0 text-center'>
-            <h2>Search By Name</h2>
             <Form.Group className='p-0 mt-3'>
               <Container>
                 <Row>
-                  <Col>
-                    <Form.Control
+                  <Card>
+                    <Card.Body>
+                      <Card.Title>Search By Name</Card.Title>
+                      <Form.Control
                       type='text'
                       name="filter"
                       value={filter}
                       onChange={((e) => setFilter(e.target.value))}
                     />
-                  </Col>
+                    </Card.Body>
+                  </Card>
+                  <Card>
+                    <Card.Body>
+                      <Card.Title>Search By Section</Card.Title>
+                      <Form.Select onChange={((e) => setSectionFilter(e.target.value))}>
+                        {sections.length !== 0 && sections.map((section) => (
+                          <option value={section}id={section._id}>{section.name}</option>
+                        ))}
+                      </Form.Select>
+                    </Card.Body>
+                  </Card>
                 </Row>
               </Container>
             </Form.Group>

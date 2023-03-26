@@ -5,7 +5,9 @@ const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 const uuid = require("uuid")
 
 const resolvers = {
+
   Query: {
+
     me: async (parent, args, context) => {
       if (context.user) {
         const userData = await User
@@ -18,6 +20,7 @@ const resolvers = {
       }
       throw new AuthenticationError('Not logged in');
     },
+
     sections: async (parent, args, context) => {
       if (context.user) {
         const user = await User
@@ -28,16 +31,12 @@ const resolvers = {
       }
       throw new AuthenticationError('Not logged in');
     },
+
     section: async (parent, { _id }, context) => {
-      if (context.user) {
-        const section = await Section
-          .findById(_id)
-          .populate('items');
-        
-        return section;
-      }
+      context.user && await Section.findById(_id).populate('items');
       throw new AuthenticationError('Not logged in');
     },
+
     items: async (parent, args, context) => {
       if (context.user) {
         const user = await User
@@ -48,13 +47,12 @@ const resolvers = {
       }
       throw new AuthenticationError('Not logged in');
     },
+
     item: async (parent, { _id }, context) => {
-      if (context.user) {
-        return await Item
-          .findById(_id)
-      }
+      context.user && await Item.findById(_id)
       throw new AuthenticationError('Not logged in');
     },
+
     checkout: async (parent, { donation, token }, context) => {
       const url = new URL(context.headers.referer).origin
       const idempontencyKey = uuid() //avoid multiple charges in case of network err
@@ -80,15 +78,14 @@ const resolvers = {
   },
 
   Mutation: {
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-
       if (!user) {
         throw new AuthenticationError('Incorrect credentials');
       }
 
       const correctPw = await user.isCorrectPassword(password);
-
       if (!correctPw) {
         throw new AuthenticationError('Incorrect credentials');
       }
@@ -96,26 +93,27 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
-
       return { token, user };
     },
+
     addSection: async (parent, args, context) => {
       if (context.user) {
         const section = await Section.create({ ...args });
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { sections: section } },
-          { new: true }
+          { $addToSet: { sections: section } }
         );
 
         return section;
       }
       throw new AuthenticationError('Not logged in');
     },
+
     editSection: async (parent, args, context) => {
       if (context.user) {
         const section = await Section.findByIdAndUpdate(
@@ -123,38 +121,44 @@ const resolvers = {
           args,
           { new: true }
         );
+
         await User.findOneAndUpdate(
           { _id: context.user._id, 'sections._id': args._id },
-          { $set: { 'sections.$': section  } },
-          { new: true }
+          { $set: { 'sections.$': section  } }
         );
+
         return section
       }
       throw new AuthenticationError('Not logged in');
     },
+
     deleteSection: async (parent, args, context) => {
       if (context.user) {
         await Section.deleteOne({ _id: args._id });
+
         return await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $pull: { sections: { _id: args._id } } }
+          { $pull: { sections: { _id: args._id } } },
+          { new: true }
         )
       }
       throw new AuthenticationError('Not logged in');
     },
+
     addItem: async (parent, args, context) => {
       if (context.user) {
         const item = await Item.create({ ...args});
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { items: item } },
-          { new: true }
+          { $addToSet: { items: item } }
         );
+
         return item;
       }
       throw new AuthenticationError('Not logged in');
     },
+
     editItem: async (parent, args, context) => {
       if (context.user) {
         const item = await Item.findByIdAndUpdate(
@@ -162,21 +166,25 @@ const resolvers = {
           args,
           { new: true }
         );
+
         await User.findOneAndUpdate(
           { _id: context.user._id, 'items._id': args._id },
-          { $set: { 'items.$': item  } },
-          { new: true }
+          { $set: { 'items.$': item  } }
         );
+
         return item
       }
       throw new AuthenticationError('Not logged in');
     },
+
     deleteItem: async (parent, args, context) => {
       if (context.user) {
         await Item.deleteOne({ _id: args._id })
+
         return await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $pull: { items: { _id: args._id } } }
+          { $pull: { items: { _id: args._id } } },
+          { new: true }
         )
       }
       throw new AuthenticationError('Not logged in');

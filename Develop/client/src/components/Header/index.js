@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import "./style.css";
-import { Button } from 'react-bootstrap'
+
 import Auth from '../../utils/auth';
+
+import { Button } from 'react-bootstrap'
+import "./style.css";
+
 
 function Header() {
   const navigate = useNavigate();
@@ -20,7 +23,7 @@ function Header() {
       >Logout</Button>) :
       setShowLogout(<></>)
   }, [Auth])
-  
+
 
   return (
     <header className='border-bottom border-white'>

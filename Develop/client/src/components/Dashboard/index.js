@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
+
 import { ItemModal, SectionModal } from '../Modals/index'
+
 import { Button, Container, Row, Col } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -11,9 +13,9 @@ function Dashboard({ modal, setModal }) {
 
   useEffect(() => {
     if (modal === 'item') {
-      setModalDisplay(<ItemModal modal={modal} setModal={setModal} selectedItem={undefined} setSelectedItem={undefined}/>)
+      setModalDisplay(<ItemModal modal={modal} setModal={setModal} selectedItem={undefined} setSelectedItem={undefined} />)
     } else if (modal === 'section') {
-      setModalDisplay(<SectionModal modal={modal} setModal={setModal} selectedSection={undefined}/>)
+      setModalDisplay(<SectionModal modal={modal} setModal={setModal} selectedSection={undefined} />)
     } else {
       setModalDisplay(<></>)
     }
@@ -36,7 +38,7 @@ function Dashboard({ modal, setModal }) {
             className='mb-3'
             variant='outline-success'
             onClick={() => {
-              setModal('item')             
+              setModal('item')
             }}
           >Add Item
           </Button>
@@ -65,4 +67,5 @@ function Dashboard({ modal, setModal }) {
     </Container>
   );
 }
+
 export default Dashboard;
