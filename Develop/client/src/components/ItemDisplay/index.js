@@ -41,6 +41,8 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
     const pageObj = paginate({ ...settings, currentPage: page, totalItems: dataset.length })
     setPagination(pageObj)
     setDisplayData(dataset.slice(pageObj.startIndex, pageObj.endIndex + 1))
+    setSelectedId(null)
+    setSelectedItem(null)
   }
 
   const handleEditClick = () => {
@@ -70,6 +72,18 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
       paginateData(settings.currentPage, originalData)
     }
   }, [filter])
+
+  useEffect(() => {
+    if (sectionFilter) {
+      let foundItems = []
+      originalData.forEach(item => {
+        item.section === sectionFilter && foundItems.push(item)
+      })
+      paginateData(1, foundItems)
+    } else {
+      paginateData(settings.currentPage, originalData)
+    }
+  }, [sectionFilter])
 
   useEffect(() => {
     if (originalData && originalData.length) {
@@ -106,11 +120,11 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
                     <Card.Body>
                       <Card.Title>Search By Name</Card.Title>
                       <Form.Control
-                      type='text'
-                      name="filter"
-                      value={filter}
-                      onChange={((e) => setFilter(e.target.value))}
-                    />
+                        type='text'
+                        name="filter"
+                        value={filter}
+                        onChange={((e) => setFilter(e.target.value))}
+                      />
                     </Card.Body>
                   </Card>
                   <Card>
@@ -118,7 +132,7 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
                       <Card.Title>Search By Section</Card.Title>
                       <Form.Select onChange={((e) => setSectionFilter(e.target.value))}>
                         {sections.length !== 0 && sections.map((section) => (
-                          <option value={section}id={section._id}>{section.name}</option>
+                          <option key={section.name} value={section.name} id={section._id}>{section.name}</option>
                         ))}
                       </Form.Select>
                     </Card.Body>
@@ -139,16 +153,17 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
                   <Accordion.Header onClick={() => {
                     if (itemIndex !== index) {
                       setItemIndex(index)
-                      setSelectedId(item._id)
+                      setSelectedItem(item)
                     } else {
                       setItemIndex(null);
-                      setSelectedId(null)
+                      setSelectedItem(null)
                     }
                   }}>{item.name}</Accordion.Header>
+                  {selectedItem && (
                   <Accordion.Body>
                     <Container>
                       <Row>
-                        <ItemDetails selectedId={selectedId} setSelectedItem={setSelectedItem} />
+                        <ItemDetails id={item._id}/>
                       </Row>
                       <Row className='justify-content-between'>
                         <Col>
@@ -160,6 +175,7 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
                       </Row>
                     </Container>
                   </Accordion.Body>
+                  )}
                 </Accordion.Item>))}
             </Accordion>
           </Row>)
@@ -185,36 +201,39 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
       </Container>
 
       {modal && modalDisplay}
-      <Modal
-        show={deletePrompt}
-        contentLabel="Delete Section">
-        <Modal.Header>
-          <Modal.Title className='text-primary'>Are you sure you would like to delete this item: </Modal.Title>
-          <CloseButton onClick={() => {
-            setDeletePrompt(false)
-          }} />
-        </Modal.Header>
-        <Modal.Body>
-          <Form onSubmit={handleDeleteClick}>
-            <Form.Group className="mb-3" controlId="name">
-              <Form.Label>{selectedItem.name}</Form.Label>
-            </Form.Group>
-            <Button
-              variant='outline-success'
-              type='submit'
-            >Delete</Button>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button
-            variant='outline-danger'
-            onClick={() => {
+      {selectedItem && (
+        <Modal
+          show={deletePrompt}
+          contentLabel="Delete Section">
+          <Modal.Header>
+            <Modal.Title className='text-primary'>Are you sure you would like to delete this item: </Modal.Title>
+            <CloseButton onClick={() => {
               setDeletePrompt(false)
-            }}
-          >Close</Button>
-        </Modal.Footer>
-      </Modal>
+            }} />
+          </Modal.Header>
+          <Modal.Body>
+            <Form onSubmit={handleDeleteClick}>
+              <Form.Group className="mb-3" controlId="name">
+                <Form.Label>{selectedItem.name}</Form.Label>
+              </Form.Group>
+              <Button
+                variant='outline-success'
+                type='submit'
+              >Delete</Button>
+            </Form>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              variant='outline-danger'
+              onClick={() => {
+                setDeletePrompt(false)
+              }}
+            >Close</Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </>
+
   )
 }
 

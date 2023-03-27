@@ -8,45 +8,46 @@ import dayjs from 'dayjs';
 import { Container, Table } from 'react-bootstrap'
 
 
-function ItemDetails({ selectedId, setSelectedItem }) {
-  const { data } = useQuery(QUERY_ITEM, { variables: { id: selectedId } });
+function ItemDetails({ id }) {
+  const { data }= useQuery(QUERY_ITEM, { variables: { id } });
+  const [itemDetails, setItemDetails] = useState({})
 
   useEffect(() => {
     if (data) {
-      setSelectedItem(data.item);
+      console.log(data)
+      setItemDetails(data.item);
     }
   }, [data]);
 
-  if (data && data.item) {
+  if (!itemDetails._id) return (<h1>Loading...</h1>)
     return (
       <Container fluid className='mb-3'>
         <Table hover bordered size="sm" className='p-2 border border-warning rounded'>
           <tbody>
             <tr id="section">
               <td>Section</td>
-              <td>{data.item.section}</td>
+              <td>{itemDetails.section}</td>
             </tr>
             <tr id="size">
               <td>Size</td>
-              <td>{data.item.size ? data.item.size : 'Not Applicable'}</td>
+              <td>{itemDetails.size ? itemDetails.size : 'Not Applicable'}</td>
             </tr>
             <tr id="weight">
               <td>Weight</td>
-              <td>{data.item.weight ? data.item.weight : 'Not Applicable'}</td>
+              <td>{itemDetails.weight ? itemDetails.weight : 'Not Applicable'}</td>
             </tr>
-            {data.item.description && (<tr id="description">
+            {itemDetails.description && (<tr id="description">
               <td>Description</td>
-              <td>{data.item.description}</td>
+              <td>{itemDetails.description}</td>
             </tr>)}
             <tr id="createdAt">
               <td>Created On</td>
-              <td>{dayjs(new Date(parseInt(data.item.createdAt)).toLocaleDateString("en-US")).format("MM-DD-YYYY")}</td>
+              <td>{dayjs(new Date(parseInt(itemDetails.createdAt)).toLocaleDateString("en-US")).format("MM-DD-YYYY")}</td>
             </tr>
           </tbody>
         </Table>
       </Container>
     )
   }
-}
 
 export default ItemDetails;
