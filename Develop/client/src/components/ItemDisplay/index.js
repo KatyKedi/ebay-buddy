@@ -23,8 +23,8 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
   const [deletePrompt, setDeletePrompt] = useState(false)
   const [itemIndex, setItemIndex] = useState(null)
   const [sections, setSections] = useState([])
-  const [sectionFilter, setSectionFilter] = useState({})
   const [filter, setFilter] = useState("")
+  const [sectionFilter, setSectionFilter] = useState("")
   const [displayData, setDisplayData] = useState([])
   const [originalData, setOriginalData] = useState([])
 
@@ -38,6 +38,7 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
   const [pagination, setPagination] = useState({})
 
   const paginateData = (page, dataset) => {
+    console.log(dataset)
     const pageObj = paginate({ ...settings, currentPage: page, totalItems: dataset.length })
     setPagination(pageObj)
     setDisplayData(dataset.slice(pageObj.startIndex, pageObj.endIndex + 1))
@@ -71,6 +72,7 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
     } else {
       paginateData(settings.currentPage, originalData)
     }
+    console.log(filter)
   }, [filter])
 
   useEffect(() => {
@@ -86,7 +88,9 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
   }, [sectionFilter])
 
   useEffect(() => {
-    if (originalData && originalData.length) {
+    if (sections && selectedSection.name) {
+      setSectionFilter(selectedSection.name)
+    } else if (originalData && originalData.length) {
       paginateData(settings.currentPage + 1, originalData)
     }
   }, [settings, originalData])
@@ -103,6 +107,10 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
       setSections(sectionsData.data.sections)
     }
   }, [sectionsData.data]);
+
+  useEffect(() => {
+    
+  }, [displayData])
 
   if (!displayData.length && originalData.length === 0) return <p>Loading...</p>
   if (!sections.length) return <p>Loading...</p>
@@ -130,9 +138,15 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
                   <Card>
                     <Card.Body>
                       <Card.Title>Search By Section</Card.Title>
-                      <Form.Select onChange={((e) => setSectionFilter(e.target.value))}>
+                      <Form.Select 
+                        value={sectionFilter}
+                        onChange={((e) => setSectionFilter(e.target.value))}>
                         {sections.length !== 0 && sections.map((section) => (
-                          <option key={section.name} value={section.name} id={section._id}>{section.name}</option>
+                          <option 
+                            key={section.name} 
+                            value={section.name} 
+                            id={section._id}
+                            onClick={() => setSelectedSection(section)}>{section.name}</option>
                         ))}
                       </Form.Select>
                     </Card.Body>
@@ -163,7 +177,7 @@ function ItemDisplay({ modal, setModal, selectedSection, setSelectedSection }) {
                   <Accordion.Body>
                     <Container>
                       <Row>
-                        <ItemDetails id={item._id}/>
+                        <ItemDetails id={selectedItem._id}/>
                       </Row>
                       <Row className='justify-content-between'>
                         <Col>

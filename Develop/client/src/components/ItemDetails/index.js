@@ -14,12 +14,11 @@ function ItemDetails({ id }) {
 
   useEffect(() => {
     if (data) {
-      console.log(data)
-      setItemDetails(data.item);
+      setItemDetails(data.item)
     }
   }, [data]);
 
-  if (!itemDetails._id) return (<h1>Loading...</h1>)
+  if (!data && !itemDetails._id) return (<h1>Loading...</h1>)
     return (
       <Container fluid className='mb-3'>
         <Table hover bordered size="sm" className='p-2 border border-warning rounded'>
