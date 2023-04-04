@@ -23,7 +23,9 @@ db.once('open', async () => {
         { name: '3D' },
         { name: '1X' },
         { name: '2X' },
-        { name: 'Z' }
+        { name: 'Z' },
+        { name: '5A' },
+        { name: '5B'}
     ]);
 
     console.log('sections seeded');
@@ -409,18 +411,6 @@ db.once('open', async () => {
             section: '2C'
         },
         {
-            name: 'Funko Pop! Marvel Art Series Captain America Set #32, 33, 34, 35, 36 Sz L Target',
-            size: '12x12x9',
-            weight: 4.8,
-            section: '2C'
-        },
-        {
-            name: 'LOUNGEFLY DUMBO 80TH ANNIVERSARY COSPLAY MINI BACKPACK NWT FREE SHIPPING',
-            size: '11x10x9',
-            weight: 2.6,
-            section: '2C'
-        },
-        {
             name: 'CHI-Volumizer 4-in-1 Blowout Brush Nozzle Paddle Brush Diffuser and Round Brush',
             size: '15x10x5',
             weight: 2.5,
@@ -784,12 +774,6 @@ db.once('open', async () => {
             name: 'Vintage Golden Brass Family of Giraffes Set 7" Tall',
             size: '8x7x3',
             weight: 1.6,
-            section: '3C'
-        },
-        {
-            name: 'Vtg Artesania Rinconada Figurines Lot of 11 Uruguay Llama Yak Buffalo Zebra....',
-            size: '10x10x5',
-            weight: 5.6,
             section: '3C'
         },
         {
@@ -1287,7 +1271,7 @@ db.once('open', async () => {
             name: `Hyde And Eek! Boutique LED Rotating Tabletop Indoor Ghost Light`,
             size: '8x7x9',
             weight: 0.9,
-            section: '1D'
+            section: '1C'
         },
         {
             name: `Airblown Inflatable Nightmare Before Christmas 3.5ft JACK SKELLINGTON LED New`,
@@ -1340,7 +1324,7 @@ db.once('open', async () => {
             name: `Airblown Inflatable Nightmare Before Christmas 3.5ft JACK SKELLINGTON LED New`,
             size: '12x7x9',
             weight: 3.7,
-            section: '4C',
+            section: '1C',
             description: 'jack on pumpkin'
         },
         {
@@ -1612,6 +1596,677 @@ db.once('open', async () => {
             weight: 2.8,
             section: '1B'
         },
+        {
+            name: `Hunter X Hunter KILLUA ZOLDYCK Funko Pop! AX 2022 Anime Expo Exclusive`,
+            size: '7x5x4',
+            weight: 0.5,
+            section: '4C'
+        },
+        {
+            name: `Nutcracker Glitterdome by Roman 100MM Snow Globe Plays the Nutcracker Ballet New`,
+            size: '9x6x6',
+            weight: 2.6,
+            section: '4B'
+        },
+        {
+            name: `Kurt S. Adler 16.5-Inch LED Lights Gingerbread House, Multi New-Open Box`,
+            size: '19x11x11',
+            weight: 6.8,
+            section: '2D'
+        },
+        {
+            name: `Jim Shore Peanuts Snoopy Astronaut THE BEAGLE HAS LANDED 5.8" Enesco 6005948`,
+            size: '10x8x8',
+            weight: 1.6,
+            section: '3C'
+        },
+        {
+            name: `Enesco Jim Shore Heartwood Creek Beach Santa with Pelican Figurine, 9.75-Inch`,
+            size: '14x11x8',
+            weight: 2.9,
+            section: '1B'
+        },
+        {
+            name: `Star Wars Red Sith Trooper Christmas Nutcracker Kurt S Adler 10 Inch SW6201L`,
+            size: '15x7x5',
+            weight: 2.3,
+            section: '2A'
+        },
+        {
+            name: `Jim Shore Peanuts SNOOPY and WOODSTOCK HALLOWEEN 2021 BEWITCHING BEAGLE 6008964`,
+            size: '9x7x8',
+            weight: 1.5,
+            section: '2B'
+        },
+        {
+            name: `Joseph's Studio by Roman 2PC Santa And Reindeer Stocking Holders 9.25" 37011 New`,
+            size: '16x10x12',
+            weight: 4.9,
+            section: '2A'
+        },
+        {
+            name: `Jim Shore - Heartwood Creek White Woodland Sleigh Centerpiece Deer #611622 13"L`,
+            size: '15x8x12',
+            weight: 3.7,
+            section: '2C'
+        },
+        {
+            name: `Loungefly Disney MINNIE MOUSE GHOST Glow-in-the-Dark Mini BACKPACK & WALLET NWT`,
+            size: '14x10x7',
+            weight: 2.1,
+            section: '1C'
+        },
+        {
+            name: `Disney Villains Maleficent Deluxe Crossbody Bag Vegan Leather NWT`,
+            size: '10x8x6',
+            weight: 0.9,
+            section: '3B'
+        },
+        {
+            name: `Wondershop 2021 Red Cardinals & Unicorn Musical Snowglobe Water Globe Set NEW`,
+            size: '11x6x8',
+            weight: 2.0,
+            section: '4A'
+        },
+        {
+            name: `Dr. Seuss THE GRINCH CAR BUDDY Airblown Inflatable 3.5ft Gemmy Walmart Exclusive`,
+            size: '11x11x6',
+            weight: 2.0,
+            section: '2C'
+        },
+        {
+            name: `Hallmark National Lampoons Vacation Cousin Eddie's RV Christmas Ornament NEW`,
+            size: '7x5x4',
+            weight: 0.5,
+            section: '4B',
+        },
+        {
+            name: `Hallmark National Lampoons Vacation Cousin Eddie's RV Christmas Ornament NEW`,
+            size: '7x5x4',
+            weight: 0.5,
+            section: '4B',
+        },
+        {
+            name: `The Nightmare Before Christmas Tree Topper JACK SKELLINGTON 12" Tree Hugger NWT`,
+            size: '18x14x4',
+            weight: 1.5,
+            section: 'X'
+        },
+        {
+            name: `SANTA JACK SKELLINGTON Lighted 14 Inch Blow Mold Nightmare Before Christmas 2022`,
+            size: '13x13x7',
+            weight: 1.7,
+            section: 'X'
+        },
+        {
+            name: `Holiday Time GNOME & PENGUIN Hand Painted Christmas Cookie Jar Set NIB`,
+            size: '17x12x9',
+            weight: 7.8,
+            section: 'X'
+        },
+        {
+            name: `Grinch Snowglobe`,
+            size: '7x5x4',
+            weight: 0.5,
+            section: '4B'
+        },
+        {
+            name: `Dept 56 Possible Dreams Clothtique GINGERBREAD CHAIR SANTA #6010183 New`,
+            section: '2C'
+        },
+        {
+            name: `SPONGEBOB SQUAREPANTS Christmas Door Greeter In A Santa Suit Plush Walmart NEW`,
+            section: '2C'
+        },
+        {
+            name: `Veronese St Michael Archangel Holding Sword & Shield Bronze & Gold Finish 12.75"`,
+            section: '2C'
+        },
+        {
+            name: `Dr. Seuss The Grinch Who Stole Christmas Holiday GRINCH EXPRESS 12PC Train Set`,
+            section: '2C'
+        },
+        {
+            name: `Walmart Animated Western Santa Lasso Dances Sings Lil Nas X "Old Town Road" NWT`,
+            section: '2C'
+        },
+        {
+            name: `Hallmark Ornaments Harry Potter Lot of 6 2021 Walgreens Hat, Books, Express New`,
+            section: '2C'
+        },
+        {
+            name: `The Grinch Who Stole Christmas Cookie Jar Canister THE GRINCH Santa Hat SEALED`,
+            section: '1A'
+        },
+        {
+            name: `Hallmark Funko Jurassic World OWEN & BLUE Ornaments GOLD CHASE Walmart Exclusive`,
+            section: '1A'
+        },
+        {
+            name: `Hallmark Funko Pop! STAR WARS C-3PO & R2-D2 Ornaments Walmart Exclusive NEW`,
+            section: '1A'
+        },
+        {
+            name: `Funko Pop! TV: The Golden Girls In Robes 4 Pack Walmart EXCLUSIVE In Hand`,
+            section: '1A'
+        },
+        {
+            name: `The Nightmare Before Christmas OOGIE BOOGIE 3.5 Inflatable Gemmy Walmart`,
+            section: '2A'
+        },
+        {
+            name: `Walmart Animated Singing Banjo Christmas Grandma Got Run Over By A Reindeer`,
+            section: '2A'
+        },
+        {
+            name: `D100 31 MM NEW HOSE CRIMPER DIE SET BLACK CUSTOM CRIMP`,
+            section: '1A'
+        },
+        {
+            name: `CUSTOM CRIMP T420 19MM Series Die Set T420-19/ Green`,
+            section: '1A'
+        },
+        {
+            name: `CUSTOM CRIMP T420 19MM Series Die Set T420-19/ Green`,
+            section: '1A'
+        },
+        {
+            name: `Animated Singing Santa`,
+            section: '1D'
+        },
+        {
+            name: `Hallmark Funko Pop! STAR WARS C-3PO & R2-D2 Ornaments CHASE Walmart Exclusive`,
+            section: '4C'
+        },
+        {
+            name: `PAQUI One Chip Challenge 2022 Carolina and Scorpion Pepper HOT! 4 Pack .21 Oz`,
+            section: '4B'
+        },
+        {
+            name: `Funko Pop Stranger Things ROBIN STEVE 7 VECNA 3-Pack Walmart Exclusive In Hand`,
+            section: '4B'
+        },
+        {
+            name: `Funko Pop! Ornaments STARLORD & GROOT Walmart Exclusive Set Gold CHASE Hallmark`,
+            section: '4C'
+        },
+        {
+            name: `2022 CFA Program Curriculum Level III (3) Box Set Volume 1-6 New`,
+            size: '12X10X5',
+            weight: 13.1,
+            section: '1B'
+        },
+        {
+            name: `FUNKO POP TV #328 THE GOLDEN GIRLS ROSE DIAMOND COLLECTION BAM EXCLUSIVE MINT`,
+            size: '7x5x4',
+            weight: 0.5,
+            section: '1A'
+        },
+        {
+            name: `Funko POP! KFC - COLONEL SANDERS (w/Cane) #04, Funko Shop Limited Edition`,
+            size: '7x5x4',
+            weight: 0.5,
+            section: '1A'
+        },
+        {
+            name: `Veronese Designs Giraffe Vase Bronze Finish Art Nouveau 17" Tall Heavy 6.5lbs`,
+            size: '10x10x8',
+            weight: 8.0,
+            section: '5A'
+        },
+        {
+            name: `Funko Pop! Game of Thrones #65 BERIC DONDARRION 2018 Fall Convention Exclusive`,
+            size: '7x5x4',
+            weight: 0.5,
+            section: '2A'
+        },
+        {
+            name: `Dept 56 Christmas Possible Dreams SANTA THROUGH THE WOODS New 2022 6010217 LED`,
+            size: '22x17x12',
+            weight: 8.6,
+            section: '5A'
+        },
+        {
+            name: `Loungefly WINNIE THE POOH Bee Bundle w/ Funko Box Lunch #1034 and Enamel Pin NEW`,
+            size: '11x12x11',
+            weight: 3.0,
+            section: '5A'
+        },
+        {
+            name: `CANINE CRECHE 7 Piece Dog Nativity Scene Set By Roman`,
+            size: '12x10x7',
+            weight: 2.1,
+            section: '1D'
+        },
+        {
+            name: `Timberland Womens Courmayeur Valley 6" Faux Fur Waterproof, MED Gray, Size 8`,
+            size: '20x12x7',
+            weight: 4.6,
+            section: '5A'
+        },
+        {
+            name: `Loungefly Disney Minnie Mouse Daisies Cosplay Mini Backpack + Wallet New Sealed`,
+            size: '12x11x11',
+            weight: 3.1,
+            section: '5A'
+        },
+        {
+            name: `Funko Pop! Pokémon Munchlax 10” #917 2023 Target Con Exclusive`,
+            size: '16x11x12',
+            weight: 3.8,
+            section: '2B'
+        },
+        {
+            name: `Funko Pop! Disney 10" MICKEY MOUSE #457 Black and White Target Exclusive 90 Year`,
+            size: '16x11x12',
+            weight: 3.0,
+            section: '1C'
+        },
+        {
+            name: `Dept 56 Possible Dreams Clothtique Santa & Mrs. Claus BINGE WATCHING #6008610`,
+            size: '16x12x2',
+            weight: 5.2,
+            section: '1D'
+        },
+        {
+            name: `Funko Creators`,
+            size: '11x10x7',
+            weight: 1.3,
+            section: '2A'
+        },
+        {
+            name: `POKEMON PIKACHU Beach Towel Pool Bath 28x58in 100% Cotton Lot Of 4 NW`,
+            section: '1A'
+        },
+        {
+            name: `Funko Pop! Michelangelo #1141 Jumbo 10" - Walmart - Teenage Mutant Ninja Turtles`,
+            weight: 3.9,
+            section: '3A'
+        },
+        {
+            name: `Funko #1063 Marvel Loki Jumbo Miss Minutes SDCC Shared Sticker Exclusive GITD`,
+            size: '16x9x12',
+            weight: 3.8,
+            section: '3B'
+        },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
+        // {
+        //     name: ``,
+        //     size: '',
+        //     weight: ,
+        //     section: ''
+        // },
         // {
         //     name: ``,
         //     size: '',
