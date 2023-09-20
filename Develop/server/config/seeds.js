@@ -33,24 +33,8 @@ db.once('open', async () => {
     await Item.deleteMany();
 
     const items = await Item.insertMany([
-        {
-            name: 'UGG Fluff Yeah Slide Baby Slippers Size S 02/03 6-12 Months Lamb Fur New in Box',
-            size: '8x7x7',
-            weight: 0.7,
-            section: '1A'
-        },
-        {
-            name: 'Yeti Abominable Snowman Animated Monster Dances and Sings WHITE CHRISTMAS New',
-            size: '9x6x6',
-            weight: 1.0,
-            section: '1A'
-        },
-        {
-            name: 'Hallmark Christmas Ornaments HARRY POTTER HOGWARTS EXPRESS BOOKS & WAND 2021 New',
-            size: '9x6x5',
-            weight: 0.9,
-            section: '1A'
-        },
+
+
         {
             name: 'Nightmare Before Christmas OOGIE BOOGIE Silhouetted Glass Votive Holder Candle',
             size: '8x7x7',
@@ -64,51 +48,15 @@ db.once('open', async () => {
             section: '1A'
         },
         {
-            name: 'The Wiggles VHS Lot 4 HOOP DEE DOO MAGICAL ADVENTURE WAKE UP JEFF TOOT TOOT EUC',
-            size: '10x7x6',
-            weight: 2.4,
-            section: '1A'
-        },
-        {
-            name: 'Nightmare Before Christmas Animated JACK SKELLINGTON in CHIMNEY Plush Walgreens',
-            size: '10x8x9',
-            weight: 1.3,
-            section: '1A'
-        },
-        {
-            name: 'BEETLEJUICE LED ROTATING SHADOW PROJECTION LIGHT HALLOWEEN TABLETOP GEMMY NEW',
-            size: '10x9x9',
-            weight: 1.5,
-            section: '1A'
-        },
-        {
             name: 'Commonwealth HUG-A-PLUSH 8" CHRISTMAS PENGUIN with Tags and Case Vintage',
             size: '8x7x6',
             weight: 0.6,
             section: '1A'
         },
         {
-            name: 'Squishmallows Kellytoy Disney WINNIE THE POOH and PIGLET 5" Stuffed Plush NWT',
-            size: '7x6x4',
-            weight: 0.5,
-            section: '1A'
-        },
-        {
             name: 'Margaret Le Van Priss Alley Cats LITTLE PRIS MUFFET Retired',
             size: '8x7x5',
             weight: 0.7,
-            section: '1A'
-        },
-        {
-            name: 'Hallmark The MANDALORIAN w/ THE CHILD Walgreens Star Wars Christmas Ornament',
-            size: '6x6x4',
-            weight: 0.5,
-            section: '1A'
-        },
-        {
-            name: 'Funko POP! Marvel Avengers Endgame IRON MAN #580 PX Exclusive GITD',
-            size: '7x5x4',
-            weight: 0.5,
             section: '1A'
         },
         {
@@ -124,69 +72,9 @@ db.once('open', async () => {
             section: '1A'
         },
         {
-            name: 'Funko POP! #1237 PEACEMAKER W/ Shield 2022 Wondrous Convention Limited Edition',
-            size: '8x5x5',
-            weight: 0.5,
-            section: '4C'
-        },
-        {
-            name: 'Funko POP! Disney Pixar WALL-E 2022 Wondrous Convention Limited Edition',
-            size: '7x6x4',
-            weight: 0.6,
-            section: '4A'
-        },
-        {
-            name: 'Dept 56 Nightmare Before Christmas Jack, Sally and Zero by Possible Dreams NIB',
-            size: '17x14x12',
-            weight: 5.4,
-            section: '1B'
-        },
-        {
-            name: 'Nickelodeon Paw Patrol The Movie LIBERTY JOINS THE TEAM Target Exclusive New',
-            size: '16x13x3',
-            weight: 1.5,
-            section: '1B'
-        },
-        {
             name: 'Nightmare Before Christmas 9" Plush Doll JACK SALLY MAYOR ZERO OOGIE DR. FINKLE',
             size: '11x9x9',
             weight: 1.6,
-            section: '1B'
-        },
-        {
-            name: 'Walgreens Exclusive NIGHTMARE BEFORE CHRISTMAS Animated Plush Doll OOGIE BOOGIE',
-            size: '11x8x6',
-            weight: 1.1,
-            section: '1B'
-        },
-        {
-            name: 'Walgreens Exclusive NIGHTMARE BEFORE CHRISTMAS Animated Plush Doll BARREL NWT',
-            size: '15x10x6',
-            weight: 1.6,
-            section: '1B'
-        },
-        {
-            name: 'Roblox SERIES 4 Celebrity Collection 24 Pieces Target Exclusive NIB',
-            size: '16x14x6',
-            weight: 2.0,
-            section: '1B'
-        },
-        {
-            name: 'Walgreens Exclusive NIGHTMARE BEFORE CHRISTMAS Animated Plush Doll SALLY NWT',
-            size: '14x11x7',
-            weight: 1.6,
-            section: '1B'
-        },
-        {
-            name: 'Funko Shop Exclusive Kellogs Frosted Flakes TONY THE TIGER 10" #70 Factory Box',
-            size: '16x11x12',
-            weight: 3.6,
-            section: '1B'
-        },
-        {
-            name: 'Walgreens Exclusive Nightmare Before Christmas ZERO CANDELABRA Candle Holder New',
-            size: '12x11x7',
-            weight: 2.7,
             section: '1B'
         },
         {
@@ -196,70 +84,10 @@ db.once('open', async () => {
             section: '1X'
         },
         {
-            name: 'Loungefly Disney MICKEY MOUSE Sketch Lunch Bag Lunchbox Tote Hot Topic NWT',
-            size: '13x9x6',
-            weight: 1.3,
-            section: '1B'
-        },
-        {
-            name: 'THE YALE & TOWNE MFG CO Padlock Lock Antique With Key USA',
-            size: '4x4x4',
-            weight: 0.8,
-            section: '1A'
-        },
-        {
-            name: 'Funko Shop Exclusive Cereal CAPTAIN CAVEMAN Pocket Pop New in Sealed Box',
-            size: '11x8x3',
-            weight: 1.0,
-            section: '1B'
-        },
-        {
-            name: 'SQUISHMALLOW Nightmare Before Christmas Large 12-14" Set of 8 New with Tags',
-            size: '25x18x14',
-            weight: 7.3,
-            section: 'Z'
-        },
-        {
-            name: 'Nightmare Before Christmas Walmart Lot JACK STOCKING DECORATED TREE JACK MUG',
-            size: '14x11x5',
-            weight: 3.1,
-            section: '1C'
-        },
-        {
-            name: 'Dr. Seuss THE GRINCH CAR BUDDY Airblown Inflatable 3.5ft Gemmy Walmart Exclusive',
-            size: '11x7x5',
-            weight: 2.2,
-            section: '1C'
-        },
-        {
             name: 'Gemmy Airblown Inflatable 101 Dalmatians 5ft MALEFICENT Lights Up LED New',
             size: '15x13x8',
             weight: 4.3,
             section: '1C'
-        },
-        {
-            name: 'Dr. Seuss THE GRINCH Lot DECORATED TREE JACK IN THE BOX 6pc COLLECTIBLE FIGURES',
-            size: '19x14x7',
-            weight: 3.8,
-            section: '1C'
-        },
-        {
-            name: 'The Shining THE GRADY TWINS Animated Plush Spooky Creepy Phrases New with Tags',
-            size: '15x11x6',
-            weight: 1.9,
-            section: '1C'
-        },
-        {
-            name: 'Squishmallows Flip A Mallows Devil DANTE / TALLY Cat 12" Stuffed Plush NWT',
-            size: '15x12x10',
-            weight: 3.3,
-            section: '1X'
-        },
-        {
-            name: 'Disney Traditions Jim Shore OLD ST. MICK 17" Christmas Mickey Mouse Costco NIB',
-            size: '20x14x12',
-            weight: 9.8,
-            section: '1X'
         },
         {
             name: 'Disney Hocus Pocus WINIFRED SANDERSON w/ Book Door Greeter Plush Walmart NWT',
@@ -267,124 +95,14 @@ db.once('open', async () => {
             weight: 3.8,
             section: 'Z'
         },
-        {
-            name: "Star Wars GALACTIC SNAKIN' GROGU The Child 9.25-Inch-Tall Animatronic Toy New",
-            size: '14x13x6',
-            weight: 2.7,
-            section: '1D'
-        },
-        {
-            name: 'Funko Pocket POP! BEWARE 13 DAY SPOOKY COUNTDOWN New SEALED Calendar',
-            size: '15x11x5',
-            weight: 1.8,
-            section: '1D'
-        },
-        {
-            name: 'ROBLOX Classics Series 6 Action Figures 23pcs 12 Virtual Codes Target Exclusive',
-            size: '15x13x6',
-            weight: 0.4,
-            section: '2A'
-        },
-        {
-            name: 'Vintage Thanksgiving Duck Set of 3 Carved Wood TII Collection Figurines',
-            size: '13x10x4',
-            weight: 2.2,
-            section: '2A'
-        },
-        {
-            name: 'Funko Pop! Enamel Pin Set of 5 HARRY POTTER HERMIONE RON DUMBLEDORE HEDWIG',
-            size: '11x8x7',
-            weight: 1.6,
-            section: '2A'
-        },
-        {
-            name: 'FRIDAY 13TH JASON VOORHEES LED ROTATING SHADOW PROJECTION LIGHT TABLETOP GEMMY',
-            size: '12x9x9',
-            weight: 1.5,
-            section: '2A'
-        },
-        {
-            name: 'Airblown Inflatable Nightmare Before Christmas 3.5ft JACK SKELLINGTON and SALLY',
-            size: '12x10x9',
-            weight: 7.0,
-            section: '2A'
-        },
-        {
-            name: 'Disney Nightmare Before Christmas THE MASTER OF FRIGHT Jack Picture 3D 10x8"',
-            size: '13x10x6',
-            weight: 1.5,
-            section: '2A'
-        },
-        {
-            name: 'Airblown Gemmy Inflatable Nightmare Before Christmas 3.5ft JACK SKELLINGTON NIB',
-            size: '11x10x7',
-            weight: 3.7,
-            description: 'scaring sign',
-            section: '2A'
-        },
-        {
-            name: 'Nickelodeon PAW Patrol CHASE 4.5 Ft. Gemmy Airblown Lighted Inflatable Walmart',
-            size: '11x7x9',
-            weight: 3.8,
-            section: '2A'
-        },
-        {
-            name: 'Nightmare Before Christmas JACK SKELLINGTON One-Piece Hood PJs Pajamas XL 16/18',
-            section: '2A'
-        },
-        {
-            name: 'DKNY Rainbow Pride Drawstring Backpack Bag Embossed New With Tags',
-            section: '2A'
-        },
+
         {
             name: 'RARE! Disneyana Nightmare Before Christmas Cookie Jar 12" Limited Edition of 350',
             size: '16x14x14',
             weight: 10.6,
             section: '2B'
         },
-        {
-            name: 'Nightmare Before Christmas JACK SKELLINGTON AND ZERO Ghost Pillow Pets Plush NWT',
-            size: '17x12x13',
-            weight: 3.4,
-            section: '2B'
-        },
-        {
-            name: 'Funko POP! Alice in Wonderland CHESHIRE CAT 10" #1066 Walmart Exclusive',
-            size: '16x11x9',
-            weight: 2.6,
-            section: '2B'
-        },
-        {
-            name: 'Ravensburger Disney JUNGLE CRUISE ADVENTURE Game Amazon Exclusive New SEALED',
-            size: '13x11x4',
-            weight: 3.0,
-            section: '2B'
-        },
-        {
-            name: 'Airblown Inflatable Nightmare Before Christmas 3.5ft JACK SKELLINGTON LED New',
-            size: '10x9x7',
-            weight: 3.6,
-            description: 'sitting on pumpkin',
-            section: '2B'
-        },
-        {
-            name: 'Nightmare Before Christmas SANTA JACK SKELLINGTON 5 Ft. Lighted Inflatable',
-            size: '11x10x7',
-            weight: 3.7,
-            section: '2B'
-        },
-        {
-            name: 'Vintage Camel Cigarette Wooden Jewelry Type Box Thomas Museum Series With COA',
-            size: '14x9x7',
-            weight: 5.8,
-            section: '2B'
-        },
-        {
-            name: 'Funko Pop! Disney Archives MINNIE MOUSE 5 Pack Amazon Exclusive New Sealed Box',
-            size: '18x7x4',
-            weight: 1.8,
-            section: '2B'
-        },
+
         {
             name: 'Walgreens Exclusive NIGHTMARE BEFORE CHRISTMAS Animated Plush Doll Set of 4 NWT',
             size: '24x17x9',
@@ -392,34 +110,9 @@ db.once('open', async () => {
             section: '2C'
         },
         {
-            name: 'Dr. Seuss THE GRINCH 5.5 Ft. Gemmy Airblown LED Lighted Inflatable Walmart',
-            size: '10x8x9',
-            weight: 4.1,
-            description: 'wreath',
-            section: '2C'
-        },
-        {
-            name: 'HOCUS POCUS LED ROTATING SHADOW PROJECTION LIGHT HALLOWEEN TABLETOP GEMMY NEW',
-            size: '10x9x9',
-            weight: 1.5,
-            section: '2C'
-        },
-        {
-            name: 'SCOOBY-DOO Christmas Stocking 4.5 Ft. Gemmy Airblown Lighted Inflatable Walmart',
-            size: '11x10x7',
-            weight: 4.2,
-            section: '2C'
-        },
-        {
             name: 'CHI-Volumizer 4-in-1 Blowout Brush Nozzle Paddle Brush Diffuser and Round Brush',
             size: '15x10x5',
             weight: 2.5,
-            section: '2C'
-        },
-        {
-            name: 'SLIMER Ghost Busters Airblown Gemmy Self Inflatable 5ft LED Lighted NIB',
-            size: '14x10x6',
-            weight: 4.1,
             section: '2C'
         },
         {
@@ -433,76 +126,10 @@ db.once('open', async () => {
             section: '2D'
         },
         {
-            name: 'Squishmallows Kellytoy Disney 5" MIKE & SULLEY Plush Stuffed Monsters Inc. NWT',
-            size: '7x5x6',
-            weight: 0.4 ,
-            section: '2D'
-        },
-        {
-            name: 'Squishmallows Kellytoy Disney 10" MIKE & SULLEY Plush Stuffed Monsters Inc. NWT',
-            size: '14x11x7',
-            weight: 1.8,
-            section: '2D'
-        },
-        {
-            name: 'Squishmallows Kellytoy Disney GOOFY AND PLUTO 10" Plush Stuffed Animal NWT',
-            size: '13x9x7',
-            weight: 1.8,
-            section: '2D'
-        },
-        {
             name: 'Franklin Uniform Set 5pc NCAA Collegiate Football Mississippi State Bulldogs YM',
             size: '12x10x12',
             weight: 3.2,
             section: '2D'
-        },
-        {
-            name: 'Hotel Style FULL 1200 Thread Count Limited Ed 6 Piece Sheet Set Gray Pumice New',
-            size: '11x7x9',
-            weight: 5.1,
-            section: '2D'
-        },
-        {
-            name: 'Black Ceramic Cat Fish Bowl Holder Vandor Pelzman Made In Japan With Sticker',
-            size: '9x9x5',
-            weight: 1.3,
-            section: '2D'
-        },
-        {
-            name: 'Disney Frozen OLAF Squishmallow 10" KellyToy New With Tags',
-            size: '11x10x7',
-            weight: 1.2,
-            section: '2D'
-        },
-        {
-            name: 'Funko Disneyland 65th Minnie Mouse #06 Mickey Mouse #03 Casey Jr. Circus Train',
-            size: '10x8x7',
-            weight: 1.3,
-            section: '2D'
-        },
-        {
-            name: 'Disney MICKEY MOUSE 90TH ANNIVERSARY Set of 4 Plush Mickeys 9” Figures NWT',
-            size: '11x7x6',
-            weight: 0.8,
-            section: '2D'
-        },
-        {
-            name: 'Vintage 3D Tin Metal High Relief Set of 2 Framed Asian Themed Wall Art',
-            size: '14x9x7',
-            weight: 3.1,
-            section: '3C'
-        },
-        {
-            name: 'The Nightmare Before Christmas Pet Toys Gift Set JACK SKELLINGTON OOGIE BOOGIE',
-            size: '11x9x6',
-            weight: 1.7,
-            section: '3C'
-        },
-        {
-            name: 'Penco Black Metal Candle Holder and Votive Cat Playing the Violin',
-            size: '9x7x6',
-            weight: 1.0,
-            section: '3C'
         },
         {
             name: 'Funko POP! Deluxe: Dug Days #1098 DUG WITH PUPPIES Target Exclusive New',
@@ -511,52 +138,9 @@ db.once('open', async () => {
             section: '3C'
         },
         {
-            name: 'Vintage N S Gustin Mouse Mice SHAKER Ceramic - Two 5 1/2" Tall & One 4 1/4" Tall',
-            size: '12x7x7',
-            weight: 2.4,
-            section: '3C'
-        },
-        {
-            name: 'Mickey Mouse 90th Anniversary 10-Piece Collectible Figure Set BRAND NEW',
-            size: '16x14x6',
-            weight: 2.1,
-            section: '3D'
-        },
-        {
-            name: 'Blue Mountain Pottery Green Black Glazed Sitting Thinking Frog 7" EUC',
-            size: '12x9x7',
-            weight: 2.7,
-            section: '3D'
-        },
-        {
-            name: 'Nightmare Before Christmas Squishmallows 14" JACK SKELLINGTON SALLY ZERO OOGIE',
-            size: '18x12x13',
-            weight: 5.2,
-            section: '3D'
-        },
-        {
-            name: 'Walgreens NIGHTMARE BEFORE CHRISTMAS Animated Plush Doll JACK SKELLINGTON New',
-            size: '12x7x9',
-            weight: 1.4,
-            description: 'regular jack',
-            section: '2B'
-        },
-        {
-            name: 'Disney Nightmare Before Christmas Slow Cooker Crock Pot Jack Skellington NBC-73',
-            size: '15x10x15',
-            weight: 15.6,
-            section: '2X'
-        },
-        {
             name: 'Funko Pop! Movies: THE LOST BOYS - FROG BROTHERS 2-pack FUNKO SHOP EXCLUSIVE NIB',
             size: '10x8x6',
             weight: 0.9,
-            section: '4A'
-        },
-        {
-            name: 'Funko POP! ASIA Water Margin WU SONG #127 2021 Summer Convention Exclusive',
-            size: '7x5x4',
-            weight: 0.5,
             section: '4A'
         },
         {
@@ -572,27 +156,9 @@ db.once('open', async () => {
             section: '4A'
         },
         {
-            name: 'Funko A Day With Pikachu SPARKING UP A CELEBRATION Pokemon Center Exclusive NIB',
-            size: '9x7x6',
-            weight: 0.6,
-            section: '4A'
-        },
-        {
-            name: 'Funko DORBZ Nickelodeon Rugrats TOMMY 478 CHUCKIE 479 ANGELICA 480 4000 Pieces',
-            size: '11x7x6',
-            weight: 1.2,
-            section: '4A'
-        },
-        {
             name: 'SDCC 2020 PX Previews Exclusive Funko #336 Comic Moments RED HOOD vs DEATHSTROKE',
             size: '10x8x7',
             weight: 1.7,
-            section: '4A'
-        },
-        {
-            name: 'Funko Pop! Monsters THE WOLF MAN & BRIDE OF FRANKENSTEIN Walgreens Exclusive',
-            size: '7x5x4',
-            weight: 0.4,
             section: '4A'
         },
         {
@@ -602,119 +168,10 @@ db.once('open', async () => {
             section: '4A'
         },
         {
-            name: 'Hallmark Christmas Ornaments Nightmare Before Christmas JACK SKELLINGTON 2021',
-            size: '5x4x3',
-            weight: 0.2,
-            section: '4A'
-        },
-        {
-            name: '2021 Hallmark Funko Pop! Friends MONICA PHOEBE RACHEL 3 Ornament Lot Walmart New',
-            size: '10x7x6',
-            weight: 1.3,
-            section: '4B'
-        },
-        {
-            name: 'Funko Star Wars REY (JAKKU) 451 & IMPERIAL SUPER COMMANDO 452 2021 Shared Exc',
-            size: '10x8x5',
-            weight: 1.2,
-            section: '4B'
-        },
-        {
-            name: 'Funko POP! JIMI HENDRIX Black Light #239 Funko Shop ECCC NYCC',
-            size: '8x7x5',
-            weight: 0.5,
-            section: '4B'
-        },
-        {
             name: 'Funko Pop Retro Toys Mystifying Oracle OUIJA PLANCHETTE #102 - BAM! Exclusive',
             size: '7x5x4',
             weight: 0.4,
             section: '4B'
-        },
-        {
-            name: 'Funko A Day With Pikachu SWEET DAYS ARE HERE Pokemon Center Exclusive NIB',
-            size: '9x6x5',
-            weight: 0.5,
-            section: '4B'
-        },
-        {
-            name: 'Funko POP! Heroes I AM WONDER WOMAN #242 2018 Fall Convention Exclusive LE NIB',
-            size: '7x5x4',
-            weight: 0.4,
-            section: '4B'
-        },
-        {
-            name: "Funko Spastik Plastik Sike O'Shriner Teal # 05 Funko Shop Exclusive FREE SHIP",
-            size: '7x5x4',
-            weight: 0.5,
-            section: '4B'
-        },
-        {
-            name: 'Funko VYNL Gremlins GIZMO + GREMLIN 2018 Fall Convention Shared Exclusive MINT',
-            size: '10x7x6',
-            weight: 0.8,
-            section: '4B'
-        },
-        {
-            name: 'Vynl Hanna Barbera HUCKLEBERRY HOUND + SNAGGLEPUSS 2018 Fall Convention 3000 PCS',
-            size: '11x8x5',
-            weight: 1.1,
-            section: '4B'
-        },
-        {
-            name: 'Funko Pop! Asia - Kung Fu Freddy Funko & Wu Song 2021 Summer Convention Unopened',
-            size: '11x9x7',
-            weight: 1.6,
-            section: '4C'
-        },
-        {
-            name: 'Vynl QUISP + QUAKE Funko 2019 Summer Convention Limited Edition',
-            size: '9x7x4',
-            weight: 0.9,
-            section: '4C'
-            
-        },
-        {
-            name: 'Jack Skellington LED Wave Motion Nightmare Before Christmas Projector Halloween',
-            size: '9x6x6',
-            weight: 1.5,
-            section: '4C'
-        },
-        {
-            name: 'Hallmark Christmas Ornaments Peanuts CHARLIE BROWN with Tree 2021 New',
-            size: '7x5x4',
-            weight: 0.4,
-            section: '4C'
-        },
-        {
-            name: 'Hallmark Christmas Ornament Dr. Seuss THE GRINCH with Present 2021 New',
-            size: '7x5x4',
-            weight: 0.4,
-            section: '4C'
-        },
-        {
-            name: 'Hallmark Christmas Ornaments A Christmas Story LEG LAMP 2021 New',
-            size: '7x5x4',
-            weight: 0.4,
-            section: '4C'
-        },
-        {
-            name: 'Hallmark Ornament Funko Pop! HARRY POTTER LORD VOLDEMORT w SNAKE Walmart New',
-            size: '7x5x4',
-            weight: 0.5,
-            section: '4C'
-        },
-        {
-            name: 'Hallmark Ornaments Small Stars Nightmare Before Christmas JACK & SALLY Plush NWT',
-            size: '7x5x4',
-            weight: 0.4,
-            section: '4C'
-        },
-        {
-            name: 'Hallmark Christmas Ornaments Pokemon PIKACHU 2021 New',
-            size: '7x5x4',
-            weight: 0.4,
-            section: '4C'
         },
         {
             name: 'Funko A Day With Pikachu ONE LUCKY DAY Pokemon Center Exclusive NIB',
@@ -723,63 +180,9 @@ db.once('open', async () => {
             section: '4C'
         },
         {
-            name: 'Funko A Day With Pikachu COMPLETELY THANK-FULL Pokemon Center Exclusive NIB',
-            size: '8x6x7',
-            weight: 0.8,
-            section: '4C'
-        },
-        {
-            name: 'Hallmark Christmas Ornaments Disney 101 DALMATIANS & CRUELLA DE VIL 2021 New',
-            size: '6x4x6',
-            weight: 0.6,
-            section: '4C'
-        },
-        {
-            name: 'Funko POP! Hallmark Ornaments HARRY POTTER & LORD VOLDEMORT Walmart Exc. New',
-            size: '7x5x6',
-            weight: 0.8,
-            section: '4C'
-        },
-        {
-            name: 'Funko Pop GANDALF THE WHITE Sword & Staff 1203 GITD Boxlunch Earth Day Exclusive',
-            size: '7x5x4',
-            weight: 0.5,
-            section: '4C'
-        },
-        {
-            name: 'LOUNGEFLY Disney Star Wars BOBA FETT Mini Backpack NWT Never opened.',
-            size:'12x7x10',
-            weight: 2.0,
-            section: '3C'
-        },
-        {
             name: 'Corelle SHADOW IRIS Purple Flower Green Rim Dinner/Salad Plates Lot Of 16 EUC',
             size: '13x13x7',
             weight: 10.4,
-            section: '3C'
-        },
-        {
-            name: 'Porcelain Lego Music Box Guitar Shaped Victorian Painted Trinket Jewelry Box',
-            size: '9x6x3',
-            weight: 1.0,
-            section: '3C'
-        },
-        {
-            name: 'VINTAGE Bronze Frog Pulling Nautilus Shell Green Patina Toothpick Planter',
-            size: '7x5x4',
-            weight: 0.9,
-            section: '3C'
-        },
-        {
-            name: 'Vintage Golden Brass Family of Giraffes Set 7" Tall',
-            size: '8x7x3',
-            weight: 1.6,
-            section: '3C'
-        },
-        {
-            name: 'Fenton Burmese Floral Hand Painted Persian Tent Candy Box No Lid Signed',
-            size: '6x5x7',
-            weight: 1.6,
             section: '3C'
         },
         {
@@ -789,70 +192,15 @@ db.once('open', async () => {
             section: '3C'
         },
         {
-            name: 'Squishmallows Disney Pride Collection 8” BING BONG Elephant Inside Out LGBTQ+',
-            size: '7x6x7',
-            weight: 0.7,
-            section: '3C'
-        },
-        {
-            name: 'COCO Dowley CAT Cookie Jar 1990 Blue Scarf Certified International Corp',
-            size: '15x11x12',
-            weight: 4.4,
-            section: '3D'
-        },
-        {
             name: `Vintage 80'S Saxton Hall Quilted Long Puffer Coat 44" Tan Womans Size Small`,
             size: '20x14x7',
             weight: 3.6,
             section: '3D'
         },
         {
-            name: 'Kellytoy Squishmallow 8” Disney Pride Collection. Mickey, Minnie, Stitch & Bing',
-            size: '10x10x11',
-            weight: 2.5,
-            section: '3B'
-        },
-        {
             name: 'Funko Soda HEAT MISER The Year Without A Santa Claus CHASE & COMMON',
             size: '6x5x7',
             weight: 1.0,
-            section: '3B'
-        },
-        {
-            name: 'Kellytoy Squishmallow 8” Disney Pride Collection. MICKEY & MINNIE MOUSE NWT',
-            size: '9x9x7',
-            weight: 1.3,
-            section: '3B'
-        },
-        {
-            name: 'Funko POP! Disney Pinocchio BLUE FAIRY #1027 Limited CHASE Edition',
-            size: '7x5x4',
-            weight: 0.5,
-            section: '4C'
-        },
-        {
-            name: 'Funko POP! Heroes BATMAN with SDCC Bag #284 2019 Summer Convention Exclusive',
-            size: '7x5x4',
-            weight: 0.5,
-            section: '4C'
-        },
-        {
-            name: 'Star Wars Vintage Collection CLONE WARS VC214 Barriss VC215 Luminara VC216 Droid',
-            size: '12x9x5',
-            weight: 0.7,
-            section: '3B',
-            description: 'kenner'
-        },
-        {
-            name: 'SWINGLINE Heavy Duty Stapler, 160 Sheet High Capacity Black/Gray (39005)',
-            size: '16x10x6',
-            weight: 3.8,
-            section: '3B'
-        },
-        {
-            name: 'DORITOS ROULETTE Nacho Cheese and Cool Ranch MAYBE HOT MAYBE NOT! 3oz 2 Pack',
-            size: '8x7x6',
-            weight: 0.6,
             section: '3B'
         },
         {
@@ -864,18 +212,6 @@ db.once('open', async () => {
             size: '10x7x9',
             weight: 5.9,
             section: '3B'
-        },
-        {
-            name: 'Funko Pop Wacky Races LAZY LUKE #599 2019 Summer Convention Shared Exclusive',
-            size: '7x5x4',
-            weight: 0.4,
-            section: '3B'
-        },
-        {
-            name: 'Comic Con SDCC 2019 50th TOUCAN Funko POP and PEZ Dispenser Shared Exclusive',
-            size: '8x6x6',
-            weight: 0.8,
-            section: '4A'
         },
         {
             name: 'Funko Pop! Funkon 2021 Exclusive THE ROCKETEER #1068 Mint',
@@ -890,22 +226,8 @@ db.once('open', async () => {
             section: '1A'
         },
         {
-            name: 'Funko Pop Saturday Night Live BUTABI BROTHERS 2 Pack NYCC 2018 Fall Exclusive',
-            size: '9x7x4',
-            weight: 0.7,
-            section: '4A'
-        },
-        {
-            name: `Funko POP! Star Wars Art Series Walmart Exclusive DARTH VADER #517 (Endor)`,
-            section : '4B'
-        },
-        {
             name: `Funko POP! Star Wars Art Series DARTH VADER 515 Mustafar 516 Hoth 517 Endor Set`,
             section : '4B'
-        },
-        {
-            name: `POP Artist Series: Disney Treasures from The Vault - GOOFY, Amazon Exclusive`,
-            section : '4C'
         },
         {
             name: `Funko Pop! XANATHAR (w/D20) #785 Dungeons & Dragons 2021 Summer Convention LE`,
@@ -918,112 +240,10 @@ db.once('open', async () => {
             section: '3A'
         },
         {
-            name: 'Disney MICKEY and MINNIE MOUSE Halloween Vampire and Witch 8" Plush Set NEW',
-            size: '10x6x4',
-            weight: 0.7,
-            section: '3A'
-        },
-        {
-            name: 'MONSTERS Cereal 4 Pk FRUTE BRUTE FRANKEN BERRY BOO-BERRY COUNT CHOCULA Sealed',
-            size: '11x11x11',
-            weight: 4.4,
-            section: '3A'
-        },
-        {
-            name: 'Funko POP! Marvel SPIDER-GIRL #955 PIAB Exclusive Blue Chase and Red Common',
-            size: '11x7x5',
-            weight: 1.0,
-            section: '3B'
-        },
-        {
-            name: 'Funko Pop! Nightmare Before Christmas 10" OOGIE BOOGIE Blacklight #810 LE',
-            section: '3D'
-        },
-        {
-            name: 'Loungefly Nightmare Before Christmas Mini Backpack and Wallet Hot Topic NWT',
-            section: '3A'
-        },
-        {
-            name: 'Funko Star Wars Art DARTH VADER 515 Mustafar 516 Hoth 517 Endor 518 Bespin',
-            section: '3A'
-        },
-        {
-            name: 'Funko Pop! Retro Toys Transformers UNICRON SDCC 2022 Summer Convention 10" #103',
-            section: '2X'
-        },
-        {
-            name: 'Nightmare Before Christmas Blacklight Funko SODA Jack Sally Mayor Oogie Boogie',
-            section: '4A'
-        },
-        {
-            name: 'Funko Pop! DC PEACEMAKER W/ PEACE SIGN SDCC 2022 Shared Exclusive #1260',
-            section: '4A'
-        },
-        {
-            name: 'Funko POP! Star Wars Art Series Walmart Exclusive DARTH VADER #518 (Bespin)',
-            section: '4A'
-        },
-        {
-            name: 'Funko Pop! YUJI ITADORI #1163 Jujutsu Kaisen 2022 SDCC Shared Exclusive',
-            section: '4C'
-        },
-        {
-            name: 'Funko Pop! AMERICA CHAVEZ SDCC Shared Exclusive Marvel Doctor Strange #1070',
-            section: '4A'
-        },
-        {
-            name: 'Funko Pop! Marvel Guardians of the Galaxy DRAX #442 Cyber Monday Exclusive LE',
-            section: '4C'
-        },
-        {
-            name: '2022 SDCC Loungefly TUSKEN RAIDER Mini Backpack Star Wars New Sealed',
-            section: '1B'
-        },
-        {
-            name: 'Funko Pop! Star Wars #548 KRRSANTAN Funko 2022 SDCC Shared Summer Convention',
-            section: '4C'
-        },
-        {
-            name: `Funko Pop WWE The Rock And Mankind 2 Pack Walmart Exclusive`,
-            size: '10x8x5',
-            weight: 0.9,
-            section: '4C'
-        },
-        {
-            name: `Funko POP! Disney Beauty And The Beast WARDROBE 2021 FUNKON Exclusive #1067`,
-            size: '7x5x4',
-            weight: 0.4,
-            section: '4A'
-        },
-        {
             name: `Funko Pop! Heroes DC Batman RED HOOD #372 PIAB Exclusive`,
             size: '7x5x4',
             weight: 0.9,
             section: '4A'
-        },
-        {
-            name: `Funko Pop! Batman Returns -THE PENGUIN AND DUCK RIDE #288 Summer Convention 2022`,
-            size: '10x8x7',
-            weight: 1.4,
-            section: '4B'
-        },
-        {
-            name: `Loungefly Princess Stories MERIDA Backpack, Wallet, Mug & Pin PALM Exclusive`,
-            size: '16x12x7',
-            weight: 1.4,
-            section: '3A'
-        },
-        {
-            name: `Nightmare Before Christmas Halloween OOGIE SALLY JACK SKELLINGTON Blow Mold Set`,
-            size: '15x11x13',
-            weight: 3.8,
-            section: 'Z'
-        },
-        {
-            name: `Nightmare Before Christmas JACK & SALLY & PUMPKIN KING Light Up Pumpkin Stack`,
-            size: '20x12x8',
-            weight: 1.1,
-            section: '1A'
         },
         {
             name: `Nightmare Before Christmas Door Greeter JACK OOGIE MAYOR ZERO SALLY FINKELSTEIN`,
@@ -1032,22 +252,10 @@ db.once('open', async () => {
             section: 'Z'
         },
         {
-            name: `Disney The Nightmare Before Christmas HARLEQUIN DEMON Plush 6"`,
-            size: '10x7x5',
-            weight: 0.4,
-            section: '4C'
-        },
-        {
             name: `Nightmare Before Christmas JACK SKELLINGTON & ZERO Snow Globe Water Globe New`,
             size: '10x9x7',
             weight: 3.1,
             section: '1A'
-        },
-        {
-            name: `Funko Pop Universal Studios FRANKENSTEIN 1227 Blacklight Walgreens Sticker`,
-            size: '7x5x4',
-            weight: 0.4,
-            section: '4C'
         },
         {
             name: `Nightmare Before Christmas CLOWN 6' Lit Airblown Inflatable Halloween Yard Decor`,
@@ -1058,59 +266,10 @@ db.once('open', async () => {
             section: '3D'
         },
         {
-            name: `The Nightmare Before Christmas OOGIE, JACK & SALLY Lighted Pumpkin Set 8"`,
-            size: '16x10x12',
-            weight: 1.5,
-            section: '1A'
-        },
-        {
-            name: `Nightmare Before Christmas DEADLY NIGHT SHADE Faux Succulent Plant Ceramic 7”`,
-            size: '7x7x7',
-            weight: 1.0,
-            section: '1C'
-        },
-        {
             name: `Funko Pop! Movies: THE LOST BOYS - FROG BROTHERS 2-pack FUNKO SHOP EXCLUSIVE NIB`,
             size: '10x9x7',
             weight: 1.0,
             section: '4A'
-        },
-        {
-            name: `Loungefly Nightmare Before Christmas Gold Moon Mini Backpack Jack Skellington`,
-            size: '11x8x9',
-            weight: 1.9,
-            section: '2D'
-        },
-        {
-            name: `FUNKO Pop! MOVIES ANASTASIA (DIAMOND) #1240 SDCC SUMMER EXCLUSIVE LE NEW IN BOX`,
-            size: '8x6x5',
-            weight: 0.5,
-            section: '2D'
-        },
-        {
-            name: `FUNKO Pop! MOVIES ANASTASIA (DIAMOND) #1240 SDCC SUMMER EXCLUSIVE LE NEW IN BOX`,
-            size: '7x5x4',
-            weight: 0.5,
-            section: '4B'
-        },
-        {
-            name: `Funko Pop Universal Studios FRANKENSTEIN 1227 Blacklight Walgreens Sticker`,
-            size: '7x5x4',
-            weight: 0.4,
-            section: '4A'
-        },
-        {
-            name: `Airblown Gemmy Inflatable Nightmare Before Christmas 3.5ft JACK SKELLINGTON NIB`,
-            size: '9x8x6',
-            weight: 2.9,
-            section: '3B',
-            description: 'scaring sign',
-        },
-        {
-            name: `Disney The Nightmare Before Christmas 14” ZERO Ghost Dog Squishmallow KellyToy`,
-            size: '14x10x7',
-            weight: 2.1,
-            section: '3D'
         },
         {
             name: `Disney Airblown Gemmy Inflatable Nightmare Before Christmas 4.5ft ZERO LED NIB`,
@@ -1119,22 +278,6 @@ db.once('open', async () => {
             section: '3B'
         },
         {
-            name: `VAMPIRE JACK SKELLINGTON WITH PURPLE CAPE AND NIGHTSADE SALLY 12" Statues 2022`,
-            size: '18x7x4',
-            weight: 2.4,
-            section: '2C'
-        },
-        {
-            name: `Gemmy Halloween Disney 3.5 ft MICKEY and MINNIE MOUSE Airblown Inflatable New`,
-            size: '15x11x12',
-            weight: 7.3,
-            section: '3D'
-        },
-        {
-            name: `Disney Nightmare Before Christmas THE MASTER OF FRIGHT Jack Picture 3D 10x8"`,
-            section: '1B'
-        },
-        {
             name: `Loungefly CORALINE Glow In the Dark Mini BACKPACK & WALLET Set Sold Out NWT`,
             size: '12x12x9',
             weight: 3.1,
@@ -1157,18 +300,6 @@ db.once('open', async () => {
             size: '8x8x10',
             weight: 4.1,
             section: 'Z'
-        },
-        {
-            name: `STRANGER THINGS Upside Down Drink Kit with Sprinkle Mix Straws Retro Beverage`,
-            size: '12x9x6',
-            weight: 1.2,
-            section: '3B'
-        },
-        {
-            name: `Loungefly CORALINE Glow In the Dark Mini BACKPACK & WALLET Set Sold Out NWT`,
-            size: '14x10x7',
-            weight: 2.6,
-            section: '3B'
         },
         {
             name: `Obi-Wan Kenobi Frosted Flakes - Star Wars Celebration 2022 Set of 2 RARE CEREAL`,
@@ -1177,89 +308,10 @@ db.once('open', async () => {
             section: '3C'
         },
         {
-            name: `Loungefly CORALINE Glow In the Dark Mini BACKPACK & WALLET Set Sold Out NWT`,
-            size: '12x12x9',
-            weight: 3.1,
-            section: '3B'
-
-        },
-        {
-            name: `STRANGER THINGS Upside Down Drink Kit with Sprinkle Mix Straws Retro Beverage`,
-            size: '12x8x6',
-            weight: 1.4,
-            section: '2D'
-        },
-        {
-            name: `Nightmare Before Christmas JACK & SALLY & PUMPKIN KING Light Up Pumpkin Stack`,
-            size: '17x14x11',
-            weight: 2.4,
-            section: 'Z'
-        },
-        {
-            name: `Loungefly CORALINE Glow In the Dark Mini BACKPACK & WALLET Set Sold Out NWT`,
-            size: '11x9x11',
-            weight: 2.8,
-            section: 'Z'
-        },
-        {
-            name: `Loungefly Mickey Mouse Jack o' Lantern Crossbody Pumpkin Bag NWT`,
-            size: '13x9x4',
-            weight: 2.8,
-            section: '1D'
-        },
-        {
-            name: `NWT Loungefly Nightmare Before Christmas Headless Jack Skellington Mini Backpack`,
-            size: '12x10x8',
-            weight: 2.4,
-            section: '1D'
-        },
-        {
-            name: `Loungefly Disney MICKEY PUMPKIN MICK O LANTERN Backpack & Wallet GITD`,
-            size: '11x9x12',
-            weight: 2.7,
-            section: '1C'
-        },
-        {
-            name: `DISNEY Halloween Mini LIGHT UP Pumpkin VILLAINS SET Maleficent Ursula Cruella`,
-            size: '8x6x5',
-            weight: 0.5,
-            section: '4C'
-        },
-        {
-            name: `Loungefly Disney MICKEY MOUSE FRANKENSTEIN Mini Backpack EE Exclusive GITD NWT`,
-            size: '14x9x6',
-            weight: 2.1,
-            section: '1C'
-        },
-        {
-            name: `LOUNGEFLY Nightmare Before Christmas OOGIE BOOGIE Wheel Backpack & Wallet NWT`,
-            size: '13x8x10',
-            weight: 2.9,
-            section: '1D'
-        },
-        {
-            name: `Disney Loungefly Halloween Candy Corn Mickey & Minnie Backpack & Ears Headband`,
-            size: '14x11x7',
-            weight: 2.4,
-            section: '1C'
-        },
-        {
             name: `Nightmare Before Christmas Oogie Boogie Neon Green Backpack - Hot Topic NWT`,
             size: '18x14x5',
             weight: 2.2,
             section: '1B'
-        },
-        {
-            name: `HYDE & EEK! Boutique Orange LED Black Wire Drape Garland Halloween Set Of 3 NIB`,
-            size: '14x10x7',
-            weight: 2.8,
-            section: '1C'
-        },
-        {
-            name: `The Nightmare Before Christmas Succulent Lock Shock & Barrel in Bathtub`,
-            size: '7x5x4',
-            weight: 0.6,
-            section: '4C'
         },
         {
             name: `Disney The Nightmare Before Christmas Succulents Toy Duck Walgreens Exclusive`,
@@ -1268,107 +320,10 @@ db.once('open', async () => {
             section: '4C'
         },
         {
-            name: `Hyde And Eek! Boutique LED Rotating Tabletop Indoor Ghost Light`,
-            size: '8x7x9',
-            weight: 0.9,
-            section: '1C'
-        },
-        {
-            name: `Airblown Inflatable Nightmare Before Christmas 3.5ft JACK SKELLINGTON LED New`,
-            size: '10x9x7',
-            weight: 3.6,
-            section: '1D',
-            description: 'jack on pumpkin'
-        },
-        {
             name: `Philips Halloween Spooky Jack O Lantern Orange Pumpkin Motion Projector LED`,
             size: '11x8x6',
             weight: 1.5,
             section: '1D'
-        },
-        {
-            name: `Disney The Nightmare Before Christmas 2 Pack Pillowcase Set Halloween Candy Bag`,
-            section: '2B'
-        },
-        {
-            name: `Hyde and Eek! Boutique 20″ Lit Halloween Sisal Animated Cat RARE!`,
-            size: '16x10x12',
-            weight: 4.5,
-            section: '1B'
-        },
-        {
-            name: `DISNEY Halloween Mini LIGHT UP Pumpkin VILLAINS SET Maleficent Ursula Cruella`,
-            size: '8x6x5',
-            weight: 0.5,
-            section: '4C'
-        },
-        {
-            name: `Nightmare Before Christmas Backpack Full Size Glow In The Dark Slouch Bag New`,
-            size: '16x9x6',
-            weight: 1.7,
-            section: '1A'
-        },
-        {
-            name: `Ghostbusters Ghost Trap Child Costume Accessory Disguise Halloween New with Tags`,
-            size: '16x9x6',
-            weight: 1.6,
-            section: '1C'
-        },
-        {
-            name: `HOCUS POCUS LED ROTATING SHADOW PROJECTION LIGHT HALLOWEEN TABLETOP GEMMY NEW`,
-            size: '10x8x9',
-            weight: 1.5,
-            section: '1D'
-        },
-        {
-            name: `Airblown Inflatable Nightmare Before Christmas 3.5ft JACK SKELLINGTON LED New`,
-            size: '12x7x9',
-            weight: 3.7,
-            section: '1C',
-            description: 'jack on pumpkin'
-        },
-        {
-            name: `Airblown Gemmy Inflatable Nightmare Before Christmas 3.5ft JACK SKELLINGTON NIB`,
-            size: '12x8x8',
-            weight: 3.6,
-            section: '1D',
-            description: 'scaring sign'
-        },
-        {
-            name: `Loungefly Disney MINNIE MOUSE GHOST Glow-in-the-Dark Mini BACKPACK & WALLET NWT`,
-            size: '16x12x7',
-            weight: 2.7,
-            section: '1C'
-        },
-        {
-            name: `Disney Loungefly Halloween Candy Corn Mickey & Minnie Backpack & Ears Headband`,
-            size: '11x11x8',
-            weight: 2.8,
-            section: '1C'
-        },
-        {
-            name: `NBC Loungefly LOCK, SHOCK & BARREL Oogie Boogie Backpack & Wallet NEW`,
-            size: '12x10x10',
-            weight: 2.4,
-            section: '1C'
-        },
-        {
-            name: `NYCC Bundle Exclusive Nightmare Before Christmas Funko ZERO Pop + Mini Backpack`,
-            size: '15x10x12',
-            weight: 3.1,
-            section: '2D'
-        },
-        {
-            name: `Loungefly Coraline Doll Split Passport Crossbody Bag Purse SEALED NWT`,
-            size: '7x5x4',
-            weight: 0.4,
-            section: '4C'
-        },
-        {
-            name: `NYCC Exclusive Nightmare Before Christmas Dr. FINKELSTEIN Mini Backpack SEALED`,
-            size: '14x10x7',
-            weight: 2.4,
-            section: '2D'
         },
         {
             name: `NYCC Exclusive Nightmare Before Christmas Dr. FINKELSTEIN Mini Backpack SEALED`,
@@ -1376,213 +331,13 @@ db.once('open', async () => {
             weight: 2.8,
             section: '2C'
         },
-        {
-            name: `Loungefly Coraline Doll Split Passport Crossbody Bag Purse SEALED NWT`,
-            size: '7x5x4',
-            weight: 0.4,
-            section: '4C'
-        },
-        {
-            name: `Hallmark National Lampoons Vacation Cousin Eddie's RV Christmas Ornament NEW`,
-            size: '7x5x4',
-            weight: 0.4,
-            section: '4C'
-        },
-        {
-            name: `NYCC Bundle Exclusive Nightmare Before Christmas Funko ZERO Pop + Mini Backpack`,
-            size: '17x12x7',
-            weight: 3.2,
-            section: '2D'
-        },
-        {
-            name: `Hallmark Harry Potter Luggage Trolley Walmart Red Box Hedwig Ornament NEW 2022`,
-            size: '7x5x4',
-            weight: 0.4,
-            section: '4B'
-        },
-        {
-            name: `Hallmark National Lampoons Vacation Cousin Eddie's RV Christmas Ornament NEW`,
-            size: '7x5x4',
-            weight: 0.5,
-            section: '4C'
-        },
-        {
-            name: `2022 Funko POP! Art Series Star Wars #535 DARTH VADER Target Exclusive`,
-            size: '7x7x5',
-            weight: 1.0,
-            section: '2B'
-        },
-        {
-            name: `2022 Funko POP! Art Series Star Wars #535 DARTH VADER Target Exclusive`,
-            size: '7x7x5',
-            weight: 1.0,
-            section: '2B'
-        },
-        {
-            name: `Country Charm 2021 Holiday Time Christmas Village MEADOW BROOK FARM Lights Up`,
-            size: '14x10x8',
-            weight: 3.0,
-            section: '1A'
-        },
-        {
-            name: `Gemmy Airblown Inflatable 101 Dalmatians 5ft CRUELLA DE VIL LED New`,
-            section: '3A'
-        },
-        {
-            name: `Funko POP! Art Series Disney 80th Fantasia SORCERER MICKEY #14 & #15 NEW Set`,
-            size: '10x8x5',
-            weight: 1.1,
-            section: '2A'
-        },
-        {
-            name: `Funko POP! Art Series The Nightmare Before Christmas Set of 8 #5-10 & #38-39 NEW`,
-            size: '19x14x7',
-            weight: 4.8,
-            section: '1D'
-        },
-        {
-            name: `Star Wars The Mandalorian THE CHILD with Stocking Airblown Inflatable 4.5 FT`,
-            size: '11x10x7',
-            weight: 3.4,
-            section: '2B'
-        },
-        {
-            name: `Loungefly Disney Nightmare Before Christmas Wallet Oogie Boogie Lock Shock NEW`,
-            size: '8x7x3',
-            weight: 0.4,
-            section: '1A'
-        },
-        {
-            name: `Funko Pop! Disney Art Series Amazon Exclusive #25 #26 #28 #29 #30 #31 #37 #40`,
-            size: '18x12x9',
-            weight: 7.4,
-            section: '1D'
-        },
-        {
-            name: `Loungefly Funko Pop! Disney JACK SKELLINGTON & ZERO GITD Backpack & Wallet`,
-            size: '16x11x8',
-            weight: 3.3,
-            section: '1B'
-        },
-        {
-            name: `Loungefly Funko Pop! Disney JACK SKELLINGTON & ZERO GITD Backpack & Wallet`,
-            size: '15x12x7',
-            weight: 1.8,
-            section: '2B'
-        },
-        {
-            name: `Loungefly JACK SKELLINGTON Pumpkin Crossbody Purse & Wallet Glow in The Dark New`,
-            size: '14x8x7',
-            weight: 1.8,
-            section: '2C'
-        },
-        {
-            name: `Loungefly Exclusive JACK SKELLINGTON Pumpkin Crossbody Purse Glow in The Dark`,
-            size: '12x9x7',
-            weight: 1.4,
-            section: '2A'
-        },
-        {
-            name: `Disney The Nightmare Before Christmas Animated JACK SKELLINGTON Voice Door Bell`,
-            size: '9x6x7',
-            weight: 1.0,
-            section: '2B'
-        },
-        {
-            name: `The Nightmare Before Christmas Jack Skellington Holiday Express Train Set NEW`,
-            size: '19x14x3',
-            weight: 2.5,
-            section: '1D'
-        },
-        {
-            name: `Giant SANTA CLAUS Gemmy Christmas Airblown Inflatable Yard Decor 14FT Tall NEW`,
-            size: '14x12x14',
-            weight: 9.2,
-            section: 'Z'
-        },
-        {
-            name: `24" Light-up Plush Golden Dog, with 35 Clear Incandescent Lights Holiday Time`,
-            size: '17x13x12',
-            weight: 5.3,
-            section: '1D'
-        },
-        {
-            name: `Funko 7 Eleven SLURPEE Exclusive BLUE RASBERRY 89 & CHERRY 92 Glitter Set of 2`,
-            size: '8x7x5',
-            weight: 1.0,
-            section: '4A'
-        },
-        {
-            name: `Funko Nightmare Before Christmas JACK SKELLINGTON 18" Backpack New with Tags`,
-            size: '23x13x3',
-            weight: 2.0,
-            section: '3X'
-        },
-        {
-            name: `Funko POP! Ad Icons 10 Inch BOB'S BIG BOY #92 Funko Shop Exclusive New LE`,
-            size: '16x13x11',
-            weight: 4.0,
-            section: '3X'
-        },
-        {
-            name: `Funko Soda CHASE YZMA with Science Flask Emperor's New Groove 2022 WonderCon LE`,
-            size: '8x5x4',
-            weight: 0.6,
-            section: '4C'
-        },
+
+
         {
             name: `FUNKO POP! MOVIES #1203 GANDALF THE WHITE LORD OF RINGS GLOWS BOXLUNCH EXCLUSIVE`,
             size: '7x5x4',
             weight: 0.6,
             section: '4C'
-        },
-        {
-            name: `Funko Pop! Alice in Wonderland WALRUS AND THE CARPENTER #1070 Funkon Exclusive`,
-            size: '7x5x4',
-            weight: 0.6,
-            section: '4C'
-        },
-        {
-            name: `Funko POP! Disney Alice in Wonderland CHESHIRE CAT #1059 BAM Exclusive GITD`,
-            size: '7x5x4',
-            weight: 0.5,
-            section: '4C'
-        },
-        {
-            name: `Funko POP! ORGANIZATION 13 MICKEY # 334 Disney Kingdom Hearts 2018 Summer Con`,
-            size: '7x5x4',
-            weight: 0.6,
-            section: '4C'
-        },
-        {
-            name: `Funko Pop! The Nightmare Before Christmas: Blacklight - Oogie Boogie #39`,
-            size: '7x5x4',
-            weight: 0.6,
-            section: '4C'
-        },
-        {
-            name: `Funko 3 Liter Soda Villian Maleficent Dragon NYCC Shared Exclusive Common`,
-            size: '13x13x6',
-            weight: 2.0,
-            section: '3X'
-        },
-        {
-            name: `Funko POP! Disney CRUELLA (MAKING ART) #1038 101 Dalmatians New`,
-            size: '7x5x4',
-            weight: 0.6,
-            section: '4B'
-        },
-        {
-            name: `Funko Vynl QUISP + QUAKE Vinyl Figures 2019 Summer Convention Limited Edition`,
-            size: '9x7x4',
-            weight: 1.0,
-            section: '4B'
-        },
-        {
-            name: `Funko POP! Hanna Barbera JABBERJAW #435 DUM DUM #435 BABA LOOEY #281 NYCC Shared`,
-            size: '11x8x6',
-            weight: 1.5,
-            section: '3D'
         },
         {
             name: `Funko Pop! Loungefly Disney MICKEY MOUSE Pin Trader Cosplay Mini Backpack NWT`,
@@ -1591,46 +346,10 @@ db.once('open', async () => {
             section: '2B'
         },
         {
-            name: `Jim Shore For Enesco Heartwood Creek Winter Wonderland Santa Figurine, 9.75-Inch`,
-            size: '14x10x7',
-            weight: 2.8,
-            section: '1B'
-        },
-        {
             name: `Hunter X Hunter KILLUA ZOLDYCK Funko Pop! AX 2022 Anime Expo Exclusive`,
             size: '7x5x4',
             weight: 0.5,
             section: '4C'
-        },
-        {
-            name: `Nutcracker Glitterdome by Roman 100MM Snow Globe Plays the Nutcracker Ballet New`,
-            size: '9x6x6',
-            weight: 2.6,
-            section: '4B'
-        },
-        {
-            name: `Kurt S. Adler 16.5-Inch LED Lights Gingerbread House, Multi New-Open Box`,
-            size: '19x11x11',
-            weight: 6.8,
-            section: '2D'
-        },
-        {
-            name: `Jim Shore Peanuts Snoopy Astronaut THE BEAGLE HAS LANDED 5.8" Enesco 6005948`,
-            size: '10x8x8',
-            weight: 1.6,
-            section: '3C'
-        },
-        {
-            name: `Enesco Jim Shore Heartwood Creek Beach Santa with Pelican Figurine, 9.75-Inch`,
-            size: '14x11x8',
-            weight: 2.9,
-            section: '1B'
-        },
-        {
-            name: `Star Wars Red Sith Trooper Christmas Nutcracker Kurt S Adler 10 Inch SW6201L`,
-            size: '15x7x5',
-            weight: 2.3,
-            section: '2A'
         },
         {
             name: `Jim Shore Peanuts SNOOPY and WOODSTOCK HALLOWEEN 2021 BEWITCHING BEAGLE 6008964`,
@@ -1645,28 +364,10 @@ db.once('open', async () => {
             section: '2A'
         },
         {
-            name: `Jim Shore - Heartwood Creek White Woodland Sleigh Centerpiece Deer #611622 13"L`,
-            size: '15x8x12',
-            weight: 3.7,
-            section: '2C'
-        },
-        {
             name: `Loungefly Disney MINNIE MOUSE GHOST Glow-in-the-Dark Mini BACKPACK & WALLET NWT`,
             size: '14x10x7',
             weight: 2.1,
             section: '1C'
-        },
-        {
-            name: `Disney Villains Maleficent Deluxe Crossbody Bag Vegan Leather NWT`,
-            size: '10x8x6',
-            weight: 0.9,
-            section: '3B'
-        },
-        {
-            name: `Wondershop 2021 Red Cardinals & Unicorn Musical Snowglobe Water Globe Set NEW`,
-            size: '11x6x8',
-            weight: 2.0,
-            section: '4A'
         },
         {
             name: `Dr. Seuss THE GRINCH CAR BUDDY Airblown Inflatable 3.5ft Gemmy Walmart Exclusive`,
@@ -1681,138 +382,18 @@ db.once('open', async () => {
             section: '4B',
         },
         {
-            name: `Hallmark National Lampoons Vacation Cousin Eddie's RV Christmas Ornament NEW`,
-            size: '7x5x4',
-            weight: 0.5,
-            section: '4B',
-        },
-        {
-            name: `The Nightmare Before Christmas Tree Topper JACK SKELLINGTON 12" Tree Hugger NWT`,
-            size: '18x14x4',
-            weight: 1.5,
-            section: 'X'
-        },
-        {
-            name: `SANTA JACK SKELLINGTON Lighted 14 Inch Blow Mold Nightmare Before Christmas 2022`,
-            size: '13x13x7',
-            weight: 1.7,
-            section: 'X'
-        },
-        {
-            name: `Holiday Time GNOME & PENGUIN Hand Painted Christmas Cookie Jar Set NIB`,
-            size: '17x12x9',
-            weight: 7.8,
-            section: 'X'
-        },
-        {
             name: `Grinch Snowglobe`,
             size: '7x5x4',
             weight: 0.5,
             section: '4B'
         },
         {
-            name: `Dept 56 Possible Dreams Clothtique GINGERBREAD CHAIR SANTA #6010183 New`,
-            section: '2C'
-        },
-        {
-            name: `SPONGEBOB SQUAREPANTS Christmas Door Greeter In A Santa Suit Plush Walmart NEW`,
-            section: '2C'
-        },
-        {
-            name: `Veronese St Michael Archangel Holding Sword & Shield Bronze & Gold Finish 12.75"`,
-            section: '2C'
-        },
-        {
-            name: `Dr. Seuss The Grinch Who Stole Christmas Holiday GRINCH EXPRESS 12PC Train Set`,
-            section: '2C'
-        },
-        {
-            name: `Walmart Animated Western Santa Lasso Dances Sings Lil Nas X "Old Town Road" NWT`,
-            section: '2C'
-        },
-        {
-            name: `Hallmark Ornaments Harry Potter Lot of 6 2021 Walgreens Hat, Books, Express New`,
-            section: '2C'
-        },
-        {
-            name: `The Grinch Who Stole Christmas Cookie Jar Canister THE GRINCH Santa Hat SEALED`,
-            section: '1A'
-        },
-        {
-            name: `Hallmark Funko Jurassic World OWEN & BLUE Ornaments GOLD CHASE Walmart Exclusive`,
-            section: '1A'
-        },
-        {
-            name: `Hallmark Funko Pop! STAR WARS C-3PO & R2-D2 Ornaments Walmart Exclusive NEW`,
-            section: '1A'
-        },
-        {
             name: `Funko Pop! TV: The Golden Girls In Robes 4 Pack Walmart EXCLUSIVE In Hand`,
-            section: '1A'
-        },
-        {
-            name: `The Nightmare Before Christmas OOGIE BOOGIE 3.5 Inflatable Gemmy Walmart`,
-            section: '2A'
-        },
-        {
-            name: `Walmart Animated Singing Banjo Christmas Grandma Got Run Over By A Reindeer`,
-            section: '2A'
-        },
-        {
-            name: `D100 31 MM NEW HOSE CRIMPER DIE SET BLACK CUSTOM CRIMP`,
-            section: '1A'
-        },
-        {
-            name: `CUSTOM CRIMP T420 19MM Series Die Set T420-19/ Green`,
-            section: '1A'
-        },
-        {
-            name: `CUSTOM CRIMP T420 19MM Series Die Set T420-19/ Green`,
             section: '1A'
         },
         {
             name: `Animated Singing Santa`,
             section: '1D'
-        },
-        {
-            name: `Hallmark Funko Pop! STAR WARS C-3PO & R2-D2 Ornaments CHASE Walmart Exclusive`,
-            section: '4C'
-        },
-        {
-            name: `PAQUI One Chip Challenge 2022 Carolina and Scorpion Pepper HOT! 4 Pack .21 Oz`,
-            section: '4B'
-        },
-        {
-            name: `Funko Pop Stranger Things ROBIN STEVE 7 VECNA 3-Pack Walmart Exclusive In Hand`,
-            section: '4B'
-        },
-        {
-            name: `Funko Pop! Ornaments STARLORD & GROOT Walmart Exclusive Set Gold CHASE Hallmark`,
-            section: '4C'
-        },
-        {
-            name: `2022 CFA Program Curriculum Level III (3) Box Set Volume 1-6 New`,
-            size: '12X10X5',
-            weight: 13.1,
-            section: '1B'
-        },
-        {
-            name: `FUNKO POP TV #328 THE GOLDEN GIRLS ROSE DIAMOND COLLECTION BAM EXCLUSIVE MINT`,
-            size: '7x5x4',
-            weight: 0.5,
-            section: '1A'
-        },
-        {
-            name: `Funko POP! KFC - COLONEL SANDERS (w/Cane) #04, Funko Shop Limited Edition`,
-            size: '7x5x4',
-            weight: 0.5,
-            section: '1A'
-        },
-        {
-            name: `Veronese Designs Giraffe Vase Bronze Finish Art Nouveau 17" Tall Heavy 6.5lbs`,
-            size: '10x10x8',
-            weight: 8.0,
-            section: '5A'
         },
         {
             name: `Funko Pop! Game of Thrones #65 BERIC DONDARRION 2018 Fall Convention Exclusive`,
@@ -1821,73 +402,17 @@ db.once('open', async () => {
             section: '2A'
         },
         {
-            name: `Dept 56 Christmas Possible Dreams SANTA THROUGH THE WOODS New 2022 6010217 LED`,
-            size: '22x17x12',
-            weight: 8.6,
-            section: '5A'
-        },
-        {
-            name: `Loungefly WINNIE THE POOH Bee Bundle w/ Funko Box Lunch #1034 and Enamel Pin NEW`,
-            size: '11x12x11',
-            weight: 3.0,
-            section: '5A'
-        },
-        {
-            name: `CANINE CRECHE 7 Piece Dog Nativity Scene Set By Roman`,
-            size: '12x10x7',
-            weight: 2.1,
-            section: '1D'
-        },
-        {
-            name: `Timberland Womens Courmayeur Valley 6" Faux Fur Waterproof, MED Gray, Size 8`,
-            size: '20x12x7',
-            weight: 4.6,
-            section: '5A'
-        },
-        {
             name: `Loungefly Disney Minnie Mouse Daisies Cosplay Mini Backpack + Wallet New Sealed`,
             size: '12x11x11',
             weight: 3.1,
             section: '5A'
         },
-        {
-            name: `Funko Pop! Pokémon Munchlax 10” #917 2023 Target Con Exclusive`,
-            size: '16x11x12',
-            weight: 3.8,
-            section: '2B'
-        },
-        {
-            name: `Funko Pop! Disney 10" MICKEY MOUSE #457 Black and White Target Exclusive 90 Year`,
-            size: '16x11x12',
-            weight: 3.0,
-            section: '1C'
-        },
-        {
-            name: `Dept 56 Possible Dreams Clothtique Santa & Mrs. Claus BINGE WATCHING #6008610`,
-            size: '16x12x2',
-            weight: 5.2,
-            section: '1D'
-        },
+
         {
             name: `Funko Creators`,
             size: '11x10x7',
             weight: 1.3,
             section: '2A'
-        },
-        {
-            name: `POKEMON PIKACHU Beach Towel Pool Bath 28x58in 100% Cotton Lot Of 4 NW`,
-            section: '1A'
-        },
-        {
-            name: `Funko Pop! Michelangelo #1141 Jumbo 10" - Walmart - Teenage Mutant Ninja Turtles`,
-            weight: 3.9,
-            section: '3A'
-        },
-        {
-            name: `Funko #1063 Marvel Loki Jumbo Miss Minutes SDCC Shared Sticker Exclusive GITD`,
-            size: '16x9x12',
-            weight: 3.8,
-            section: '3B'
         },
         // {
         //     name: ``,
