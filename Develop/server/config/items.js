@@ -43,7 +43,7 @@ const items = [
     name: 'UGG Fluff Yeah Slide Baby Slippers Size S 02/03 6-12 Months Lamb Fur New in Box',
     size: '8x7x7',
     weight: 0.7,
-    section: '1A'
+    section: '1C'
   },
   {
     name: `Nightmare Before Christmas Backpack Full Size Glow In The Dark Slouch Bag New`,
@@ -53,7 +53,7 @@ const items = [
   },
   {
     name: `The Grinch Who Stole Christmas Cookie Jar Canister THE GRINCH Santa Hat SEALED`,
-    section: '1A',
+    section: '1C',
     size: '12x10x11',
     weight: 5.4
   },
@@ -163,7 +163,7 @@ const items = [
     name: `Loungefly Funko Pop! Disney JACK SKELLINGTON & ZERO GITD Backpack & Wallet`,
     size: '16x11x8',
     weight: 3.3,
-    section: '1B'
+    section: '1C'
   },
   {
     name: `Hyde and Eek! Boutique 20″ Lit Halloween Sisal Animated Cat RARE!`,
@@ -181,7 +181,7 @@ const items = [
     name: 'Funko Shop Exclusive Cereal CAPTAIN CAVEMAN Pocket Pop New in Sealed Box',
     size: '11x8x3',
     weight: 1.0,
-    section: '1B'
+    section: '1C'
   },
   {
     name: 'Roblox SERIES 4 Celebrity Collection 24 Pieces Target Exclusive NIB',
@@ -199,7 +199,7 @@ const items = [
     name: 'Loungefly Disney MICKEY MOUSE Sketch Lunch Bag Lunchbox Tote Hot Topic NWT',
     size: '13x9x6',
     weight: 1.3,
-    section: '1B'
+    section: '1C'
   },
   {
     name: 'Walgreens Exclusive NIGHTMARE BEFORE CHRISTMAS Animated Plush Doll BARREL NWT',
@@ -229,12 +229,6 @@ const items = [
     name: 'Dr. Seuss THE GRINCH CAR BUDDY Airblown Inflatable 3.5ft Gemmy Walmart Exclusive',
     size: '11x7x5',
     weight: 2.2,
-    section: '1C'
-  },
-  {
-    name: 'Dr. Seuss THE GRINCH Lot DECORATED TREE JACK IN THE BOX 6pc COLLECTIBLE FIGURES',
-    size: '19x14x7',
-    weight: 3.8,
     section: '1C'
   },
   {
@@ -335,12 +329,6 @@ const items = [
     section: '1D'
 },
 {
-  name: `CANINE CRECHE 7 Piece Dog Nativity Scene Set By Roman`,
-  size: '12x10x7',
-  weight: 2.1,
-  section: '1D'
-},
-{
   name: `Be Jolly Dancing Singing Lighted Christmas Tree Sunglasses JINGLE BELLS New`,
   size: '12x10x7',
   weight: 1.7,
@@ -369,7 +357,7 @@ const items = [
   name: "Star Wars GALACTIC SNAKIN' GROGU The Child 9.25-Inch-Tall Animatronic Toy New",
   size: '14x13x6',
   weight: 2.7,
-  section: '1D'
+  section: '1B'
 },
 {
   name: `HOCUS POCUS LED ROTATING SHADOW PROJECTION LIGHT HALLOWEEN TABLETOP GEMMY NEW`,
@@ -389,12 +377,6 @@ const items = [
   name: 'Funko A Day With Pikachu SWEET DAYS ARE HERE Pokemon Center Exclusive NIB',
   size: '9x6x6',
   weight: 0.5,
-  section: '2A'
-},
-{
-  name: `Loungefly Exclusive JACK SKELLINGTON Pumpkin Crossbody Purse Glow in The Dark`,
-  size: '12x9x7',
-  weight: 1.4,
   section: '2A'
 },
 {
@@ -441,18 +423,6 @@ const items = [
   section: '2A'
 },
 {
-  name: `Loungefly CORALINE Glow In the Dark Mini BACKPACK & WALLET Set Sold Out NWT`,
-  size: '11x9x11',
-  weight: 2.8,
-  section: '2A'
-},
-{
-  name: 'Airblown Inflatable Nightmare Before Christmas 3.5ft JACK SKELLINGTON and SALLY',
-  size: '12x10x9',
-  weight: 7.0,
-  section: '2A'
-},
-{
   name: 'ROBLOX Classics Series 6 Action Figures 23pcs 12 Virtual Codes Target Exclusive',
   size: '15x13x6',
   weight: 0.4,
@@ -486,10 +456,6 @@ const items = [
   name: `Funko Pop! Pokémon Munchlax 10” #917 2023 Target Con Exclusive`,
   size: '16x11x12',
   weight: 3.8,
-  section: '2B'
-},
-{
-  name: `Disney The Nightmare Before Christmas 2 Pack Pillowcase Set Halloween Candy Bag`,
   section: '2B'
 },
 {
@@ -848,21 +814,9 @@ const items = [
   section: '3A'
 },
 {
-  name: `Loungefly CORALINE Glow In the Dark Mini BACKPACK & WALLET Set Sold Out NWT`,
-  size: '12x12x9',
-  weight: 3.1,
-  section: '3B'
-},
-{
   name: 'SWINGLINE Heavy Duty Stapler, 160 Sheet High Capacity Black/Gray (39005)',
   size: '16x10x6',
   weight: 3.8,
-  section: '3B'
-},
-{
-  name: `Loungefly CORALINE Glow In the Dark Mini BACKPACK & WALLET Set Sold Out NWT`,
-  size: '14x10x7',
-  weight: 2.6,
   section: '3B'
 },
 {
@@ -1486,6 +1440,24 @@ const items = [
   weight: 8.6,
   section: '5A'
 },
+{
+  name: `Jim Shore Peanuts SNOOPY and WOODSTOCK HALLOWEEN 2021 BEWITCHING BEAGLE 6008964`,
+  size: '9x7x8',
+  weight: 1.5,
+  section: '1A'
+},
+{
+  name: `Funko Pop! TV: The Golden Girls In Robes 4 Pack Walmart EXCLUSIVE In Hand`,
+  section: '1B',
+  size: '14x7x5',
+  weight: 1.3
+},
+{
+  name: `Kurt S. Adler Hollywood Nutcracker with Sea Turtle Hat by Holly Adler, 11-Inch`,
+  size: '14x10x6',
+  weight: 2.4, 
+  section: '1D'
+}
 ]
 
 console.log(items.length)
