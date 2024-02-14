@@ -1,4 +1,4 @@
-const items = [
+export default [
   {
     name: 'THE YALE & TOWNE MFG CO Padlock Lock Antique With Key USA',
     size: '4x4x4',
@@ -112,27 +112,9 @@ const items = [
     section: '1A'
   },
   {
-    name: 'Nightmare Before Christmas Animated JACK SKELLINGTON in CHIMNEY Plush Walgreens',
-    size: '10x8x9',
-    weight: 1.3,
-    section: '1A'
-  },
-  {
     name: 'Warhammer 40K Codex DRUKHARI, THOUSAND SONS & Datacards: GREY KNIGHTS New SEALED',
     size: '13x9x3',
     weight: 3.5,
-    section: '1B'
-  },
-  {
-    name: `Enesco Jim Shore Heartwood Creek Beach Santa with Pelican Figurine, 9.75-Inch`,
-    size: '14x11x8',
-    weight: 2.9,
-    section: '1B'
-  },
-  {
-    name: `Jim Shore For Enesco Heartwood Creek Winter Wonderland Santa Figurine, 9.75-Inch`,
-    size: '14x10x7',
-    weight: 2.8,
     section: '1B'
   },
   {
@@ -140,12 +122,6 @@ const items = [
     section: '1B',
     weight: 2.9,
     size: '12x12x9'
-  },
-  {
-    name: 'Nickelodeon Paw Patrol The Movie LIBERTY JOINS THE TEAM Target Exclusive New',
-    size: '16x13x3',
-    weight: 1.5,
-    section: '1B'
   },
   {
     name: 'Dept 56 Nightmare Before Christmas Jack, Sally and Zero by Possible Dreams NIB',
@@ -202,18 +178,6 @@ const items = [
     section: '1C'
   },
   {
-    name: 'Walgreens Exclusive NIGHTMARE BEFORE CHRISTMAS Animated Plush Doll BARREL NWT',
-    size: '15x10x6',
-    weight: 1.6,
-    section: '1B'
-  },
-  {
-    name: `Nightmare Before Christmas DEADLY NIGHT SHADE Faux Succulent Plant Ceramic 7”`,
-    size: '7x7x7',
-    weight: 1.0,
-    section: '1C'
-  },
-  {
     name: `Loungefly Disney MICKEY MOUSE FRANKENSTEIN Mini Backpack EE Exclusive GITD NWT`,
     size: '14x9x6',
     weight: 2.1,
@@ -226,12 +190,6 @@ const items = [
     section: '1C'
   },
   {
-    name: 'Dr. Seuss THE GRINCH CAR BUDDY Airblown Inflatable 3.5ft Gemmy Walmart Exclusive',
-    size: '11x7x5',
-    weight: 2.2,
-    section: '1C'
-  },
-  {
     name: `HYDE & EEK! Boutique Orange LED Black Wire Drape Garland Halloween Set Of 3 NIB`,
     size: '14x10x7',
     weight: 2.8,
@@ -241,12 +199,6 @@ const items = [
     name: `NBC Loungefly LOCK, SHOCK & BARREL Oogie Boogie Backpack & Wallet NEW`,
     size: '12x10x10',
     weight: 2.4,
-    section: '1C'
-  },
-  {
-    name: `Ghostbusters Ghost Trap Child Costume Accessory Disguise Halloween New with Tags`,
-    size: '16x9x6',
-    weight: 1.6,
     section: '1C'
   },
   {
@@ -322,12 +274,6 @@ const items = [
     weight: 2.8,
     section: '1D'
   },
-  {
-    name: `Dept 56 Possible Dreams Clothtique Santa & Mrs. Claus BINGE WATCHING #6008610`,
-    size: '16x12x2',
-    weight: 5.2,
-    section: '1D'
-},
 {
   name: `Be Jolly Dancing Singing Lighted Christmas Tree Sunglasses JINGLE BELLS New`,
   size: '12x10x7',
@@ -346,12 +292,6 @@ const items = [
   weight: 3.6,
   section: '1D',
   description: 'scaring sign'
-},
-{
-  name: `LOUNGEFLY Nightmare Before Christmas OOGIE BOOGIE Wheel Backpack & Wallet NWT`,
-  size: '13x8x10',
-  weight: 2.9,
-  section: '1D'
 },
 {
   name: "Star Wars GALACTIC SNAKIN' GROGU The Child 9.25-Inch-Tall Animatronic Toy New",
@@ -587,12 +527,6 @@ const items = [
   section: '2C'
 },
 {
-  name: `Dr. Seuss The Grinch Who Stole Christmas Holiday GRINCH EXPRESS 12PC Train Set`,
-  section: '2C',
-  size: '16x13x4',
-  weight: 2.1
-},
-{
   name: 'Dr. Seuss THE GRINCH 5.5 Ft. Gemmy Airblown LED Lighted Inflatable Walmart',
   size: '10x8x9',
   weight: 4.1,
@@ -610,18 +544,6 @@ const items = [
   size: '14x8x7',
   weight: 1.8,
   section: '2C'
-},
-{
-  name: 'SCOOBY-DOO Christmas Stocking 4.5 Ft. Gemmy Airblown Lighted Inflatable Walmart',
-  size: '11x10x7',
-  weight: 4.2,
-  section: '2C'
-},
-{
-  name: `Dept 56 Possible Dreams Clothtique GINGERBREAD CHAIR SANTA #6010183 New`,
-  section: '2C',
-  size: '18x13x13',
-  weight: 4.7
 },
 {
   name: `Funko POP! Movies Universal Monsters FRANKENSTEIN & THE BRIDE Hot Topic 2 Pack`,
@@ -790,12 +712,6 @@ const items = [
   weight: 2.0
 },
 {
-  name: `Disney Villains Maleficent Deluxe Crossbody Bag Vegan Leather NWT`,
-  size: '10x8x6',
-  weight: 0.9,
-  section: '3A'
-},
-{
   name: 'MONSTERS Cereal 4 Pk FRUTE BRUTE FRANKEN BERRY BOO-BERRY COUNT CHOCULA Sealed',
   size: '11x11x11',
   weight: 4.4,
@@ -881,12 +797,6 @@ const items = [
   section: '3C'
 },
 {
-  name: 'VINTAGE Bronze Frog Pulling Nautilus Shell Green Patina Toothpick Planter',
-  size: '7x5x4',
-  weight: 0.9,
-  section: '3C'
-},
-{
   name: 'Vintage 3D Tin Metal High Relief Set of 2 Framed Asian Themed Wall Art',
   size: '14x9x7',
   weight: 3.1,
@@ -902,18 +812,6 @@ const items = [
   name: `Gemmy Halloween Disney 3.5 ft MICKEY and MINNIE MOUSE Airblown Inflatable New`,
   size: '15x11x12',
   weight: 7.3,
-  section: '3D'
-},
-{
-  name: 'COCO Dowley CAT Cookie Jar 1990 Blue Scarf Certified International Corp',
-  size: '15x11x12',
-  weight: 4.4,
-  section: '3D'
-},
-{
-  name: `Funko Pop! Nightmare Before Christmas 10" OOGIE BOOGIE Blacklight #810 LE`,
-  size: '17x14x10',
-  weight: 4.7,
   section: '3D'
 },
 {
@@ -951,12 +849,6 @@ const items = [
   name: 'Blue Mountain Pottery Green Black Glazed Sitting Thinking Frog 7" EUC',
   size: '12x9x7',
   weight: 2.7,
-  section: '3D'
-},
-{
-  name: 'Mickey Mouse 90th Anniversary 10-Piece Collectible Figure Set BRAND NEW',
-  size: '16x14x6',
-  weight: 2.1,
   section: '3D'
 },
 {
@@ -1005,12 +897,6 @@ const items = [
   name: `Hallmark Christmas Ornament Disney Villains CRUELLA DE VIL 101 Dalmatians New`,
   size: '7x5x4',
   weight: 0.2,
-  section: '4A'
-},
-{
-  name: `Funko 7 Eleven SLURPEE Exclusive BLUE RASBERRY 89 & CHERRY 92 Glitter Set of 2`,
-  size: '8x7x5',
-  weight: 1.0,
   section: '4A'
 },
 {
@@ -1273,12 +1159,6 @@ const items = [
   section: '5'
 },
 {
-  name: `Kurt S. Adler 15-Inch Hollywood Collections Mouse King Nutcracker HA0330`,
-  size: '19x7x8',
-  weight: 2.8,
-  section: '5'
-},
-{
   name: `Disney Patriotic 4th of July MICKEY MINNIE STITCH 9" Stuffed Plush Set NWT`,
   size: '10x6x5',
   weight: 0.6,
@@ -1318,12 +1198,6 @@ const items = [
   name: `A GOOFY MOVIE Powerline LOUNGEFLY GITD Backpack FUNKO Pop #1340 WonderCon 2023`,
   size: '14x10x9',
   weight: 3.2,
-  section: '5'
-},
-{
-  name: `Jim Shore PEANUTS Deluxe Holiday Train 8 PC Gift Set With Rare SALLY CAR`,
-  size: '18x12x9',
-  weight: 8.2,
   section: '5'
 },
 {
@@ -1459,5 +1333,3 @@ const items = [
   section: '1D'
 }
 ]
-
-console.log(items.length)
